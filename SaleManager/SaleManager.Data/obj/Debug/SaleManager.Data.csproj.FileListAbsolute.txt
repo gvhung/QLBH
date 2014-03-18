@@ -1,0 +1,5 @@
+D:\GitHub\QLBH\SaleManager\SaleManager.Data\bin\Debug\SaleManager.Data.dll.config
+D:\GitHub\QLBH\SaleManager\SaleManager.Data\bin\Debug\SaleManager.Data.dll
+D:\GitHub\QLBH\SaleManager\SaleManager.Data\bin\Debug\SaleManager.Data.pdb
+D:\GitHub\QLBH\SaleManager\SaleManager.Data\obj\Debug\SaleManager.Data.dll
+D:\GitHub\QLBH\SaleManager\SaleManager.Data\obj\Debug\SaleManager.Data.pdb

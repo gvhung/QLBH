@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBHModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="QLBHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="QLBHModel.City" />
+    <EntitySet Name="Customers" EntityType="QLBHModel.Customer" />
+    <EntitySet Name="CustomerShippings" EntityType="QLBHModel.CustomerShipping" />
+    <EntitySet Name="DataVersions" EntityType="QLBHModel.DataVersion" />
+    <EntitySet Name="Exports" EntityType="QLBHModel.Export" />
+    <EntitySet Name="ExportDetails" EntityType="QLBHModel.ExportDetail" />
+    <EntitySet Name="Features" EntityType="QLBHModel.Feature" />
+    <EntitySet Name="Groups" EntityType="QLBHModel.Group" />
+    <EntitySet Name="Imports" EntityType="QLBHModel.Import" />
+    <EntitySet Name="ImportDetails" EntityType="QLBHModel.ImportDetail" />
+    <EntitySet Name="Orders" EntityType="QLBHModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="QLBHModel.OrderDetail" />
+    <EntitySet Name="OrderPayments" EntityType="QLBHModel.OrderPayment" />
+    <EntitySet Name="PaymentTypes" EntityType="QLBHModel.PaymentType" />
+    <EntitySet Name="Products" EntityType="QLBHModel.Product" />
+    <EntitySet Name="ProductCategories" EntityType="QLBHModel.ProductCategory" />
+    <EntitySet Name="ProductGroups" EntityType="QLBHModel.ProductGroup" />
+    <EntitySet Name="ProductUnits" EntityType="QLBHModel.ProductUnit" />
+    <EntitySet Name="Providers" EntityType="QLBHModel.Provider" />
+    <EntitySet Name="Sessions" EntityType="QLBHModel.Session" />
+    <EntitySet Name="Stocks" EntityType="QLBHModel.Stock" />
+    <EntitySet Name="Storages" EntityType="QLBHModel.Storage" />
+    <EntitySet Name="Users" EntityType="QLBHModel.User" />
+    <EntitySet Name="UserInfoes" EntityType="QLBHModel.UserInfo" />
+    <AssociationSet Name="FK_Customer_City" Association="QLBHModel.FK_Customer_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerShipping_City" Association="QLBHModel.FK_CustomerShipping_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="CustomerShipping" EntitySet="CustomerShippings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_City" Association="QLBHModel.FK_Provider_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Provider" EntitySet="Providers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_City" Association="QLBHModel.FK_Stock_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_City" Association="QLBHModel.FK_UserInfo_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_User" Association="QLBHModel.FK_Customer_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerContact_Customer" Association="QLBHModel.FK_CustomerContact_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerShipping" EntitySet="CustomerShippings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="QLBHModel.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Export_Order" Association="QLBHModel.FK_Export_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Export" EntitySet="Exports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Export_Stock" Association="QLBHModel.FK_Export_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Export" EntitySet="Exports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Export_User" Association="QLBHModel.FK_Export_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Export" EntitySet="Exports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetail_Export" Association="QLBHModel.FK_ExportDetail_Export">
+      <End Role="Export" EntitySet="Exports" />
+      <End Role="ExportDetail" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetail_Product" Association="QLBHModel.FK_ExportDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ExportDetail" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetail_Storage" Association="QLBHModel.FK_ExportDetail_Storage">
+      <End Role="Storage" EntitySet="Storages" />
+      <End Role="ExportDetail" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.FK_User_UserGroup">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Import_Provider" Association="QLBHModel.FK_Import_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="Import" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Import_Stock" Association="QLBHModel.FK_Import_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Import" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Import_User" Association="QLBHModel.FK_Import_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Import" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportDetail_Import" Association="QLBHModel.FK_ImportDetail_Import">
+      <End Role="Import" EntitySet="Imports" />
+      <End Role="ImportDetail" EntitySet="ImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportDetail_Product" Association="QLBHModel.FK_ImportDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ImportDetail" EntitySet="ImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportDetail_Storage" Association="QLBHModel.FK_ImportDetail_Storage">
+      <End Role="Storage" EntitySet="Storages" />
+      <End Role="ImportDetail" EntitySet="ImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_User" Association="QLBHModel.FK_Order_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_User1" Association="QLBHModel.FK_Order_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Order" Association="QLBHModel.FK_OrderDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPayment_Order" Association="QLBHModel.FK_OrderPayment_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderPayment" EntitySet="OrderPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Product" Association="QLBHModel.FK_OrderDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPayment_PaymentType" Association="QLBHModel.FK_OrderPayment_PaymentType">
+      <End Role="PaymentType" EntitySet="PaymentTypes" />
+      <End Role="OrderPayment" EntitySet="OrderPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPayment_User" Association="QLBHModel.FK_OrderPayment_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="OrderPayment" EntitySet="OrderPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductGroup" Association="QLBHModel.FK_Product_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductUnit" Association="QLBHModel.FK_Product_ProductUnit">
+      <End Role="ProductUnit" EntitySet="ProductUnits" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Product" Association="QLBHModel.FK_Storage_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Storage" EntitySet="Storages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGroup_ProductCategory" Association="QLBHModel.FK_ProductGroup_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Stock" Association="QLBHModel.FK_Storage_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Storage" EntitySet="Storages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_User" Association="QLBHModel.FK_UserInfo_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FeatureMapping" Association="QLBHModel.FeatureMapping">
+      <End Role="Feature" EntitySet="Features" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="QLBHModel.FK_Customer_City" FromRole="City" ToRole="Customer" />
+    <NavigationProperty Name="CustomerShippings" Relationship="QLBHModel.FK_CustomerShipping_City" FromRole="City" ToRole="CustomerShipping" />
+    <NavigationProperty Name="Providers" Relationship="QLBHModel.FK_Provider_City" FromRole="City" ToRole="Provider" />
+    <NavigationProperty Name="Stocks" Relationship="QLBHModel.FK_Stock_City" FromRole="City" ToRole="Stock" />
+    <NavigationProperty Name="UserInfoes" Relationship="QLBHModel.FK_UserInfo_City" FromRole="City" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerType" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ReferUserId" Type="Int32" Nullable="false" />
+    <Property Name="ApprovedUserId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="QLBHModel.FK_Customer_City" FromRole="Customer" ToRole="City" />
+    <NavigationProperty Name="User" Relationship="QLBHModel.FK_Customer_User" FromRole="Customer" ToRole="User" />
+    <NavigationProperty Name="CustomerShippings" Relationship="QLBHModel.FK_CustomerContact_Customer" FromRole="Customer" ToRole="CustomerShipping" />
+    <NavigationProperty Name="Orders" Relationship="QLBHModel.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CustomerShipping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="QLBHModel.FK_CustomerShipping_City" FromRole="CustomerShipping" ToRole="City" />
+    <NavigationProperty Name="Customer" Relationship="QLBHModel.FK_CustomerContact_Customer" FromRole="CustomerShipping" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="DataVersion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Export">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="QLBHModel.FK_Export_Order" FromRole="Export" ToRole="Order" />
+    <NavigationProperty Name="Stock" Relationship="QLBHModel.FK_Export_Stock" FromRole="Export" ToRole="Stock" />
+    <NavigationProperty Name="User" Relationship="QLBHModel.FK_Export_User" FromRole="Export" ToRole="User" />
+    <NavigationProperty Name="ExportDetails" Relationship="QLBHModel.FK_ExportDetail_Export" FromRole="Export" ToRole="ExportDetail" />
+  </EntityType>
+  <EntityType Name="ExportDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExportId" Type="Int32" Nullable="false" />
+    <Property Name="StorageId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Export" Relationship="QLBHModel.FK_ExportDetail_Export" FromRole="ExportDetail" ToRole="Export" />
+    <NavigationProperty Name="Product" Relationship="QLBHModel.FK_ExportDetail_Product" FromRole="ExportDetail" ToRole="Product" />
+    <NavigationProperty Name="Storage" Relationship="QLBHModel.FK_ExportDetail_Storage" FromRole="ExportDetail" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Feature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Groups" Relationship="QLBHModel.FeatureMapping" FromRole="Feature" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="QLBHModel.FK_User_UserGroup" FromRole="Group" ToRole="User" />
+    <NavigationProperty Name="Features" Relationship="QLBHModel.FeatureMapping" FromRole="Group" ToRole="Feature" />
+  </EntityType>
+  <EntityType Name="Import">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ProviderId" Type="Int32" Nullable="false" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatebBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Provider" Relationship="QLBHModel.FK_Import_Provider" FromRole="Import" ToRole="Provider" />
+    <NavigationProperty Name="Stock" Relationship="QLBHModel.FK_Import_Stock" FromRole="Import" ToRole="Stock" />
+    <NavigationProperty Name="User" Relationship="QLBHModel.FK_Import_User" FromRole="Import" ToRole="User" />
+    <NavigationProperty Name="ImportDetails" Relationship="QLBHModel.FK_ImportDetail_Import" FromRole="Import" ToRole="ImportDetail" />
+  </EntityType>
+  <EntityType Name="ImportDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImportId" Type="Int32" Nullable="false" />
+    <Property Name="StorageId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Import" Relationship="QLBHModel.FK_ImportDetail_Import" FromRole="ImportDetail" ToRole="Import" />
+    <NavigationProperty Name="Product" Relationship="QLBHModel.FK_ImportDetail_Product" FromRole="ImportDetail" ToRole="Product" />
+    <NavigationProperty Name="Storage" Relationship="QLBHModel.FK_ImportDetail_Storage" FromRole="ImportDetail" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ReferUserId" Type="Int32" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsSeen" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="QLBHModel.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_Order" FromRole="Order" ToRole="Export" />
+    <NavigationProperty Name="User" Relationship="QLBHModel.FK_Order_User" FromRole="Order" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="QLBHModel.FK_Order_User1" FromRole="Order" ToRole="User" />
+    <NavigationProperty Name="OrderDetails" Relationship="QLBHModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+    <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_Order" FromRole="Order" ToRole="OrderPayment" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TotalQuantity" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="QLBHModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="QLBHModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="OrderPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="QLBHModel.FK_OrderPayment_Order" FromRole="OrderPayment" ToRole="Order" />
+    <NavigationProperty Name="PaymentType" Relationship="QLBHModel.FK_OrderPayment_PaymentType" FromRole="OrderPayment" ToRole="PaymentType" />
+    <NavigationProperty Name="User" Relationship="QLBHModel.FK_OrderPayment_User" FromRole="OrderPayment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_PaymentType" FromRole="PaymentType" ToRole="OrderPayment" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ProductGroupId" Type="Int32" Nullable="false" />
+    <Property Name="ProductUnitId" Type="Int32" Nullable="false" />
+    <Property Name="SafeQuantity" Type="Int32" Nullable="false" />
+    <Property Name="Size" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="IsSurface" Type="Boolean" Nullable="false" />
+    <Property Name="AllowSurface" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ExportDetails" Relationship="QLBHModel.FK_ExportDetail_Product" FromRole="Product" ToRole="ExportDetail" />
+    <NavigationProperty Name="ImportDetails" Relationship="QLBHModel.FK_ImportDetail_Product" FromRole="Product" ToRole="ImportDetail" />
+    <NavigationProperty Name="OrderDetails" Relationship="QLBHModel.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
+    <NavigationProperty Name="ProductGroup" Relationship="QLBHModel.FK_Product_ProductGroup" FromRole="Product" ToRole="ProductGroup" />
+    <NavigationProperty Name="ProductUnit" Relationship="QLBHModel.FK_Product_ProductUnit" FromRole="Product" ToRole="ProductUnit" />
+    <NavigationProperty Name="Storages" Relationship="QLBHModel.FK_Storage_Product" FromRole="Product" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ProductGroups" Relationship="QLBHModel.FK_ProductGroup_ProductCategory" FromRole="ProductCategory" ToRole="ProductGroup" />
+  </EntityType>
+  <EntityType Name="ProductGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="QLBHModel.FK_Product_ProductGroup" FromRole="ProductGroup" ToRole="Product" />
+    <NavigationProperty Name="ProductCategory" Relationship="QLBHModel.FK_ProductGroup_ProductCategory" FromRole="ProductGroup" ToRole="ProductCategory" />
+  </EntityType>
+  <EntityType Name="ProductUnit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="QLBHModel.FK_Product_ProductUnit" FromRole="ProductUnit" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="QLBHModel.FK_Provider_City" FromRole="Provider" ToRole="City" />
+    <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_Provider" FromRole="Provider" ToRole="Import" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Token" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastRenewDate" Type="DateTime" Nullable="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="QLBHModel.FK_Stock_City" FromRole="Stock" ToRole="City" />
+    <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_Stock" FromRole="Stock" ToRole="Export" />
+    <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_Stock" FromRole="Stock" ToRole="Import" />
+    <NavigationProperty Name="Storages" Relationship="QLBHModel.FK_Storage_Stock" FromRole="Stock" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Storage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ExportDetails" Relationship="QLBHModel.FK_ExportDetail_Storage" FromRole="Storage" ToRole="ExportDetail" />
+    <NavigationProperty Name="ImportDetails" Relationship="QLBHModel.FK_ImportDetail_Storage" FromRole="Storage" ToRole="ImportDetail" />
+    <NavigationProperty Name="Product" Relationship="QLBHModel.FK_Storage_Product" FromRole="Storage" ToRole="Product" />
+    <NavigationProperty Name="Stock" Relationship="QLBHModel.FK_Storage_Stock" FromRole="Storage" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="ReferUserId" Type="Int32" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="QLBHModel.FK_Customer_User" FromRole="User" ToRole="Customer" />
+    <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_User" FromRole="User" ToRole="Export" />
+    <NavigationProperty Name="Group" Relationship="QLBHModel.FK_User_UserGroup" FromRole="User" ToRole="Group" />
+    <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_User" FromRole="User" ToRole="Import" />
+    <NavigationProperty Name="Orders" Relationship="QLBHModel.FK_Order_User" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="Orders1" Relationship="QLBHModel.FK_Order_User1" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_User" FromRole="User" ToRole="OrderPayment" />
+    <NavigationProperty Name="UserInfoes" Relationship="QLBHModel.FK_UserInfo_User" FromRole="User" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="SocialInsuranceNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="TaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SocialNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SocialIssuedDate" Type="DateTime" Nullable="false" />
+    <Property Name="SocialIssudePlace" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="City" Relationship="QLBHModel.FK_UserInfo_City" FromRole="UserInfo" ToRole="City" />
+    <NavigationProperty Name="User" Relationship="QLBHModel.FK_UserInfo_User" FromRole="UserInfo" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Customer_City">
+    <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
+    <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerShipping_City">
+    <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
+    <End Role="CustomerShipping" Type="QLBHModel.CustomerShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerShipping">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_City">
+    <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
+    <End Role="Provider" Type="QLBHModel.Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_City">
+    <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
+    <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_City">
+    <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
+    <End Role="UserInfo" Type="QLBHModel.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_User">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
+    <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="ApprovedUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerContact_Customer">
+    <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="1" />
+    <End Role="CustomerShipping" Type="QLBHModel.CustomerShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerShipping">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="1" />
+    <End Role="Order" Type="QLBHModel.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Export_Order">
+    <End Role="Order" Type="QLBHModel.Order" Multiplicity="1" />
+    <End Role="Export" Type="QLBHModel.Export" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Export">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Export_Stock">
+    <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="1" />
+    <End Role="Export" Type="QLBHModel.Export" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Export">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Export_User">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
+    <End Role="Export" Type="QLBHModel.Export" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Export">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetail_Export">
+    <End Role="Export" Type="QLBHModel.Export" Multiplicity="1" />
+    <End Role="ExportDetail" Type="QLBHModel.ExportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Export">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetail">
+        <PropertyRef Name="ExportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetail_Product">
+    <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
+    <End Role="ExportDetail" Type="QLBHModel.ExportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetail_Storage">
+    <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="1" />
+    <End Role="ExportDetail" Type="QLBHModel.ExportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetail">
+        <PropertyRef Name="StorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserGroup">
+    <End Role="Group" Type="QLBHModel.Group" Multiplicity="1" />
+    <End Role="User" Type="QLBHModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Import_Provider">
+    <End Role="Provider" Type="QLBHModel.Provider" Multiplicity="1" />
+    <End Role="Import" Type="QLBHModel.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Import">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Import_Stock">
+    <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="1" />
+    <End Role="Import" Type="QLBHModel.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Import">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Import_User">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
+    <End Role="Import" Type="QLBHModel.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Import">
+        <PropertyRef Name="CreatebBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportDetail_Import">
+    <End Role="Import" Type="QLBHModel.Import" Multiplicity="1" />
+    <End Role="ImportDetail" Type="QLBHModel.ImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Import">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportDetail">
+        <PropertyRef Name="ImportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportDetail_Product">
+    <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
+    <End Role="ImportDetail" Type="QLBHModel.ImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportDetail_Storage">
+    <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="1" />
+    <End Role="ImportDetail" Type="QLBHModel.ImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportDetail">
+        <PropertyRef Name="StorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_User">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="0..1" />
+    <End Role="Order" Type="QLBHModel.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ReferUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_User1">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
+    <End Role="Order" Type="QLBHModel.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Order">
+    <End Role="Order" Type="QLBHModel.Order" Multiplicity="1" />
+    <End Role="OrderDetail" Type="QLBHModel.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPayment_Order">
+    <End Role="Order" Type="QLBHModel.Order" Multiplicity="1" />
+    <End Role="OrderPayment" Type="QLBHModel.OrderPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderPayment">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Product">
+    <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
+    <End Role="OrderDetail" Type="QLBHModel.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPayment_PaymentType">
+    <End Role="PaymentType" Type="QLBHModel.PaymentType" Multiplicity="1" />
+    <End Role="OrderPayment" Type="QLBHModel.OrderPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderPayment">
+        <PropertyRef Name="PaymentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPayment_User">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
+    <End Role="OrderPayment" Type="QLBHModel.OrderPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderPayment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductGroup">
+    <End Role="ProductGroup" Type="QLBHModel.ProductGroup" Multiplicity="1" />
+    <End Role="Product" Type="QLBHModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductUnit">
+    <End Role="ProductUnit" Type="QLBHModel.ProductUnit" Multiplicity="1" />
+    <End Role="Product" Type="QLBHModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductUnit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Product">
+    <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
+    <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGroup_ProductCategory">
+    <End Role="ProductCategory" Type="QLBHModel.ProductCategory" Multiplicity="1" />
+    <End Role="ProductGroup" Type="QLBHModel.ProductGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductGroup">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Stock">
+    <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="1" />
+    <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_User">
+    <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
+    <End Role="UserInfo" Type="QLBHModel.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FeatureMapping">
+    <End Role="Feature" Type="QLBHModel.Feature" Multiplicity="*" />
+    <End Role="Group" Type="QLBHModel.Group" Multiplicity="*" />
+  </Association>
+</Schema>

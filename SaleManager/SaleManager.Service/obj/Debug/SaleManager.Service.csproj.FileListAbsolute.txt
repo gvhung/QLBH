@@ -1,0 +1,9 @@
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\bin\Debug\SaleManager.Service.dll
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\bin\Debug\SaleManager.Service.pdb
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\obj\Debug\SaleManager.Service.dll
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\obj\Debug\SaleManager.Service.pdb
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\bin\Debug\SaleManager.Data.dll
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\bin\Debug\SaleManager.Data.pdb
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\obj\Debug\SaleManager.Service.csprojResolveAssemblyReference.cache
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\bin\Debug\SaleManager.Common.dll
+D:\GitHub\QLBH\SaleManager\SaleManager.Service\bin\Debug\SaleManager.Common.pdb
