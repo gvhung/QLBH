@@ -104,18 +104,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Groups">
-      <EntityTypeMapping TypeName="QLBHModel.Group">
-        <MappingFragment StoreEntitySet="Group">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
-          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Imports">
       <EntityTypeMapping TypeName="QLBHModel.Import">
         <MappingFragment StoreEntitySet="Import">
@@ -330,13 +318,25 @@
       <EntityTypeMapping TypeName="QLBHModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="ReferUserId" ColumnName="ReferUserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGroups">
+      <EntityTypeMapping TypeName="QLBHModel.UserGroup">
+        <MappingFragment StoreEntitySet="UserGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
           <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
@@ -369,7 +369,7 @@
       <EndProperty Name="Feature">
         <ScalarProperty Name="Id" ColumnName="FeatureId" />
       </EndProperty>
-      <EndProperty Name="Group">
+      <EndProperty Name="UserGroup">
         <ScalarProperty Name="Id" ColumnName="UserGroupId" />
       </EndProperty>
     </AssociationSetMapping>

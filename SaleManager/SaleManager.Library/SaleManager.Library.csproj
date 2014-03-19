@@ -34,11 +34,13 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,10 +50,13 @@
   <ItemGroup>
     <Compile Include="Filter\UserFilter.cs" />
     <Compile Include="Helper\AccessFactory.cs" />
-    <Compile Include="Helper\Constant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SaleManager.Common\SaleManager.Common.csproj">
+      <Project>{1D1695AC-5847-48A4-8248-FCCE81ADE0E2}</Project>
+      <Name>SaleManager.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SaleManager.Data\SaleManager.Data.csproj">
       <Project>{EA9316CA-80A5-4D83-B954-66556BEBBA9B}</Project>
       <Name>SaleManager.Data</Name>
@@ -61,7 +66,9 @@
       <Name>SaleManager.Service</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -40,7 +40,7 @@ namespace SaleManager.Controllers
                else
                   ClearCookie();
 
-               return RedirectToAction("Index", "Home");
+               return RedirectToAction("Index", "Customer");
             }
             else
             {

@@ -33,7 +33,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_ExportDetail_Export", "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Export), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_ExportDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_ExportDetail_Storage", "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Storage), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_User_UserGroup", "Group", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Group), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.User), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_Import_Provider", "Provider", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Provider), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_Import_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_Import_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
@@ -52,8 +51,9 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_Storage_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Storage), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_ProductGroup_ProductCategory", "ProductCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductCategory), "ProductGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ProductGroup), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_Storage_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Storage), true)]
+[assembly: EdmRelationshipAttribute("QLBHModel", "FK_User_UserGroup", "UserGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.UserGroup), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.User), true)]
 [assembly: EdmRelationshipAttribute("QLBHModel", "FK_UserInfo_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "UserInfo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserInfo), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FeatureMapping", "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Feature), "Group", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Group))]
+[assembly: EdmRelationshipAttribute("QLBHModel", "FeatureMapping", "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Feature), "UserGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserGroup))]
 
 #endregion
 
@@ -216,22 +216,6 @@ namespace SaleManager.Data
             }
         }
         private ObjectSet<Feature> _Features;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Group> Groups
-        {
-            get
-            {
-                if ((_Groups == null))
-                {
-                    _Groups = base.CreateObjectSet<Group>("Groups");
-                }
-                return _Groups;
-            }
-        }
-        private ObjectSet<Group> _Groups;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -476,6 +460,22 @@ namespace SaleManager.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<UserGroup> UserGroups
+        {
+            get
+            {
+                if ((_UserGroups == null))
+                {
+                    _UserGroups = base.CreateObjectSet<UserGroup>("UserGroups");
+                }
+                return _UserGroups;
+            }
+        }
+        private ObjectSet<UserGroup> _UserGroups;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<UserInfo> UserInfoes
         {
             get
@@ -547,14 +547,6 @@ namespace SaleManager.Data
         public void AddToFeatures(Feature feature)
         {
             base.AddObject("Features", feature);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Groups EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToGroups(Group group)
-        {
-            base.AddObject("Groups", group);
         }
     
         /// <summary>
@@ -675,6 +667,14 @@ namespace SaleManager.Data
         public void AddToUsers(User user)
         {
             base.AddObject("Users", user);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the UserGroups EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUserGroups(UserGroup userGroup)
+        {
+            base.AddObject("UserGroups", userGroup);
         }
     
         /// <summary>
@@ -3058,251 +3058,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FeatureMapping", "Group")]
-        public EntityCollection<Group> Groups
+        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FeatureMapping", "UserGroup")]
+        public EntityCollection<UserGroup> UserGroups
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Group>("QLBHModel.FeatureMapping", "Group");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserGroup>("QLBHModel.FeatureMapping", "UserGroup");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Group>("QLBHModel.FeatureMapping", "Group", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Group")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Group : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new Group object.
-        /// </summary>
-        /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="name">Initial value of the Name property.</param>
-        /// <param name="status">Initial value of the Status property.</param>
-        /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
-        /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
-        public static Group CreateGroup(global::System.Int32 id, global::System.String name, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
-        {
-            Group group = new Group();
-            group.Id = id;
-            group.Name = name;
-            group.Status = status;
-            group.LastModifiedBy = lastModifiedBy;
-            group.LastModifiedDate = lastModifiedDate;
-            return group;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Name
-        {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                OnNameChanging(value);
-                ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Name");
-                OnNameChanged();
-            }
-        }
-        private global::System.String _Name;
-        partial void OnNameChanging(global::System.String value);
-        partial void OnNameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Note
-        {
-            get
-            {
-                return _Note;
-            }
-            set
-            {
-                OnNoteChanging(value);
-                ReportPropertyChanging("Note");
-                _Note = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Note");
-                OnNoteChanged();
-            }
-        }
-        private global::System.String _Note;
-        partial void OnNoteChanging(global::System.String value);
-        partial void OnNoteChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Status
-        {
-            get
-            {
-                return _Status;
-            }
-            set
-            {
-                OnStatusChanging(value);
-                ReportPropertyChanging("Status");
-                _Status = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Status");
-                OnStatusChanged();
-            }
-        }
-        private global::System.Int32 _Status;
-        partial void OnStatusChanging(global::System.Int32 value);
-        partial void OnStatusChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 LastModifiedBy
-        {
-            get
-            {
-                return _LastModifiedBy;
-            }
-            set
-            {
-                OnLastModifiedByChanging(value);
-                ReportPropertyChanging("LastModifiedBy");
-                _LastModifiedBy = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LastModifiedBy");
-                OnLastModifiedByChanged();
-            }
-        }
-        private global::System.Int32 _LastModifiedBy;
-        partial void OnLastModifiedByChanging(global::System.Int32 value);
-        partial void OnLastModifiedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime LastModifiedDate
-        {
-            get
-            {
-                return _LastModifiedDate;
-            }
-            set
-            {
-                OnLastModifiedDateChanging(value);
-                ReportPropertyChanging("LastModifiedDate");
-                _LastModifiedDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("LastModifiedDate");
-                OnLastModifiedDateChanged();
-            }
-        }
-        private global::System.DateTime _LastModifiedDate;
-        partial void OnLastModifiedDateChanging(global::System.DateTime value);
-        partial void OnLastModifiedDateChanged();
-
-        #endregion
-
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_User_UserGroup", "User")]
-        public EntityCollection<User> Users
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("QLBHModel.FK_User_UserGroup", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("QLBHModel.FK_User_UserGroup", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FeatureMapping", "Feature")]
-        public EntityCollection<Feature> Features
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Feature>("QLBHModel.FeatureMapping", "Feature");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("QLBHModel.FeatureMapping", "Feature", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserGroup>("QLBHModel.FeatureMapping", "UserGroup", value);
                 }
             }
         }
@@ -8235,7 +8002,7 @@ namespace SaleManager.Data
         /// Create a new User object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="groupId">Initial value of the GroupId property.</param>
+        /// <param name="userGroupId">Initial value of the UserGroupId property.</param>
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="password">Initial value of the Password property.</param>
         /// <param name="firstName">Initial value of the FirstName property.</param>
@@ -8244,11 +8011,11 @@ namespace SaleManager.Data
         /// <param name="status">Initial value of the Status property.</param>
         /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
         /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
-        public static User CreateUser(global::System.Int32 id, global::System.Int32 groupId, global::System.String name, global::System.String password, global::System.String firstName, global::System.String lastName, global::System.Boolean gender, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
+        public static User CreateUser(global::System.Int32 id, global::System.Int32 userGroupId, global::System.String name, global::System.String password, global::System.String firstName, global::System.String lastName, global::System.Boolean gender, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
         {
             User user = new User();
             user.Id = id;
-            user.GroupId = groupId;
+            user.UserGroupId = userGroupId;
             user.Name = name;
             user.Password = password;
             user.FirstName = firstName;
@@ -8296,24 +8063,24 @@ namespace SaleManager.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 GroupId
+        public global::System.Int32 UserGroupId
         {
             get
             {
-                return _GroupId;
+                return _UserGroupId;
             }
             set
             {
-                OnGroupIdChanging(value);
-                ReportPropertyChanging("GroupId");
-                _GroupId = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("GroupId");
-                OnGroupIdChanged();
+                OnUserGroupIdChanging(value);
+                ReportPropertyChanging("UserGroupId");
+                _UserGroupId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserGroupId");
+                OnUserGroupIdChanged();
             }
         }
-        private global::System.Int32 _GroupId;
-        partial void OnGroupIdChanging(global::System.Int32 value);
-        partial void OnGroupIdChanged();
+        private global::System.Int32 _UserGroupId;
+        partial void OnUserGroupIdChanging(global::System.Int32 value);
+        partial void OnUserGroupIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -8586,44 +8353,6 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_User_UserGroup", "Group")]
-        public Group Group
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("QLBHModel.FK_User_UserGroup", "Group").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("QLBHModel.FK_User_UserGroup", "Group").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Group> GroupReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Group>("QLBHModel.FK_User_UserGroup", "Group");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Group>("QLBHModel.FK_User_UserGroup", "Group", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_User", "Import")]
         public EntityCollection<Import> Imports
         {
@@ -8712,6 +8441,44 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_User_UserGroup", "UserGroup")]
+        public UserGroup UserGroup
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<UserGroup> UserGroupReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_UserInfo_User", "UserInfo")]
         public EntityCollection<UserInfo> UserInfoes
         {
@@ -8724,6 +8491,239 @@ namespace SaleManager.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserInfo>("QLBHModel.FK_UserInfo_User", "UserInfo", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="UserGroup")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class UserGroup : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new UserGroup object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="status">Initial value of the Status property.</param>
+        /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
+        /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
+        public static UserGroup CreateUserGroup(global::System.Int32 id, global::System.String name, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
+        {
+            UserGroup userGroup = new UserGroup();
+            userGroup.Id = id;
+            userGroup.Name = name;
+            userGroup.Status = status;
+            userGroup.LastModifiedBy = lastModifiedBy;
+            userGroup.LastModifiedDate = lastModifiedDate;
+            return userGroup;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Note
+        {
+            get
+            {
+                return _Note;
+            }
+            set
+            {
+                OnNoteChanging(value);
+                ReportPropertyChanging("Note");
+                _Note = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Note");
+                OnNoteChanged();
+            }
+        }
+        private global::System.String _Note;
+        partial void OnNoteChanging(global::System.String value);
+        partial void OnNoteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
+            }
+        }
+        private global::System.Int32 _Status;
+        partial void OnStatusChanging(global::System.Int32 value);
+        partial void OnStatusChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 LastModifiedBy
+        {
+            get
+            {
+                return _LastModifiedBy;
+            }
+            set
+            {
+                OnLastModifiedByChanging(value);
+                ReportPropertyChanging("LastModifiedBy");
+                _LastModifiedBy = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastModifiedBy");
+                OnLastModifiedByChanged();
+            }
+        }
+        private global::System.Int32 _LastModifiedBy;
+        partial void OnLastModifiedByChanging(global::System.Int32 value);
+        partial void OnLastModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastModifiedDate
+        {
+            get
+            {
+                return _LastModifiedDate;
+            }
+            set
+            {
+                OnLastModifiedDateChanging(value);
+                ReportPropertyChanging("LastModifiedDate");
+                _LastModifiedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastModifiedDate");
+                OnLastModifiedDateChanged();
+            }
+        }
+        private global::System.DateTime _LastModifiedDate;
+        partial void OnLastModifiedDateChanging(global::System.DateTime value);
+        partial void OnLastModifiedDateChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_User_UserGroup", "User")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("QLBHModel.FK_User_UserGroup", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("QLBHModel.FK_User_UserGroup", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FeatureMapping", "Feature")]
+        public EntityCollection<Feature> Features
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Feature>("QLBHModel.FeatureMapping", "Feature");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("QLBHModel.FeatureMapping", "Feature", value);
                 }
             }
         }

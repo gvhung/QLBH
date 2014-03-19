@@ -14,14 +14,21 @@ namespace SaleManager.Common
       DONE = 3
    }
 
-   public enum UserRole
+   public enum UserGroup
    {
-      ADMINISTRATOR = 0,
-      COMPANY_OWNER = 1,
-      SALE = 2,
-      SALE_MANAGER = 3,
-      STAFF = 4,
-      STOCK = 5
+      ADMINISTRATOR = 1,
+      USER = 2,
+      COMPANY_OWNER = 3,
+      SALE = 4,
+      SALE_MANAGER = 5,
+      STAFF = 6,
+      STOCK = 7
+   }
+
+   public enum CustomType
+   {
+      PERSONAL = 0,
+      COMPANY = 1
    }
 
    //public enum ShippingType : short

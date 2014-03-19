@@ -8,7 +8,6 @@
     <EntitySet Name="Exports" EntityType="QLBHModel.Export" />
     <EntitySet Name="ExportDetails" EntityType="QLBHModel.ExportDetail" />
     <EntitySet Name="Features" EntityType="QLBHModel.Feature" />
-    <EntitySet Name="Groups" EntityType="QLBHModel.Group" />
     <EntitySet Name="Imports" EntityType="QLBHModel.Import" />
     <EntitySet Name="ImportDetails" EntityType="QLBHModel.ImportDetail" />
     <EntitySet Name="Orders" EntityType="QLBHModel.Order" />
@@ -24,6 +23,7 @@
     <EntitySet Name="Stocks" EntityType="QLBHModel.Stock" />
     <EntitySet Name="Storages" EntityType="QLBHModel.Storage" />
     <EntitySet Name="Users" EntityType="QLBHModel.User" />
+    <EntitySet Name="UserGroups" EntityType="QLBHModel.UserGroup" />
     <EntitySet Name="UserInfoes" EntityType="QLBHModel.UserInfo" />
     <AssociationSet Name="FK_Customer_City" Association="QLBHModel.FK_Customer_City">
       <End Role="City" EntitySet="Cities" />
@@ -80,10 +80,6 @@
     <AssociationSet Name="FK_ExportDetail_Storage" Association="QLBHModel.FK_ExportDetail_Storage">
       <End Role="Storage" EntitySet="Storages" />
       <End Role="ExportDetail" EntitySet="ExportDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.FK_User_UserGroup">
-      <End Role="Group" EntitySet="Groups" />
-      <End Role="User" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_Import_Provider" Association="QLBHModel.FK_Import_Provider">
       <End Role="Provider" EntitySet="Providers" />
@@ -157,13 +153,17 @@
       <End Role="Stock" EntitySet="Stocks" />
       <End Role="Storage" EntitySet="Storages" />
     </AssociationSet>
+    <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.FK_User_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroups" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
     <AssociationSet Name="FK_UserInfo_User" Association="QLBHModel.FK_UserInfo_User">
       <End Role="User" EntitySet="Users" />
       <End Role="UserInfo" EntitySet="UserInfoes" />
     </AssociationSet>
     <AssociationSet Name="FeatureMapping" Association="QLBHModel.FeatureMapping">
       <End Role="Feature" EntitySet="Features" />
-      <End Role="Group" EntitySet="Groups" />
+      <End Role="UserGroup" EntitySet="UserGroups" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="City">
@@ -279,20 +279,7 @@
     <Property Name="Status" Type="Int32" Nullable="false" />
     <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
     <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Groups" Relationship="QLBHModel.FeatureMapping" FromRole="Feature" ToRole="Group" />
-  </EntityType>
-  <EntityType Name="Group">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="Status" Type="Int32" Nullable="false" />
-    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="Users" Relationship="QLBHModel.FK_User_UserGroup" FromRole="Group" ToRole="User" />
-    <NavigationProperty Name="Features" Relationship="QLBHModel.FeatureMapping" FromRole="Group" ToRole="Feature" />
+    <NavigationProperty Name="UserGroups" Relationship="QLBHModel.FeatureMapping" FromRole="Feature" ToRole="UserGroup" />
   </EntityType>
   <EntityType Name="Import">
     <Key>
@@ -534,7 +521,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="UserGroupId" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
     <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
@@ -546,12 +533,25 @@
     <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Customers" Relationship="QLBHModel.FK_Customer_User" FromRole="User" ToRole="Customer" />
     <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_User" FromRole="User" ToRole="Export" />
-    <NavigationProperty Name="Group" Relationship="QLBHModel.FK_User_UserGroup" FromRole="User" ToRole="Group" />
     <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_User" FromRole="User" ToRole="Import" />
     <NavigationProperty Name="Orders" Relationship="QLBHModel.FK_Order_User" FromRole="User" ToRole="Order" />
     <NavigationProperty Name="Orders1" Relationship="QLBHModel.FK_Order_User1" FromRole="User" ToRole="Order" />
     <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_User" FromRole="User" ToRole="OrderPayment" />
+    <NavigationProperty Name="UserGroup" Relationship="QLBHModel.FK_User_UserGroup" FromRole="User" ToRole="UserGroup" />
     <NavigationProperty Name="UserInfoes" Relationship="QLBHModel.FK_UserInfo_User" FromRole="User" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="QLBHModel.FK_User_UserGroup" FromRole="UserGroup" ToRole="User" />
+    <NavigationProperty Name="Features" Relationship="QLBHModel.FeatureMapping" FromRole="UserGroup" ToRole="Feature" />
   </EntityType>
   <EntityType Name="UserInfo">
     <Key>
@@ -741,18 +741,6 @@
       </Principal>
       <Dependent Role="ExportDetail">
         <PropertyRef Name="StorageId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_User_UserGroup">
-    <End Role="Group" Type="QLBHModel.Group" Multiplicity="1" />
-    <End Role="User" Type="QLBHModel.User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Group">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="User">
-        <PropertyRef Name="GroupId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -972,6 +960,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_User_UserGroup">
+    <End Role="UserGroup" Type="QLBHModel.UserGroup" Multiplicity="1" />
+    <End Role="User" Type="QLBHModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserInfo_User">
     <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
     <End Role="UserInfo" Type="QLBHModel.UserInfo" Multiplicity="*" />
@@ -986,6 +986,6 @@
   </Association>
   <Association Name="FeatureMapping">
     <End Role="Feature" Type="QLBHModel.Feature" Multiplicity="*" />
-    <End Role="Group" Type="QLBHModel.Group" Multiplicity="*" />
+    <End Role="UserGroup" Type="QLBHModel.UserGroup" Multiplicity="*" />
   </Association>
 </Schema>

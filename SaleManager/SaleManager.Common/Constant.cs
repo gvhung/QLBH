@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace SaleManager.Library.Helper
+namespace SaleManager.Common
 {
    public class Constant
    {
       public const string UserLogined = "UserLogined";
+
+      public const string CUSTOMER_TYPE_PERSONAL = "Cá nhân";
+      public const string CUSTOMER_TYPE_COMPANY = "Công ty";
+      public const string CUSTOMER_CODE = "C"; //next number is id
 
       #region Pages
       static RedirectToRouteResult _loginPage;

@@ -14,7 +14,6 @@
           <EntitySet Name="ExportDetail" EntityType="QLBHModel.Store.ExportDetail" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Feature" EntityType="QLBHModel.Store.Feature" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="FeatureMapping" EntityType="QLBHModel.Store.FeatureMapping" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Group" EntityType="QLBHModel.Store.Group" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Import" EntityType="QLBHModel.Store.Import" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ImportDetail" EntityType="QLBHModel.Store.ImportDetail" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Order" EntityType="QLBHModel.Store.Order" store:Type="Tables" Schema="dbo" />
@@ -30,6 +29,7 @@
           <EntitySet Name="Stock" EntityType="QLBHModel.Store.Stock" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Storage" EntityType="QLBHModel.Store.Storage" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="User" EntityType="QLBHModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroup" EntityType="QLBHModel.Store.UserGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UserInfo" EntityType="QLBHModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Customer_City" Association="QLBHModel.Store.FK_Customer_City">
             <End Role="City" EntitySet="City" />
@@ -76,7 +76,7 @@
             <End Role="FeatureMapping" EntitySet="FeatureMapping" />
           </AssociationSet>
           <AssociationSet Name="FK_FeatureMapping_UserGroup" Association="QLBHModel.Store.FK_FeatureMapping_UserGroup">
-            <End Role="Group" EntitySet="Group" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
             <End Role="FeatureMapping" EntitySet="FeatureMapping" />
           </AssociationSet>
           <AssociationSet Name="FK_Import_Provider" Association="QLBHModel.Store.FK_Import_Provider">
@@ -164,7 +164,7 @@
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
           <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.Store.FK_User_UserGroup">
-            <End Role="Group" EntitySet="Group" />
+            <End Role="UserGroup" EntitySet="UserGroup" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
           <AssociationSet Name="FK_UserInfo_City" Association="QLBHModel.Store.FK_UserInfo_City">
@@ -279,17 +279,6 @@
           </Key>
           <Property Name="FeatureId" Type="int" Nullable="false" />
           <Property Name="UserGroupId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Group">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
-          <Property Name="Note" Type="nvarchar(max)" />
-          <Property Name="Status" Type="int" Nullable="false" />
-          <Property Name="LastModifiedBy" Type="int" Nullable="false" />
-          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -492,13 +481,24 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="UserGroupId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Gender" Type="bit" Nullable="false" />
           <Property Name="ReferUserId" Type="int" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="int" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Note" Type="nvarchar(max)" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="LastModifiedBy" Type="int" Nullable="false" />
           <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
@@ -657,10 +657,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FeatureMapping_UserGroup">
-          <End Role="Group" Type="QLBHModel.Store.Group" Multiplicity="1" />
+          <End Role="UserGroup" Type="QLBHModel.Store.UserGroup" Multiplicity="1" />
           <End Role="FeatureMapping" Type="QLBHModel.Store.FeatureMapping" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Group">
+            <Principal Role="UserGroup">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="FeatureMapping">
@@ -921,14 +921,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_UserGroup">
-          <End Role="Group" Type="QLBHModel.Store.Group" Multiplicity="1" />
+          <End Role="UserGroup" Type="QLBHModel.Store.UserGroup" Multiplicity="1" />
           <End Role="User" Type="QLBHModel.Store.User" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Group">
+            <Principal Role="UserGroup">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="GroupId" />
+              <PropertyRef Name="UserGroupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -969,7 +969,6 @@
           <EntitySet Name="Exports" EntityType="QLBHModel.Export" />
           <EntitySet Name="ExportDetails" EntityType="QLBHModel.ExportDetail" />
           <EntitySet Name="Features" EntityType="QLBHModel.Feature" />
-          <EntitySet Name="Groups" EntityType="QLBHModel.Group" />
           <EntitySet Name="Imports" EntityType="QLBHModel.Import" />
           <EntitySet Name="ImportDetails" EntityType="QLBHModel.ImportDetail" />
           <EntitySet Name="Orders" EntityType="QLBHModel.Order" />
@@ -985,6 +984,7 @@
           <EntitySet Name="Stocks" EntityType="QLBHModel.Stock" />
           <EntitySet Name="Storages" EntityType="QLBHModel.Storage" />
           <EntitySet Name="Users" EntityType="QLBHModel.User" />
+          <EntitySet Name="UserGroups" EntityType="QLBHModel.UserGroup" />
           <EntitySet Name="UserInfoes" EntityType="QLBHModel.UserInfo" />
           <AssociationSet Name="FK_Customer_City" Association="QLBHModel.FK_Customer_City">
             <End Role="City" EntitySet="Cities" />
@@ -1041,10 +1041,6 @@
           <AssociationSet Name="FK_ExportDetail_Storage" Association="QLBHModel.FK_ExportDetail_Storage">
             <End Role="Storage" EntitySet="Storages" />
             <End Role="ExportDetail" EntitySet="ExportDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.FK_User_UserGroup">
-            <End Role="Group" EntitySet="Groups" />
-            <End Role="User" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_Import_Provider" Association="QLBHModel.FK_Import_Provider">
             <End Role="Provider" EntitySet="Providers" />
@@ -1118,13 +1114,17 @@
             <End Role="Stock" EntitySet="Stocks" />
             <End Role="Storage" EntitySet="Storages" />
           </AssociationSet>
+          <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.FK_User_UserGroup">
+            <End Role="UserGroup" EntitySet="UserGroups" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserInfo_User" Association="QLBHModel.FK_UserInfo_User">
             <End Role="User" EntitySet="Users" />
             <End Role="UserInfo" EntitySet="UserInfoes" />
           </AssociationSet>
           <AssociationSet Name="FeatureMapping" Association="QLBHModel.FeatureMapping">
             <End Role="Feature" EntitySet="Features" />
-            <End Role="Group" EntitySet="Groups" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="City">
@@ -1240,20 +1240,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Groups" Relationship="QLBHModel.FeatureMapping" FromRole="Feature" ToRole="Group" />
-        </EntityType>
-        <EntityType Name="Group">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
-          <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Users" Relationship="QLBHModel.FK_User_UserGroup" FromRole="Group" ToRole="User" />
-          <NavigationProperty Name="Features" Relationship="QLBHModel.FeatureMapping" FromRole="Group" ToRole="Feature" />
+          <NavigationProperty Name="UserGroups" Relationship="QLBHModel.FeatureMapping" FromRole="Feature" ToRole="UserGroup" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -1495,7 +1482,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="UserGroupId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
@@ -1507,12 +1494,25 @@
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Customers" Relationship="QLBHModel.FK_Customer_User" FromRole="User" ToRole="Customer" />
           <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_User" FromRole="User" ToRole="Export" />
-          <NavigationProperty Name="Group" Relationship="QLBHModel.FK_User_UserGroup" FromRole="User" ToRole="Group" />
           <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_User" FromRole="User" ToRole="Import" />
           <NavigationProperty Name="Orders" Relationship="QLBHModel.FK_Order_User" FromRole="User" ToRole="Order" />
           <NavigationProperty Name="Orders1" Relationship="QLBHModel.FK_Order_User1" FromRole="User" ToRole="Order" />
           <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_User" FromRole="User" ToRole="OrderPayment" />
+          <NavigationProperty Name="UserGroup" Relationship="QLBHModel.FK_User_UserGroup" FromRole="User" ToRole="UserGroup" />
           <NavigationProperty Name="UserInfoes" Relationship="QLBHModel.FK_UserInfo_User" FromRole="User" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="QLBHModel.FK_User_UserGroup" FromRole="UserGroup" ToRole="User" />
+          <NavigationProperty Name="Features" Relationship="QLBHModel.FeatureMapping" FromRole="UserGroup" ToRole="Feature" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -1702,18 +1702,6 @@
             </Principal>
             <Dependent Role="ExportDetail">
               <PropertyRef Name="StorageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_UserGroup">
-          <End Role="Group" Type="QLBHModel.Group" Multiplicity="1" />
-          <End Role="User" Type="QLBHModel.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Group">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="GroupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1933,6 +1921,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_User_UserGroup">
+          <End Role="UserGroup" Type="QLBHModel.UserGroup" Multiplicity="1" />
+          <End Role="User" Type="QLBHModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserInfo_User">
           <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
           <End Role="UserInfo" Type="QLBHModel.UserInfo" Multiplicity="*" />
@@ -1947,7 +1947,7 @@
         </Association>
         <Association Name="FeatureMapping">
           <End Role="Feature" Type="QLBHModel.Feature" Multiplicity="*" />
-          <End Role="Group" Type="QLBHModel.Group" Multiplicity="*" />
+          <End Role="UserGroup" Type="QLBHModel.UserGroup" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -2055,18 +2055,6 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
                 <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Groups">
-            <EntityTypeMapping TypeName="QLBHModel.Group">
-              <MappingFragment StoreEntitySet="Group">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
-                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2284,13 +2272,25 @@
             <EntityTypeMapping TypeName="QLBHModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="ReferUserId" ColumnName="ReferUserId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroups">
+            <EntityTypeMapping TypeName="QLBHModel.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
                 <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
@@ -2323,7 +2323,7 @@
             <EndProperty Name="Feature">
               <ScalarProperty Name="Id" ColumnName="FeatureId" />
             </EndProperty>
-            <EndProperty Name="Group">
+            <EndProperty Name="UserGroup">
               <ScalarProperty Name="Id" ColumnName="UserGroupId" />
             </EndProperty>
           </AssociationSetMapping>
@@ -2347,22 +2347,21 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="SaleManagerModel" ZoomLevel="110">
+      <Diagram Name="SaleManagerModel" ZoomLevel="35">
         <EntityTypeShape EntityType="QLBHModel.City" Width="1.5" PointX="8.25" PointY="8.375" Height="3.1340950520833317" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.Customer" Width="1.5" PointX="7.5" PointY="12.5" Height="4.8648079427083317" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.CustomerShipping" Width="1.5" PointX="12.75" PointY="13.125" Height="3.7109993489583317" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.DataVersion" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.Export" Width="1.5" PointX="12" PointY="17.625" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.ExportDetail" Width="1.5" PointX="17.25" PointY="20.625" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.ExportDetail" Width="1.5" PointX="17.25" PointY="20.625" Height="3.3263964843750031" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.Feature" Width="1.5" PointX="0.75" PointY="13.75" Height="2.3648893229166692" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Group" Width="1.5" PointX="3" PointY="13.625" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.Import" Width="1.5" PointX="10.5" PointY="13.125" Height="3.7109993489583317" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.ImportDetail" Width="1.5" PointX="15.75" PointY="13.125" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Order" Width="1.5" PointX="9.75" PointY="17.75" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.Order" Width="1.5" PointX="9.75" PointY="17.75" Height="4.2879036458333388" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.OrderDetail" Width="1.5" PointX="15" PointY="18.375" Height="3.1340950520833317" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.OrderPayment" Width="1.5" PointX="18" PointY="15.625" Height="3.3263964843750031" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.PaymentType" Width="1.5" PointX="15.75" PointY="9.125" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Product" Width="1.5" PointX="15" PointY="28.75" Height="5.057109375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.Product" Width="1.5" PointX="15" PointY="28.75" Height="5.0571093750000031" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.ProductCategory" Width="1.5" PointX="10.5" PointY="28.75" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.ProductGroup" Width="1.5" PointX="12.75" PointY="28.5" Height="2.749492187499996" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.ProductUnit" Width="1.5" PointX="12.75" PointY="32" Height="2.1725878906250067" IsExpanded="true" />
@@ -2371,6 +2370,7 @@
         <EntityTypeShape EntityType="QLBHModel.Stock" Width="1.5" PointX="9.75" PointY="23.25" Height="4.0956022135416674" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.Storage" Width="1.5" PointX="15" PointY="23.875" Height="3.326396484374996" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.User" Width="1.5" PointX="5.25" PointY="12.625" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBHModel.UserGroup" Width="1.5" PointX="3" PointY="13.625" Height="2.5571907552083388" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBHModel.UserInfo" Width="1.5" PointX="10.5" PointY="7.625" Height="4.48020507812501" IsExpanded="true" />
         <AssociationConnector Association="QLBHModel.FK_Customer_City" ManuallyRouted="false">
           <ConnectorPoint PointX="8.625" PointY="11.509095052083332" />
@@ -2466,20 +2466,16 @@
           <ConnectorPoint PointX="17.25" PointY="22.692047526041666" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_ExportDetail_Product" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="31.278554687499998" />
-          <ConnectorPoint PointX="18" PointY="31.278554687499998" />
-          <ConnectorPoint PointX="18" PointY="23.951396484374996" />
+          <ConnectorPoint PointX="16.5" PointY="31.2785546875" />
+          <ConnectorPoint PointX="18" PointY="31.2785546875" />
+          <ConnectorPoint PointX="18" PointY="23.951396484375003" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_ExportDetail_Storage" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="25.607648984374997" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="25.607648984374997" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="25.607648984374997" />
-          <ConnectorPoint PointX="17.5937475" PointY="25.607648984374997" />
-          <ConnectorPoint PointX="17.5937475" PointY="23.951396484374996" />
-        </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_User_UserGroup" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="14.903595377604166" />
-          <ConnectorPoint PointX="5.25" PointY="14.903595377604166" />
+          <ConnectorPoint PointX="16.5" PointY="25.607648984375" />
+          <ConnectorPoint PointX="16.791669166666669" PointY="25.607648984375" />
+          <ConnectorPoint PointX="16.958335833333333" PointY="25.607648984375" />
+          <ConnectorPoint PointX="17.5937475" PointY="25.607648984375" />
+          <ConnectorPoint PointX="17.5937475" PointY="23.951396484375003" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_Import_Provider" ManuallyRouted="false">
           <ConnectorPoint PointX="9.75" PointY="6.8398382427884572" />
@@ -2520,32 +2516,32 @@
           <ConnectorPoint PointX="15.75" PointY="13.125" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_ImportDetail_Product" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="29.983024843750005" />
-          <ConnectorPoint PointX="16.8750025" PointY="29.983024843750005" />
+          <ConnectorPoint PointX="16.5" PointY="29.983024843750009" />
+          <ConnectorPoint PointX="16.8750025" PointY="29.983024843750009" />
           <ConnectorPoint PointX="16.8750025" PointY="16.643697916666667" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_ImportDetail_Storage" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="24.710071992187505" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="24.710071992187505" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="24.710071992187505" />
-          <ConnectorPoint PointX="17.06250375" PointY="24.710071992187505" />
+          <ConnectorPoint PointX="16.5" PointY="24.710071992187508" />
+          <ConnectorPoint PointX="16.791669166666669" PointY="24.710071992187508" />
+          <ConnectorPoint PointX="16.958335833333333" PointY="24.710071992187508" />
+          <ConnectorPoint PointX="17.06250375" PointY="24.710071992187508" />
           <ConnectorPoint PointX="17.06250375" PointY="16.643697916666667" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_Order_User" ManuallyRouted="false">
           <ConnectorPoint PointX="6.4062525" PointY="17.297506510416667" />
-          <ConnectorPoint PointX="6.4062525" PointY="19.893951822916666" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="19.893951822916666" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="19.893951822916666" />
-          <ConnectorPoint PointX="9.75" PointY="19.893951822916666" />
+          <ConnectorPoint PointX="6.4062525" PointY="19.893951822916669" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="19.893951822916669" />
+          <ConnectorPoint PointX="9.4583333333333339" PointY="19.893951822916669" />
+          <ConnectorPoint PointX="9.75" PointY="19.893951822916669" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_Order_User1" ManuallyRouted="false">
           <ConnectorPoint PointX="5.5937475" PointY="17.297506510416667" />
-          <ConnectorPoint PointX="5.5937475" PointY="18.790723411458337" />
-          <ConnectorPoint PointX="6.3229191666666669" PointY="18.790723411458337" />
-          <ConnectorPoint PointX="6.4895858333333329" PointY="18.790723411458337" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="18.790723411458337" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="18.790723411458337" />
-          <ConnectorPoint PointX="9.75" PointY="18.790723411458337" />
+          <ConnectorPoint PointX="5.5937475" PointY="18.790723411458341" />
+          <ConnectorPoint PointX="6.3229191666666669" PointY="18.790723411458341" />
+          <ConnectorPoint PointX="6.4895858333333329" PointY="18.790723411458341" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="18.790723411458341" />
+          <ConnectorPoint PointX="9.4583333333333339" PointY="18.790723411458341" />
+          <ConnectorPoint PointX="9.75" PointY="18.790723411458341" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_OrderDetail_Order" ManuallyRouted="false">
           <ConnectorPoint PointX="11.25" PointY="21.357646484375" />
@@ -2605,8 +2601,8 @@
           <ConnectorPoint PointX="15" PointY="30.030998593749992" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_Product_ProductUnit" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.25" PointY="32.9035546875" />
-          <ConnectorPoint PointX="15" PointY="32.9035546875" />
+          <ConnectorPoint PointX="14.25" PointY="32.903554687500005" />
+          <ConnectorPoint PointX="15" PointY="32.903554687500005" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_Storage_Product" ManuallyRouted="false">
           <ConnectorPoint PointX="15.7812525" PointY="28.75" />
@@ -2621,6 +2617,10 @@
           <ConnectorPoint PointX="14.541666666666666" PointY="26.312098795572915" />
           <ConnectorPoint PointX="14.708333333333334" PointY="26.312098795572915" />
           <ConnectorPoint PointX="15" PointY="26.312098795572915" />
+        </AssociationConnector>
+        <AssociationConnector Association="QLBHModel.FK_User_UserGroup" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.903595377604169" />
+          <ConnectorPoint PointX="5.25" PointY="14.903595377604169" />
         </AssociationConnector>
         <AssociationConnector Association="QLBHModel.FK_UserInfo_User" ManuallyRouted="false">
           <ConnectorPoint PointX="5.5937475" PointY="12.625" />

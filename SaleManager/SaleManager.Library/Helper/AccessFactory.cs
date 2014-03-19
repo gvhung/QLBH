@@ -5,6 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.Caching;
 using System.Web.SessionState;
+using SaleManager.Common;
 using SaleManager.Data;
 using SaleManager.Service;
 
@@ -37,9 +38,9 @@ namespace SaleManager.Library.Helper
 
       public static void Login(string username)
       {
-         //var service = new UserService();
-         //var user = service.GetUserByUserName(username);
-         //Session[Constant.UserLogined] = user;
+         var service = new UserService();
+         var user = service.GetUserByUserName(username);
+         Session[Constant.UserLogined] = user;
       }
 
       public static void Logout()
