@@ -70,17 +70,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\SaleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Images\x.png" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\jqueryUI\basic.js" />
     <Content Include="Scripts\jqueryUI\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jqueryUI\jquery-ui-1.9.1.custom.js" />
+    <Content Include="Scripts\jqueryUI\jquery.simplemodal.1.4.4.min.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.accordion.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.core.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.datepicker.js" />
@@ -89,7 +95,12 @@
     <Content Include="Scripts\jqueryUI\jquery.ui.sortable.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.tabs.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.widget.js" />
+    <Content Include="Styles\basic.css" />
+    <Content Include="Styles\basic_ie.css" />
+    <Content Include="Styles\customerlist.css" />
     <Content Include="Views\Customer\Index.aspx" />
+    <Content Include="Views\Sale\CustomerList.aspx" />
+    <Content Include="Views\Sale\SaleList.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

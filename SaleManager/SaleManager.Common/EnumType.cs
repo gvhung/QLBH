@@ -13,7 +13,7 @@ namespace SaleManager.Common
       REVIEW = 2,
       DONE = 3
    }
-
+    
    public enum UserGroup
    {
       ADMINISTRATOR = 1,
@@ -30,6 +30,14 @@ namespace SaleManager.Common
       PERSONAL = 0,
       COMPANY = 1
    }
+
+   public enum Gender
+   {
+       MALE = 0,
+       FEMALE = 1
+   }
+
+
 
    //public enum ShippingType : short
    //{

@@ -40,7 +40,7 @@ namespace SaleManager.Controllers
                else
                   ClearCookie();
 
-               return RedirectToAction("Index", "Customer");
+               return RedirectToAction("CustomerList", "Sale");
             }
             else
             {
@@ -54,9 +54,10 @@ namespace SaleManager.Controllers
 
       public ActionResult LogOff()
       {
-         //FormsService.SignOut();
+         AccessFactory.Logout();
+         ClearCookie();
 
-         return RedirectToAction("Index", "Home");
+         return RedirectToAction("LogOn", "Account");
       }
 
       private void AddCookie(LogOnModel model)
@@ -86,10 +87,5 @@ namespace SaleManager.Controllers
 
          return false;
       }
-
-
-
-      
-
    }
 }

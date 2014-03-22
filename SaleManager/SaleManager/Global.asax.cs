@@ -22,6 +22,18 @@ namespace SaleManager
              new { controller = "Account", action = "LogOn", id = UrlParameter.Optional } // Parameter defaults
          );
 
+         //User list
+         routes.MapRoute(
+              "SaleList", // Route name
+              "{controller}/{action}", // URL with parameters
+              new { controller = "Sale", action = "SaleList" } // Parameter defaults
+          );
+
+         routes.MapRoute(
+             "CustomerList", // Route name
+             "{controller}/{action}", // URL with parameters
+             new { controller = "Sale", action = "CustomerList" } // Parameter defaults
+         );
       }
 
       protected void Application_Start()

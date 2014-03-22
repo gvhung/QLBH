@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerStatus.cs" />
     <Compile Include="CustomerType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaleManagerModel.Designer.cs">

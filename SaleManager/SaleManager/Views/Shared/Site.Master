@@ -8,6 +8,7 @@
     </title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/jqueryUI/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/Common.js"></script>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
 </head>
 <body>

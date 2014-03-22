@@ -17,6 +17,8 @@ namespace SaleManager.Models
       public string Note { get; set; }
       public int Type { get; set; }
       public int City { get; set; }
+      public string Error { get; set; }
+      public bool Save { get; set; }
 
       public IList<City> cities { get; set; }
       public IList<CustomerType> customertypes { get; set; } 

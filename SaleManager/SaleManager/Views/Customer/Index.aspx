@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Thêm khách hàng</h2>
-    <form method="POST">
+    <form id="CustomerForm" method="POST">
     <table border="0">
         <tr>
             <td>
@@ -87,9 +87,11 @@
         </tr>
         <tr>
             <td>
+                <%=Html.Hidden("Save") %>
             </td>
             <td>
-                <div id="Error" style="color: red; display: none">
+                <div id="Error" style="color: red;">-
+                    <%=Model.Error%>
                 </div>
             </td>
         </tr>
@@ -98,7 +100,7 @@
             </td>
             <td style="text-align: right">
                 <input type="button" value="Nhập lại" onclick="Reset();" />
-                <input type="submit" value="Lưu" />
+                <input type="button" value="Lưu" onclick="return Validation();" />
             </td>
         </tr>
     </table>
@@ -106,12 +108,11 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContent" runat="server">
     <script>
-//        $(function() {
-//            $(document).ready(function() {
-//                $("Type").val($("#customertype").val());
-//                $("City").val($("#cityname").val());
-//            });
-//        });
+        $(function () {
+            $(document).ready(function () {
+                
+            });
+        });
 
         function Reset() {
             $("#Name").val("");
@@ -124,12 +125,32 @@
             $("#Error").val("");
         }
 
+        function Validation() {
+            if ($("#Name").val() == "") {
+                $("#Error").text("Tên khách hàng không được trống.");
+                $("#Error").attr("style", "color: red;display:block");
+                return false;
+            }
+            else if ($("#Phone1").val() == "" && $("#Phone2").val() == "") {
+                $("#Error").text("Số điện thoại không được trống.");
+                $("#Error").attr("style", "color: red;display:block");
+                return false;
+            }
+            else if ($("#Address").val() == "") {
+                $("#Error").text("Địa chỉ không được trống.");
+                $("#Error").attr("style", "color: red;display:block");
+                return false;
+            }
+
+            return true;
+        }
+
         function ChangeCustomerType() {
-//            $("Type").val($("#customertype").val());
+            //            $("Type").val($("#customertype").val());
         }
 
         function ChangeCity() {
-//            $("City").val($("#cityname").val());
+            //            $("City").val($("#cityname").val());
         }
     </script>
 </asp:Content>

@@ -6,6 +6,14 @@
 
 <asp:Content ID="script" ContentPlaceHolderID="ScriptContent" runat="server">
    <script>
+
+       $(function () {
+           $(document).keypress(function (evt) {
+               if (evt.keyCode == "13")
+                   $("#form").submit();
+           });
+       });
+
        function LoginValidation() {
            var flag = true;
            if ($("#username").val().trim() == "") {
@@ -23,12 +31,14 @@
            }
            return flag;
        }
+
+
    </script>
 </asp:Content>
 
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Log On</h2>
-    <form method="post">
+    <form id="form" method="post">
         <span style="color: red; font-weight: bold"> <%= Model == null ? "" : Model.Errors %></span>
         <div>
             <fieldset>
@@ -38,7 +48,7 @@
                     User name
                 </div>
                 <div class="editor-field">
-                    <input id="username" name="username" type="text" value="administrator"/>
+                    <input id="username" name="username" type="text" value="manager"/>
                     <span id="Eusername" style="color: red"></span>
                 </div>
                 
@@ -50,10 +60,10 @@
                     <span id="Epassword" style="color: red"></span>
                 </div>
                 
-                <div class="editor-label">
+           <%--     <div class="editor-label">
                     <input id="RememberMe" name="RememberMe" type="checkbox" value="false" onchange="javascript:this.value = this.checked" />
                     Remember me?
-                </div>                
+                </div>                --%>
                 <p>
                     <input type="submit" value="Log On" onclick="return LoginValidation();" />
                 </p>

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filter\SaleManagerFilter.cs" />
     <Compile Include="Filter\UserFilter.cs" />
     <Compile Include="Helper\AccessFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
