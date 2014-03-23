@@ -37,15 +37,15 @@
 </asp:Content>
 
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Log On</h2>
+    <h2>Đăng nhập</h2>
     <form id="form" method="post">
         <span style="color: red; font-weight: bold"> <%= Model == null ? "" : Model.Errors %></span>
         <div>
             <fieldset>
-                <legend>Account Information</legend>
+                <legend>Thông tin đăng nhập</legend>
                 
                 <div class="editor-label">
-                    User name
+                   Tài khoản
                 </div>
                 <div class="editor-field">
                     <input id="username" name="username" type="text" value="manager"/>
@@ -53,7 +53,7 @@
                 </div>
                 
                 <div class="editor-label">
-                    Password
+                    Mật khẩu
                 </div>
                 <div class="editor-field">
                     <input id="password" name="password" type="password"value="pass"/>
@@ -65,7 +65,7 @@
                     Remember me?
                 </div>                --%>
                 <p>
-                    <input type="submit" value="Log On" onclick="return LoginValidation();" />
+                    <input type="submit" value="Đăng nhập" onclick="return LoginValidation();" />
                 </p>
             </fieldset>
         </div>

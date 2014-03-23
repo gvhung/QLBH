@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using SaleManager.Common;
@@ -12,12 +13,9 @@ using SaleManager.Service;
 
 namespace SaleManager.Controllers
 {
-   [UserFilter]
+   [SaleFilter]
    public class CustomerController : Controller
    {
-      //
-      // GET: /Customer/
-
       public ActionResult Index()
       {
          return View(Init());
@@ -84,5 +82,56 @@ namespace SaleManager.Controllers
          return model;
       }
 
+
+      #region order manager
+      public ActionResult OrderManager()
+      {
+          return View();
+      }
+
+      public ActionResult SearchCustomer()
+      {
+          try
+          {
+              var table = new StringBuilder();
+              var datefrom = DateTime.ParseExact(Request["DateFrom"], "dd/MM/yyyy", null);
+              var dateto = DateTime.ParseExact(Request["DateTo"], "dd/MM/yyyy", null);
+              var oService = new OrderService();
+              var orders = oService.GetOrderByDate(datefrom, dateto).
+                            Where(c => c.ReferUserId == AccessFactory.CurrentUser.Id);
+
+              table.Append("<table class='table1'>");
+              table.Append("<tr>");
+              table.Append("<th>Mã đơn hàng</th>");
+              table.Append("<th>Tổng giá trị</th>");
+              table.Append("<th>Ngày tạo</th>");
+              table.Append("</tr>");
+
+              foreach (var order in orders)
+              {
+                  var total = oService.GetOrderDetailByOrderid(order.Id).Sum(c => c.TotalQuantity);
+
+                  table.Append("<tr>");
+                  table.AppendFormat("<td>{0}</td>", order.Code);
+                  table.AppendFormat("<td>{0}</td>", Constant.ConvertCurrency(total));
+                  table.AppendFormat("<td>{0}</td>", order.CreatedDate.ToString("dd/MM/yyyy"));
+                  table.Append("</tr>");
+              }
+
+              table.Append("</table>");
+
+              return Json(new
+              {
+                  finish = true,
+                  data = table.ToString()
+              });
+          }
+          catch (Exception e)
+          {
+              return Json(new { finish = false, data = e.ToString() });
+          }
+      }
+
+      #endregion
    }
 }

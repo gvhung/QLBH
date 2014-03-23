@@ -11,10 +11,10 @@
     <form id="form" method="POST">
     <table>
          <tr>
-            <td>Từ khóa</td>
-            <td>Seller</td>
-            <td>Trạng thái</td>
-            <td></td>
+            <th>Từ khóa</th>
+            <th>Seller</th>
+            <th>Trạng thái</th>
+            <th></th>
         </tr>
         <tr>
             <td><%=Html.TextBox("Search") %></td>
@@ -28,16 +28,16 @@
     </form>
     <br/>
     <br/>
-    <table>
+    <table class="table1">
         <thead>
-            <td>STT</td>
-            <td>Tên</td>
-            <td>Loại khách hàng</td>
-            <td>Số điện thoại 1</td>
-            <td>Số điện thoại 2</td>
-            <td>Email</td>
-            <td>Tỉnh/Thành</td>
-            <td>Trạng thái</td>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Loại khách hàng</th>
+            <th>Số điện thoại 1</th>
+            <th>Số điện thoại 2</th>
+            <th>Email</th>
+            <th>Tỉnh/Thành</th>
+            <th>Trạng thái</th>
         </thead>
         <tbody>
             <%

@@ -37,6 +37,18 @@ namespace SaleManager.Common
        FEMALE = 1
    }
 
+   public enum ISSEEN
+   {
+       NEW = 0,
+       OLD = 1
+   }
+
+   public enum PaymentType
+   {
+       CASH = 1,
+       TRANSFER = 2
+   }
+
 
 
    //public enum ShippingType : short

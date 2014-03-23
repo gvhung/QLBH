@@ -34,6 +34,12 @@ namespace SaleManager
              "{controller}/{action}", // URL with parameters
              new { controller = "Sale", action = "CustomerList" } // Parameter defaults
          );
+
+         routes.MapRoute(
+           "Manager", // Route name
+           "{controller}/{action}", // URL with parameters
+           new { controller = "Manager", action = "SaleManager" } // Parameter defaults
+       );
       }
 
       protected void Application_Start()

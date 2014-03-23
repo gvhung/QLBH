@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using SaleManager.Common;
@@ -156,6 +157,6 @@ namespace SaleManager.Controllers
             return model;
         }
 
-        #endregion
+         #endregion
     }
 }

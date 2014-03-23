@@ -6,24 +6,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Danh sách nhân viên bán hàng phụ trách</h2>
-    <table>
+        Danh sách seller phụ trách</h2>
+    <table class="table1">
         <tr>
-            <td>
+            <th>
                 Tên đăng nhập
-            </td>
-            <td>
+            </th>
+            <th>
                 Họ
-            </td>
-            <td>
+            </th>
+            <th>
                 Tên
-            </td>
-            <td>
+            </th>
+            <th>
                 Giới tính
-            </td>
-            <td>
+            </th>
+            <th>
                 Trạng thái
-            </td>
+            </th>
         </tr>
         <% foreach (var user in Model.UserList)
            { %>

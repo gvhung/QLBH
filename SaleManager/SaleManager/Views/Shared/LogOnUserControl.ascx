@@ -1,15 +1,16 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
+<%@ Import Namespace="SaleManager.Library.Helper" %>
 <%
-    if (SaleManager.Library.Helper.AccessFactory.IsLogined())
+    if (AccessFactory.IsLogined())
     {
 %>
-        Welcome <b><%: Page.User.Identity.Name %></b>!
-        [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]
+        Chào mừng, <b><%= AccessFactory.CurrentUserName %></b>!
+        [ <%: Html.ActionLink("Đăng xuất", "LogOff", "Account") %> ]
 <%
     }
     else {
 %> 
-        [ <%: Html.ActionLink("Log On", "LogOn", "Account") %> ]
+        [ <%: Html.ActionLink("Đăng nhập", "LogOn", "Account") %> ]
 <%
     }
 %>

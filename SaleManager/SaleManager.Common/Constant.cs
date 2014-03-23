@@ -9,6 +9,7 @@ namespace SaleManager.Common
    public class Constant
    {
       public const string UserLogined = "UserLogined";
+      public const string UserRole = "UserRole";
       public const string CITY = "CITY";
       public const string ALL = "Tất cả";
       public const int ALL_VALUE = 99;
@@ -27,35 +28,40 @@ namespace SaleManager.Common
       public const string STATUS_DONE = "Hoàn tất";
 
 
-      #region Pages
-      static RedirectToRouteResult _loginPage;
-      public static RedirectToRouteResult LoginPage
-      {
-         get
-         {
-            if (_loginPage == null)
-            {
-               var dictionary = new Dictionary<string, object> { { "action", "LogOn" }, { "controller", "Account" } };
-               _loginPage = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(dictionary));
-            }
-            return _loginPage;
-         }
-      }
+       public static string ConvertCurrency(double money)
+       {
+           return money.ToString("# ### ### ### ### ### ### ### vnđ");
+       }
 
-      static RedirectToRouteResult _homePage;
-      public static RedirectToRouteResult HomePage
-      {
-         get
-         {
-            if (_homePage == null)
-            {
-               var dictionary = new Dictionary<string, object> { { "action", "Index" }, { "controller", "Home" } };
-               _homePage = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(dictionary));
-            }
-            return _homePage;
-         }
-      }
+       #region Pages
+       static RedirectToRouteResult _loginPage;
+       public static RedirectToRouteResult LoginPage
+       {
+           get
+           {
+               if (_loginPage == null)
+               {
+                   var dictionary = new Dictionary<string, object> { { "action", "LogOn" }, { "controller", "Account" } };
+                   _loginPage = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(dictionary));
+               }
+               return _loginPage;
+           }
+       }
 
-      #endregion
+       static RedirectToRouteResult _homePage;
+       public static RedirectToRouteResult HomePage
+       {
+           get
+           {
+               if (_homePage == null)
+               {
+                   var dictionary = new Dictionary<string, object> { { "action", "Index" }, { "controller", "Home" } };
+                   _homePage = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(dictionary));
+               }
+               return _homePage;
+           }
+       }
+
+       #endregion
    }
 }

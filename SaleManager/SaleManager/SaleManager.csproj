@@ -69,18 +69,26 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\ManagerModel.cs" />
     <Compile Include="Models\SaleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\menu.jpg" />
+    <Content Include="Images\menuactive.png" />
+    <Content Include="Images\menuhover.png" />
+    <Content Include="Images\right.png" />
+    <Content Include="Images\wrapper.jpg" />
     <Content Include="Images\x.png" />
     <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\jqueryUI\basic.js" />
@@ -89,6 +97,7 @@
     <Content Include="Scripts\jqueryUI\jquery.simplemodal.1.4.4.min.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.accordion.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.core.js" />
+    <Content Include="Scripts\jqueryUI\jquery.ui.datepicker-vi.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.datepicker.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.draggable.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.mouse.js" />
@@ -98,9 +107,27 @@
     <Content Include="Styles\basic.css" />
     <Content Include="Styles\basic_ie.css" />
     <Content Include="Styles\customerlist.css" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui.css" />
     <Content Include="Views\Customer\Index.aspx" />
+    <Content Include="Views\Customer\OrderManager.aspx" />
+    <Content Include="Views\Manager\PaymentManager.aspx" />
+    <Content Include="Views\Manager\SaleManager.aspx" />
     <Content Include="Views\Sale\CustomerList.aspx" />
     <Content Include="Views\Sale\SaleList.aspx" />
+    <Content Include="Views\Shared\MenuUserControl.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -108,30 +135,14 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Styles\Site.css" />
     <Content Include="Views\Account\LogOn.aspx" />
-    <Content Include="Views\Home\About.aspx" />
-    <Content Include="Views\Home\Index.aspx" />
-    <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\jqueryUI\themes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SaleManager.Common\SaleManager.Common.csproj">

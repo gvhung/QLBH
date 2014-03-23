@@ -33,6 +33,21 @@ namespace SaleManager.Library.Helper
             set { Session[Constant.UserLogined] = value; }
         }
 
+        public static string CurrentUserName
+        {
+            get { return CurrentUser.Name; }
+        }
+
+        public static int CurrentUserRole
+        {
+            get
+            {
+                if (Session[Constant.UserRole] == null)
+                    Session[Constant.UserRole] = CurrentUser.UserGroupId;
+                return Convert.ToInt32(Session[Constant.UserRole]);
+            }
+        }
+
         public static Dictionary<int, string> Cities
         {
             get
@@ -85,7 +100,7 @@ namespace SaleManager.Library.Helper
                 Session[Constant.UserLogined] = new User();
                 return false;
             }
-            return ((SaleManager.Data.User)Session[Constant.UserLogined]).Name != null;
+            return ((User)Session[Constant.UserLogined]).Name != null;
         }
 
         public static bool IsSaleLogined()
@@ -99,7 +114,7 @@ namespace SaleManager.Library.Helper
                 Session[Constant.UserLogined] = new User();
                 return false;
             }
-            var user = ((SaleManager.Data.User)Session[Constant.UserLogined]);
+            var user = ((User)Session[Constant.UserLogined]);
             return user.Name != null && user.UserGroupId == (int)SaleManager.Common.UserGroup.SALE;
         }
 
@@ -114,9 +129,23 @@ namespace SaleManager.Library.Helper
                 Session[Constant.UserLogined] = new User();
                 return false;
             }
-            var user = ((SaleManager.Data.User)Session[Constant.UserLogined]);
+            var user = ((User)Session[Constant.UserLogined]);
             return user.Name != null && user.UserGroupId == (int)SaleManager.Common.UserGroup.SALE_MANAGER;
         }
 
+        public static bool IsCompanyOwnerLogined()
+        {
+            if (Session == null)
+            {
+                return false;
+            }
+            else if (Session[Constant.UserLogined] == null)
+            {
+                Session[Constant.UserLogined] = new User();
+                return false;
+            }
+            var user = ((User)Session[Constant.UserLogined]);
+            return user.Name != null && user.UserGroupId == (int)SaleManager.Common.UserGroup.COMPANY_OWNER;
+        }
     }
 }
