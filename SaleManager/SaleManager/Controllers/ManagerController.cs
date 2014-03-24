@@ -15,6 +15,7 @@ namespace SaleManager.Controllers
     [CompanyOwnerFilter]
     public class ManagerController : Controller
     {
+        #region sale
         public ActionResult SaleManager()
         {
             return View();
@@ -81,7 +82,9 @@ namespace SaleManager.Controllers
             
             
         }
+        #endregion
 
+        #region payment
         public ActionResult PaymentManager()
         {
             return View();
@@ -147,7 +150,171 @@ namespace SaleManager.Controllers
 
             }
         }
+        #endregion
 
-        
+        #region export
+        public ActionResult ExportManager()
+        {
+            return View();
+        }
+
+        public ActionResult SearchExport()
+        {
+            try
+            {
+                var table = new StringBuilder();
+                var datefrom = DateTime.ParseExact(Request["DateFrom"], "dd/MM/yyyy", null);
+                var dateto = DateTime.ParseExact(Request["DateTo"], "dd/MM/yyyy", null);
+                var eService = new ExportService();
+                var oService = new OrderService();
+                var tService = new StockService();
+                var cService = new CustomerService();
+                var exports = eService.GetExportByDate(datefrom, dateto);
+
+
+                table.Append("<table class='table1'>");
+                table.Append("<tr>");
+                table.Append("<th>Mã đơn hàng</th>");
+                table.Append("<th>Khách hàng</th>");
+                table.Append("<th>Tên kho</th>");
+                table.Append("<th>Ngày xuất kho</th>");
+                table.Append("</tr>");
+
+                foreach (var export in exports)
+                {
+                    var order = oService.GetOrderById(export.OrderId);
+                    var customer = cService.GetCustomerById(order.CustomerId);
+                    var stock = tService.GetStockById(export.StockId);
+                    table.Append("<tr>");
+                    table.AppendFormat("<td>{0}</td>", order.Code);
+                    table.AppendFormat("<td>{0}</td>", customer.Name);
+                    table.AppendFormat("<td>{0}</td>", stock.Name);
+                    table.AppendFormat("<td>{0}</td>", export.CreatedDate.ToShortDateString());
+                    table.Append("</tr>");
+                }
+
+                table.Append("</table>");
+
+                return Json(new
+                {
+                    finish = true,
+                    data = table.ToString()
+                });
+            }
+            catch (Exception e)
+            {
+
+                return Json(new { finish = false, data = e.ToString() });
+
+            }
+        }
+        #endregion
+
+        #region import
+        public ActionResult ImportManager()
+        {
+            return View();
+        }
+
+        public ActionResult SearchImport()
+        {
+            try
+            {
+                var table = new StringBuilder();
+                var datefrom = DateTime.ParseExact(Request["DateFrom"], "dd/MM/yyyy", null);
+                var dateto = DateTime.ParseExact(Request["DateTo"], "dd/MM/yyyy", null);
+                var iService = new ImportService();
+                var pService = new ProviderService();
+                var tService = new StockService();
+                var imports = iService.GetExportByDate(datefrom, dateto);
+
+
+                table.Append("<table class='table1'>");
+                table.Append("<tr>");
+                table.Append("<th>Nhà cung cấp</th>");
+                table.Append("<th>Ngày giờ</th>");
+                table.Append("<th>Tên kho</th>");
+                table.Append("</tr>");
+
+                foreach (var import in imports)
+                {
+                    var provider = pService.GetProviderById(import.ProviderId);
+                    var stock = tService.GetStockById(import.StockId);
+                    table.Append("<tr>");
+                    table.AppendFormat("<td>{0}</td>", provider.Name);
+                    table.AppendFormat("<td>{0}</td>", import.CreatedDate.ToShortDateString());
+                    table.AppendFormat("<td>{0}</td>", stock.Name);
+                    table.Append("</tr>");
+                }
+
+                table.Append("</table>");
+
+                return Json(new
+                {
+                    finish = true,
+                    data = table.ToString()
+                });
+            }
+            catch (Exception e)
+            {
+
+                return Json(new { finish = false, data = e.ToString() });
+
+            }
+        }
+        #endregion
+
+        #region storage
+        public ActionResult StorageManager()
+        {
+            return View();
+        }
+
+        public ActionResult SearchStorage()
+        {
+            try
+            {
+                var table = new StringBuilder();
+                var sService = new StorageService();
+                var pService = new ProductService();
+                var tService = new StockService();
+                var storages = sService.GetAllStorage().OrderBy(p => p.StockId).ThenBy(p=> p.ProductId);
+
+                table.Append("<table class='table1'>");
+                table.Append("<tr>");
+                table.Append("<th>Sản phẩm</th>");
+                table.Append("<th>Tên kho</th>");
+                table.Append("<th>Số lượng kho</th>");
+                table.Append("<th>Số lượng an toàn</th>");
+                table.Append("</tr>");
+
+                foreach (var storage in storages)
+                {
+                    var product = pService.GetProductById(storage.ProductId);
+                    var stock = tService.GetStockById(storage.StockId);
+                    table.Append("<tr>");
+                    table.AppendFormat("<td>{0}</td>", product.Name);
+                    table.AppendFormat("<td>{0}</td>", stock.Name);
+                    table.AppendFormat("<td>{0}</td>", storage.Quantity);
+                    table.AppendFormat("<td>{0}</td>", product.SafeQuantity);
+                    table.Append("</tr>");
+                }
+
+                table.Append("</table>");
+
+                return Json(new
+                {
+                    finish = true,
+                    data = table.ToString()
+                });
+            }
+            catch (Exception e)
+            {
+
+                return Json(new { finish = false, data = e.ToString() });
+
+            }
+        }
+        #endregion
     }
 }

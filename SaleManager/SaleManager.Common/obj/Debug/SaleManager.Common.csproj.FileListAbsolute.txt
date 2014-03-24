@@ -2,3 +2,4 @@ D:\GitHub\QLBH\SaleManager\SaleManager.Common\bin\Debug\SaleManager.Common.dll
 D:\GitHub\QLBH\SaleManager\SaleManager.Common\bin\Debug\SaleManager.Common.pdb
 D:\GitHub\QLBH\SaleManager\SaleManager.Common\obj\Debug\SaleManager.Common.dll
 D:\GitHub\QLBH\SaleManager\SaleManager.Common\obj\Debug\SaleManager.Common.pdb
+D:\GitHub\QLBH\SaleManager\SaleManager.Common\obj\Debug\SaleManager.Common.csprojResolveAssemblyReference.cache

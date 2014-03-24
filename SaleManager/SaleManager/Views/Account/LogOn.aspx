@@ -48,7 +48,7 @@
                    Tài khoản
                 </div>
                 <div class="editor-field">
-                    <input id="username" name="username" type="text" value="manager"/>
+                    <input id="username" name="username" type="text" value="owner"/>
                     <span id="Eusername" style="color: red"></span>
                 </div>
                 

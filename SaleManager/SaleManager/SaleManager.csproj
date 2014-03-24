@@ -123,8 +123,11 @@
     <Content Include="Styles\jquery-ui.css" />
     <Content Include="Views\Customer\Index.aspx" />
     <Content Include="Views\Customer\OrderManager.aspx" />
+    <Content Include="Views\Manager\ExportManager.aspx" />
+    <Content Include="Views\Manager\ImportManager.aspx" />
     <Content Include="Views\Manager\PaymentManager.aspx" />
     <Content Include="Views\Manager\SaleManager.aspx" />
+    <Content Include="Views\Manager\StorageManager.aspx" />
     <Content Include="Views\Sale\CustomerList.aspx" />
     <Content Include="Views\Sale\SaleList.aspx" />
     <Content Include="Views\Shared\MenuUserControl.ascx" />
