@@ -9,7 +9,7 @@ namespace SaleManager.Service
 {
    public class CustomerService
    {
-      private readonly QLBHEntities _entities = new QLBHEntities();
+      private readonly SaleMgnEntities _entities = new SaleMgnEntities();
 
       public IList<CustomerType> GetAllCustomerType()
       {
@@ -37,6 +37,10 @@ namespace SaleManager.Service
       {
          _entities.Customers.AddObject(customer);
          _entities.SaveChanges();
+
+          var id = customer.Id;
+          customer.Code = string.Format(Constant.CUSTOMER_CODE, id.ToString("000000"));
+          _entities.SaveChanges();
       }
 
       public Customer GetCustomerById(int id)

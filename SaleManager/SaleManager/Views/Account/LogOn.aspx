@@ -17,14 +17,14 @@
        function LoginValidation() {
            var flag = true;
            if ($("#username").val().trim() == "") {
-               $("#Eusername").text("User name is require.");
+               $("#Eusername").text("Tài khoản không được trống.");
                flag = false;
            } else {
                $("#Eusername").text("");
            }
 
            if ($("#password").val().trim() == "") {
-               $("#Epassword").text("Password is require.");
+               $("#Epassword").text("Mật khẩu không được trống.");
                flag = false;
            } else {
                $("#Epassword").text("");
@@ -48,7 +48,7 @@
                    Tài khoản
                 </div>
                 <div class="editor-field">
-                    <input id="username" name="username" type="text" value="owner"/>
+                    <input id="username" name="username" type="text" value="sale1"/>
                     <span id="Eusername" style="color: red"></span>
                 </div>
                 

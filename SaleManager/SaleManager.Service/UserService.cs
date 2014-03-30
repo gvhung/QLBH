@@ -9,7 +9,7 @@ namespace SaleManager.Service
 {
     public class UserService
     {
-        private readonly QLBHEntities _entities = new QLBHEntities();
+        private readonly SaleMgnEntities _entities = new SaleMgnEntities();
 
         public User GetUserById(int id)
         {
@@ -34,7 +34,7 @@ namespace SaleManager.Service
         public void UpdateUser(User user)
         {
             var u = _entities.Users.FirstOrDefault(i => i.Id == user.Id);
-            u.UserGroupId = user.UserGroupId;
+            u.GroupId = user.GroupId;
             u.Name = user.Name;
             u.Password = user.Password;
             u.FirstName = user.FirstName;

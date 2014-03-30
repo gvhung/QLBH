@@ -46,17 +46,17 @@
     <Compile Include="CustomerStatus.cs" />
     <Compile Include="CustomerType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaleManagerModel.Designer.cs">
+    <Compile Include="SaleMgn.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SaleManagerModel.edmx</DependentUpon>
+      <DependentUpon>SaleMgn.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="SaleManagerModel.edmx">
+    <EntityDeploy Include="SaleMgn.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SaleManagerModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SaleMgn.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

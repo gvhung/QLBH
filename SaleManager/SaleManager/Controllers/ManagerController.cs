@@ -25,7 +25,7 @@ namespace SaleManager.Controllers
         {
             try
             {
-                var table= new StringBuilder();
+                var table = new StringBuilder();
                 var datefrom = DateTime.ParseExact(Request["DateFrom"], "dd/MM/yyyy", null);
                 var dateto = DateTime.ParseExact(Request["DateTo"], "dd/MM/yyyy", null);
                 var oService = new OrderService();
@@ -34,16 +34,19 @@ namespace SaleManager.Controllers
                 var totalcount = orders.Count();
                 var newcount = orders.Count(c => c.IsSeen == false);
                 double totalsum = 0, newsum = 0;
-               
 
-                table.Append("<table class='table1'>");
+
+                table.Append("<table id='table1' class='table1'>");
+                table.Append("<thead>");
                 table.Append("<tr>");
                 table.Append("<th>Mã đơn hàng</th>");
                 table.Append("<th>Giá đơn hàng</th>");
                 table.Append("<th>Tỉnh/thành khách hàng</th>");
                 table.Append("<th>Trạng thái đơn hàng</th>");
                 table.Append("</tr>");
-                
+                table.Append("</thead>");
+
+                table.Append("<tbody>");
                 foreach (var order in orders)
                 {
                     var total = oService.GetOrderDetailByOrderid(order.Id).Sum(c => c.TotalQuantity);
@@ -63,14 +66,19 @@ namespace SaleManager.Controllers
                         newsum += total;
                 }
 
+
+                table.Append("</tbody>");
                 table.Append("</table>");
-                oService.UpdateOrderInSeen(orders);   
-                
-                return Json(new {finish = true, data = table.ToString(),
-                                 totalCount = totalcount,
-                                 totalSum = Constant.ConvertCurrency(totalsum),
-                                 newCount = newcount,
-                                 newSum = Constant.ConvertCurrency(newsum)
+                oService.UpdateOrderInSeen(orders);
+
+                return Json(new
+                {
+                    finish = true,
+                    data = table.ToString(),
+                    totalCount = totalcount,
+                    totalSum = Constant.ConvertCurrency(totalsum),
+                    newCount = newcount,
+                    newSum = Constant.ConvertCurrency(newsum)
                 });
             }
             catch (Exception e)
@@ -79,8 +87,8 @@ namespace SaleManager.Controllers
                 return Json(new { finish = false, data = e.ToString() });
 
             }
-            
-            
+
+
         }
         #endregion
 
@@ -104,14 +112,17 @@ namespace SaleManager.Controllers
                 double totalCash = 0, totalTransfer = 0;
 
 
-                table.Append("<table class='table1'>");
+                table.Append("<table id='table1' class='table1'>");
+                table.Append("<thead>");
                 table.Append("<tr>");
                 table.Append("<th>Mã đơn hàng</th>");
                 table.Append("<th>Khách hàng</th>");
                 table.Append("<th>Hình thức thanh toán</th>");
                 table.Append("<th>Tổng giá trị</th>");
                 table.Append("</tr>");
+                table.Append("</thead>");
 
+                table.Append("<tbody>");
                 foreach (var payment in payments)
                 {
                     var total = oService.GetOrderDetailByOrderid(payment.OrderId).Sum(c => c.TotalQuantity);
@@ -133,6 +144,8 @@ namespace SaleManager.Controllers
                         totalTransfer += total;
                 }
 
+
+                table.Append("</tbody>");
                 table.Append("</table>");
 
                 return Json(new
@@ -172,14 +185,17 @@ namespace SaleManager.Controllers
                 var exports = eService.GetExportByDate(datefrom, dateto);
 
 
-                table.Append("<table class='table1'>");
+                table.Append("<table id='table1' class='table1'>");
+                table.Append("<thead>");
                 table.Append("<tr>");
                 table.Append("<th>Mã đơn hàng</th>");
                 table.Append("<th>Khách hàng</th>");
                 table.Append("<th>Tên kho</th>");
                 table.Append("<th>Ngày xuất kho</th>");
                 table.Append("</tr>");
+                table.Append("</thead>");
 
+                table.Append("<tbody>");
                 foreach (var export in exports)
                 {
                     var order = oService.GetOrderById(export.OrderId);
@@ -193,6 +209,7 @@ namespace SaleManager.Controllers
                     table.Append("</tr>");
                 }
 
+                table.Append("</tbody>");
                 table.Append("</table>");
 
                 return Json(new
@@ -229,13 +246,16 @@ namespace SaleManager.Controllers
                 var imports = iService.GetExportByDate(datefrom, dateto);
 
 
-                table.Append("<table class='table1'>");
+                table.Append("<table id='table1' class='table1'>");
+                table.Append("<thead>");
                 table.Append("<tr>");
                 table.Append("<th>Nhà cung cấp</th>");
                 table.Append("<th>Ngày giờ</th>");
                 table.Append("<th>Tên kho</th>");
                 table.Append("</tr>");
+                table.Append("</thead>");
 
+                table.Append("<tbody>");
                 foreach (var import in imports)
                 {
                     var provider = pService.GetProviderById(import.ProviderId);
@@ -247,6 +267,8 @@ namespace SaleManager.Controllers
                     table.Append("</tr>");
                 }
 
+
+                table.Append("</tbody>");
                 table.Append("</table>");
 
                 return Json(new
@@ -278,16 +300,19 @@ namespace SaleManager.Controllers
                 var sService = new StorageService();
                 var pService = new ProductService();
                 var tService = new StockService();
-                var storages = sService.GetAllStorage().OrderBy(p => p.StockId).ThenBy(p=> p.ProductId);
+                var storages = sService.GetAllStorage().OrderBy(p => p.StockId).ThenBy(p => p.ProductId);
 
-                table.Append("<table class='table1'>");
+                table.Append("<table id='table1' class='table1'>");
+                table.Append("<thead>");
                 table.Append("<tr>");
                 table.Append("<th>Sản phẩm</th>");
                 table.Append("<th>Tên kho</th>");
                 table.Append("<th>Số lượng kho</th>");
                 table.Append("<th>Số lượng an toàn</th>");
                 table.Append("</tr>");
+                table.Append("</thead>");
 
+                table.Append("<tbody>");
                 foreach (var storage in storages)
                 {
                     var product = pService.GetProductById(storage.ProductId);
@@ -300,6 +325,8 @@ namespace SaleManager.Controllers
                     table.Append("</tr>");
                 }
 
+
+                table.Append("</tbody>");
                 table.Append("</table>");
 
                 return Json(new

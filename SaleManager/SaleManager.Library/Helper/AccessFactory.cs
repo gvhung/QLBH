@@ -43,7 +43,7 @@ namespace SaleManager.Library.Helper
             get
             {
                 if (Session[Constant.UserRole] == null)
-                    Session[Constant.UserRole] = CurrentUser.UserGroupId;
+                    Session[Constant.UserRole] = CurrentUser.GroupId;
                 return Convert.ToInt32(Session[Constant.UserRole]);
             }
         }
@@ -115,7 +115,7 @@ namespace SaleManager.Library.Helper
                 return false;
             }
             var user = ((User)Session[Constant.UserLogined]);
-            return user.Name != null && user.UserGroupId == (int)SaleManager.Common.UserGroup.SALE;
+            return user.Name != null && user.GroupId == (int)SaleManager.Common.UserGroup.SALE;
         }
 
         public static bool IsSaleManagerLogined()
@@ -130,7 +130,7 @@ namespace SaleManager.Library.Helper
                 return false;
             }
             var user = ((User)Session[Constant.UserLogined]);
-            return user.Name != null && user.UserGroupId == (int)SaleManager.Common.UserGroup.SALE_MANAGER;
+            return user.Name != null && user.GroupId == (int)SaleManager.Common.UserGroup.SALE_MANAGER;
         }
 
         public static bool IsCompanyOwnerLogined()
@@ -145,7 +145,7 @@ namespace SaleManager.Library.Helper
                 return false;
             }
             var user = ((User)Session[Constant.UserLogined]);
-            return user.Name != null && user.UserGroupId == (int)SaleManager.Common.UserGroup.COMPANY_OWNER;
+            return user.Name != null && user.GroupId == (int)SaleManager.Common.UserGroup.COMPANY_OWNER;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SaleManager.Service
 {
     public class ImportService
     {
-        private readonly QLBHEntities _entities = new QLBHEntities();
+        private readonly SaleMgnEntities _entities = new SaleMgnEntities();
         public IEnumerable<Import> GetExportByDate(DateTime datefrom, DateTime dateto)
         {
             return _entities.Imports.OrderBy(p => p.Id).

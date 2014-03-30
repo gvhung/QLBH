@@ -94,6 +94,7 @@
     <Content Include="Scripts\jqueryUI\basic.js" />
     <Content Include="Scripts\jqueryUI\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jqueryUI\jquery-ui-1.9.1.custom.js" />
+    <Content Include="Scripts\jqueryUI\jquery.dataTables.min.js" />
     <Content Include="Scripts\jqueryUI\jquery.simplemodal.1.4.4.min.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.accordion.js" />
     <Content Include="Scripts\jqueryUI\jquery.ui.core.js" />
@@ -107,6 +108,7 @@
     <Content Include="Styles\basic.css" />
     <Content Include="Styles\basic_ie.css" />
     <Content Include="Styles\customerlist.css" />
+    <Content Include="Styles\demo_table.css" />
     <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />

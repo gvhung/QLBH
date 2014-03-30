@@ -9,7 +9,7 @@ namespace SaleManager.Service
 {
     public class ProductService
     {
-        private readonly QLBHEntities _entities = new QLBHEntities();
+        private readonly SaleMgnEntities _entities = new SaleMgnEntities();
 
         public Product GetProductById(int id)
         {

@@ -9,7 +9,7 @@ namespace SaleManager.Service
 {
     public class StockService
     {
-        private readonly QLBHEntities _entities = new QLBHEntities();
+        private readonly SaleMgnEntities _entities = new SaleMgnEntities();
 
         public Stock GetStockById(int id)
         {

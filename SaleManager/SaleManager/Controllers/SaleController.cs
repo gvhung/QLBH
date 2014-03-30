@@ -24,7 +24,7 @@ namespace SaleManager.Controllers
             var model = new SaleListModel
             {
                 UserList = uService.GetAllUserWithDeActive()
-                    .Where(c => c.UserGroupId == (int) UserGroup.SALE &&
+                    .Where(c => c.GroupId == (int)UserGroup.SALE &&
                                 c.ReferUserId == AccessFactory.CurrentUser.Id)
             };
             return View(model);
@@ -99,7 +99,7 @@ namespace SaleManager.Controllers
 
                 return Json(new { finish = true });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return Json(new { finish = false });

@@ -19,41 +19,42 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Customer_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Customer), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_CustomerShipping_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "CustomerShipping", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.CustomerShipping), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Provider_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "Provider", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Provider), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Stock_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Stock), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_UserInfo_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "UserInfo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserInfo), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Customer_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Customer), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_CustomerContact_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Customer), "CustomerShipping", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.CustomerShipping), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Order_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Customer), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Order), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Export_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Export), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Export_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Export), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Export_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Export), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ExportDetail_Export", "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Export), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ExportDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ExportDetail_Storage", "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Storage), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Import_Provider", "Provider", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Provider), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Import_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Import_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ImportDetail_Import", "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Import), "ImportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ImportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ImportDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "ImportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ImportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ImportDetail_Storage", "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Storage), "ImportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ImportDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Order_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SaleManager.Data.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Order), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Order_User1", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Order), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_OrderDetail_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_OrderPayment_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "OrderPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderPayment), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_OrderDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderDetail), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_OrderPayment_PaymentType", "PaymentType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.PaymentType), "OrderPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderPayment), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_OrderPayment_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "OrderPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderPayment), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Product_ProductGroup", "ProductGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductGroup), "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Product), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Product_ProductUnit", "ProductUnit", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductUnit), "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Product), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Storage_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Storage), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_ProductGroup_ProductCategory", "ProductCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductCategory), "ProductGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ProductGroup), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_Storage_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Storage), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_User_UserGroup", "UserGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.UserGroup), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.User), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FK_UserInfo_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "UserInfo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserInfo), true)]
-[assembly: EdmRelationshipAttribute("QLBHModel", "FeatureMapping", "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Feature), "UserGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserGroup))]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Customer_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Customer), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_CustomerShipping_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "CustomerShipping", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.CustomerShipping), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Provider_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "Provider", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Provider), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Stock_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Stock), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_UserInfo_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.City), "UserInfo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserInfo), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Customer_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Customer), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_CustomerContact_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Customer), "CustomerShipping", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.CustomerShipping), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Order_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Customer), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Order), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Export_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Export), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Export_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Export), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Export_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Export), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ExportDetail_Export", "Export", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Export), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ExportDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ExportDetail_Storage", "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Storage), "ExportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ExportDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Import_Provider", "Provider", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Provider), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Import_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Import_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Import), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ImportDetail_Import", "Import", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Import), "ImportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ImportDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ImportDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "ImportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ImportDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ImportDetail_Storage", "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Storage), "ImportDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ImportDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Order_User2", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Order), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderDetail_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderPayment_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "OrderPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderPayment), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderTrack_Order", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Order), "OrderTrack", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderTrack), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderDetail_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderDetail), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderPayment_PaymentType", "PaymentType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.PaymentType), "OrderPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderPayment), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderPayment_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "OrderPayment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderPayment), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_OrderTrack_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "OrderTrack", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.OrderTrack), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Product_ProductGroup", "ProductGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductGroup), "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Product), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Product_ProductUnit", "ProductUnit", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductUnit), "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Product), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Storage_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Product), "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Storage), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_ProductGroup_ProductCategory", "ProductCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.ProductCategory), "ProductGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.ProductGroup), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_Storage_Stock", "Stock", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.Stock), "Storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Storage), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_User_UserGroup", "UserGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.UserGroup), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.User), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FK_UserInfo_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SaleManager.Data.User), "UserInfo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserInfo), true)]
+[assembly: EdmRelationshipAttribute("SaleMgnModel", "FeatureMapping", "Feature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.Feature), "UserGroup", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SaleManager.Data.UserGroup))]
 
 #endregion
 
@@ -64,32 +65,32 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class QLBHEntities : ObjectContext
+    public partial class SaleMgnEntities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new QLBHEntities object using the connection string found in the 'QLBHEntities' section of the application configuration file.
+        /// Initializes a new SaleMgnEntities object using the connection string found in the 'SaleMgnEntities' section of the application configuration file.
         /// </summary>
-        public QLBHEntities() : base("name=QLBHEntities", "QLBHEntities")
+        public SaleMgnEntities() : base("name=SaleMgnEntities", "SaleMgnEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new QLBHEntities object.
+        /// Initialize a new SaleMgnEntities object.
         /// </summary>
-        public QLBHEntities(string connectionString) : base(connectionString, "QLBHEntities")
+        public SaleMgnEntities(string connectionString) : base(connectionString, "SaleMgnEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new QLBHEntities object.
+        /// Initialize a new SaleMgnEntities object.
         /// </summary>
-        public QLBHEntities(EntityConnection connection) : base(connection, "QLBHEntities")
+        public SaleMgnEntities(EntityConnection connection) : base(connection, "SaleMgnEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -296,6 +297,22 @@ namespace SaleManager.Data
             }
         }
         private ObjectSet<OrderPayment> _OrderPayments;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<OrderTrack> OrderTracks
+        {
+            get
+            {
+                if ((_OrderTracks == null))
+                {
+                    _OrderTracks = base.CreateObjectSet<OrderTrack>("OrderTracks");
+                }
+                return _OrderTracks;
+            }
+        }
+        private ObjectSet<OrderTrack> _OrderTracks;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -590,6 +607,14 @@ namespace SaleManager.Data
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the OrderTracks EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToOrderTracks(OrderTrack orderTrack)
+        {
+            base.AddObject("OrderTracks", orderTrack);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the PaymentTypes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToPaymentTypes(PaymentType paymentType)
@@ -696,7 +721,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="City")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="City")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class City : EntityObject
@@ -886,18 +911,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Customer_City", "Customer")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Customer_City", "Customer")]
         public EntityCollection<Customer> Customers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Customer>("QLBHModel.FK_Customer_City", "Customer");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Customer>("SaleMgnModel.FK_Customer_City", "Customer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Customer>("QLBHModel.FK_Customer_City", "Customer", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Customer>("SaleMgnModel.FK_Customer_City", "Customer", value);
                 }
             }
         }
@@ -908,18 +933,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_CustomerShipping_City", "CustomerShipping")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_CustomerShipping_City", "CustomerShipping")]
         public EntityCollection<CustomerShipping> CustomerShippings
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CustomerShipping>("QLBHModel.FK_CustomerShipping_City", "CustomerShipping");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CustomerShipping>("SaleMgnModel.FK_CustomerShipping_City", "CustomerShipping");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CustomerShipping>("QLBHModel.FK_CustomerShipping_City", "CustomerShipping", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CustomerShipping>("SaleMgnModel.FK_CustomerShipping_City", "CustomerShipping", value);
                 }
             }
         }
@@ -930,18 +955,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Provider_City", "Provider")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Provider_City", "Provider")]
         public EntityCollection<Provider> Providers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Provider>("QLBHModel.FK_Provider_City", "Provider");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Provider>("SaleMgnModel.FK_Provider_City", "Provider");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Provider>("QLBHModel.FK_Provider_City", "Provider", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Provider>("SaleMgnModel.FK_Provider_City", "Provider", value);
                 }
             }
         }
@@ -952,18 +977,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Stock_City", "Stock")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Stock_City", "Stock")]
         public EntityCollection<Stock> Stocks
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Stock>("QLBHModel.FK_Stock_City", "Stock");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Stock>("SaleMgnModel.FK_Stock_City", "Stock");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Stock>("QLBHModel.FK_Stock_City", "Stock", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Stock>("SaleMgnModel.FK_Stock_City", "Stock", value);
                 }
             }
         }
@@ -974,18 +999,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_UserInfo_City", "UserInfo")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_UserInfo_City", "UserInfo")]
         public EntityCollection<UserInfo> UserInfoes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserInfo>("QLBHModel.FK_UserInfo_City", "UserInfo");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserInfo>("SaleMgnModel.FK_UserInfo_City", "UserInfo");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserInfo>("QLBHModel.FK_UserInfo_City", "UserInfo", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserInfo>("SaleMgnModel.FK_UserInfo_City", "UserInfo", value);
                 }
             }
         }
@@ -997,7 +1022,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Customer")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Customer")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Customer : EntityObject
@@ -1437,16 +1462,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Customer_City", "City")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Customer_City", "City")]
         public City City
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Customer_City", "City").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Customer_City", "City").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Customer_City", "City").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Customer_City", "City").Value = value;
             }
         }
         /// <summary>
@@ -1458,13 +1483,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Customer_City", "City");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Customer_City", "City");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("QLBHModel.FK_Customer_City", "City", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("SaleMgnModel.FK_Customer_City", "City", value);
                 }
             }
         }
@@ -1475,16 +1500,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Customer_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Customer_User", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Customer_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Customer_User", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Customer_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Customer_User", "User").Value = value;
             }
         }
         /// <summary>
@@ -1496,13 +1521,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Customer_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Customer_User", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_Customer_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_Customer_User", "User", value);
                 }
             }
         }
@@ -1513,18 +1538,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_CustomerContact_Customer", "CustomerShipping")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_CustomerContact_Customer", "CustomerShipping")]
         public EntityCollection<CustomerShipping> CustomerShippings
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CustomerShipping>("QLBHModel.FK_CustomerContact_Customer", "CustomerShipping");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CustomerShipping>("SaleMgnModel.FK_CustomerContact_Customer", "CustomerShipping");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CustomerShipping>("QLBHModel.FK_CustomerContact_Customer", "CustomerShipping", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CustomerShipping>("SaleMgnModel.FK_CustomerContact_Customer", "CustomerShipping", value);
                 }
             }
         }
@@ -1535,18 +1560,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Order_Customer", "Order")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Order_Customer", "Order")]
         public EntityCollection<Order> Orders
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("QLBHModel.FK_Order_Customer", "Order");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("SaleMgnModel.FK_Order_Customer", "Order");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("QLBHModel.FK_Order_Customer", "Order", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("SaleMgnModel.FK_Order_Customer", "Order", value);
                 }
             }
         }
@@ -1558,7 +1583,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="CustomerShipping")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="CustomerShipping")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class CustomerShipping : EntityObject
@@ -1570,20 +1595,16 @@ namespace SaleManager.Data
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="customerId">Initial value of the CustomerId property.</param>
-        /// <param name="name">Initial value of the Name property.</param>
-        /// <param name="gender">Initial value of the Gender property.</param>
         /// <param name="address">Initial value of the Address property.</param>
         /// <param name="cityId">Initial value of the CityId property.</param>
         /// <param name="status">Initial value of the Status property.</param>
         /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
         /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
-        public static CustomerShipping CreateCustomerShipping(global::System.Int32 id, global::System.Int32 customerId, global::System.String name, global::System.Boolean gender, global::System.String address, global::System.Int32 cityId, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
+        public static CustomerShipping CreateCustomerShipping(global::System.Int32 id, global::System.Int32 customerId, global::System.String address, global::System.Int32 cityId, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
         {
             CustomerShipping customerShipping = new CustomerShipping();
             customerShipping.Id = id;
             customerShipping.CustomerId = customerId;
-            customerShipping.Name = name;
-            customerShipping.Gender = gender;
             customerShipping.Address = address;
             customerShipping.CityId = cityId;
             customerShipping.Status = status;
@@ -1646,102 +1667,6 @@ namespace SaleManager.Data
         private global::System.Int32 _CustomerId;
         partial void OnCustomerIdChanging(global::System.Int32 value);
         partial void OnCustomerIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Name
-        {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                OnNameChanging(value);
-                ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Name");
-                OnNameChanged();
-            }
-        }
-        private global::System.String _Name;
-        partial void OnNameChanging(global::System.String value);
-        partial void OnNameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean Gender
-        {
-            get
-            {
-                return _Gender;
-            }
-            set
-            {
-                OnGenderChanging(value);
-                ReportPropertyChanging("Gender");
-                _Gender = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Gender");
-                OnGenderChanged();
-            }
-        }
-        private global::System.Boolean _Gender;
-        partial void OnGenderChanging(global::System.Boolean value);
-        partial void OnGenderChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String PhoneNumber1
-        {
-            get
-            {
-                return _PhoneNumber1;
-            }
-            set
-            {
-                OnPhoneNumber1Changing(value);
-                ReportPropertyChanging("PhoneNumber1");
-                _PhoneNumber1 = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("PhoneNumber1");
-                OnPhoneNumber1Changed();
-            }
-        }
-        private global::System.String _PhoneNumber1;
-        partial void OnPhoneNumber1Changing(global::System.String value);
-        partial void OnPhoneNumber1Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String PhoneNumber2
-        {
-            get
-            {
-                return _PhoneNumber2;
-            }
-            set
-            {
-                OnPhoneNumber2Changing(value);
-                ReportPropertyChanging("PhoneNumber2");
-                _PhoneNumber2 = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("PhoneNumber2");
-                OnPhoneNumber2Changed();
-            }
-        }
-        private global::System.String _PhoneNumber2;
-        partial void OnPhoneNumber2Changing(global::System.String value);
-        partial void OnPhoneNumber2Changed();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1898,16 +1823,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_CustomerShipping_City", "City")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_CustomerShipping_City", "City")]
         public City City
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_CustomerShipping_City", "City").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_CustomerShipping_City", "City").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_CustomerShipping_City", "City").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_CustomerShipping_City", "City").Value = value;
             }
         }
         /// <summary>
@@ -1919,13 +1844,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_CustomerShipping_City", "City");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_CustomerShipping_City", "City");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("QLBHModel.FK_CustomerShipping_City", "City", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("SaleMgnModel.FK_CustomerShipping_City", "City", value);
                 }
             }
         }
@@ -1936,16 +1861,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_CustomerContact_Customer", "Customer")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_CustomerContact_Customer", "Customer")]
         public Customer Customer
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("QLBHModel.FK_CustomerContact_Customer", "Customer").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("SaleMgnModel.FK_CustomerContact_Customer", "Customer").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("QLBHModel.FK_CustomerContact_Customer", "Customer").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("SaleMgnModel.FK_CustomerContact_Customer", "Customer").Value = value;
             }
         }
         /// <summary>
@@ -1957,13 +1882,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("QLBHModel.FK_CustomerContact_Customer", "Customer");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("SaleMgnModel.FK_CustomerContact_Customer", "Customer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Customer>("QLBHModel.FK_CustomerContact_Customer", "Customer", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Customer>("SaleMgnModel.FK_CustomerContact_Customer", "Customer", value);
                 }
             }
         }
@@ -1975,7 +1900,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="DataVersion")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="DataVersion")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class DataVersion : EntityObject
@@ -2084,7 +2009,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Export")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Export")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Export : EntityObject
@@ -2350,16 +2275,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Export_Order", "Order")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Export_Order", "Order")]
         public Order Order
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_Export_Order", "Order").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_Export_Order", "Order").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_Export_Order", "Order").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_Export_Order", "Order").Value = value;
             }
         }
         /// <summary>
@@ -2371,13 +2296,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_Export_Order", "Order");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_Export_Order", "Order");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("QLBHModel.FK_Export_Order", "Order", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("SaleMgnModel.FK_Export_Order", "Order", value);
                 }
             }
         }
@@ -2388,16 +2313,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Export_Stock", "Stock")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Export_Stock", "Stock")]
         public Stock Stock
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Export_Stock", "Stock").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Export_Stock", "Stock").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Export_Stock", "Stock").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Export_Stock", "Stock").Value = value;
             }
         }
         /// <summary>
@@ -2409,13 +2334,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Export_Stock", "Stock");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Export_Stock", "Stock");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Stock>("QLBHModel.FK_Export_Stock", "Stock", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Stock>("SaleMgnModel.FK_Export_Stock", "Stock", value);
                 }
             }
         }
@@ -2426,16 +2351,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Export_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Export_User", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Export_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Export_User", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Export_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Export_User", "User").Value = value;
             }
         }
         /// <summary>
@@ -2447,13 +2372,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Export_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Export_User", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_Export_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_Export_User", "User", value);
                 }
             }
         }
@@ -2464,18 +2389,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ExportDetail_Export", "ExportDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ExportDetail_Export", "ExportDetail")]
         public EntityCollection<ExportDetail> ExportDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExportDetail>("QLBHModel.FK_ExportDetail_Export", "ExportDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExportDetail>("SaleMgnModel.FK_ExportDetail_Export", "ExportDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExportDetail>("QLBHModel.FK_ExportDetail_Export", "ExportDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExportDetail>("SaleMgnModel.FK_ExportDetail_Export", "ExportDetail", value);
                 }
             }
         }
@@ -2487,7 +2412,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="ExportDetail")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="ExportDetail")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ExportDetail : EntityObject
@@ -2753,16 +2678,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ExportDetail_Export", "Export")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ExportDetail_Export", "Export")]
         public Export Export
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Export>("QLBHModel.FK_ExportDetail_Export", "Export").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Export>("SaleMgnModel.FK_ExportDetail_Export", "Export").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Export>("QLBHModel.FK_ExportDetail_Export", "Export").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Export>("SaleMgnModel.FK_ExportDetail_Export", "Export").Value = value;
             }
         }
         /// <summary>
@@ -2774,13 +2699,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Export>("QLBHModel.FK_ExportDetail_Export", "Export");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Export>("SaleMgnModel.FK_ExportDetail_Export", "Export");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Export>("QLBHModel.FK_ExportDetail_Export", "Export", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Export>("SaleMgnModel.FK_ExportDetail_Export", "Export", value);
                 }
             }
         }
@@ -2791,16 +2716,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ExportDetail_Product", "Product")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ExportDetail_Product", "Product")]
         public Product Product
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_ExportDetail_Product", "Product").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_ExportDetail_Product", "Product").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_ExportDetail_Product", "Product").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_ExportDetail_Product", "Product").Value = value;
             }
         }
         /// <summary>
@@ -2812,13 +2737,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_ExportDetail_Product", "Product");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_ExportDetail_Product", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("QLBHModel.FK_ExportDetail_Product", "Product", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SaleMgnModel.FK_ExportDetail_Product", "Product", value);
                 }
             }
         }
@@ -2829,16 +2754,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ExportDetail_Storage", "Storage")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ExportDetail_Storage", "Storage")]
         public Storage Storage
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("QLBHModel.FK_ExportDetail_Storage", "Storage").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("SaleMgnModel.FK_ExportDetail_Storage", "Storage").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("QLBHModel.FK_ExportDetail_Storage", "Storage").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("SaleMgnModel.FK_ExportDetail_Storage", "Storage").Value = value;
             }
         }
         /// <summary>
@@ -2850,13 +2775,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("QLBHModel.FK_ExportDetail_Storage", "Storage");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("SaleMgnModel.FK_ExportDetail_Storage", "Storage");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Storage>("QLBHModel.FK_ExportDetail_Storage", "Storage", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Storage>("SaleMgnModel.FK_ExportDetail_Storage", "Storage", value);
                 }
             }
         }
@@ -2868,7 +2793,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Feature")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Feature")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Feature : EntityObject
@@ -3058,18 +2983,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FeatureMapping", "UserGroup")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FeatureMapping", "UserGroup")]
         public EntityCollection<UserGroup> UserGroups
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserGroup>("QLBHModel.FeatureMapping", "UserGroup");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserGroup>("SaleMgnModel.FeatureMapping", "UserGroup");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserGroup>("QLBHModel.FeatureMapping", "UserGroup", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserGroup>("SaleMgnModel.FeatureMapping", "UserGroup", value);
                 }
             }
         }
@@ -3081,7 +3006,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Import")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Import")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Import : EntityObject
@@ -3373,16 +3298,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_Provider", "Provider")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Import_Provider", "Provider")]
         public Provider Provider
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Provider>("QLBHModel.FK_Import_Provider", "Provider").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Provider>("SaleMgnModel.FK_Import_Provider", "Provider").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Provider>("QLBHModel.FK_Import_Provider", "Provider").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Provider>("SaleMgnModel.FK_Import_Provider", "Provider").Value = value;
             }
         }
         /// <summary>
@@ -3394,13 +3319,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Provider>("QLBHModel.FK_Import_Provider", "Provider");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Provider>("SaleMgnModel.FK_Import_Provider", "Provider");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Provider>("QLBHModel.FK_Import_Provider", "Provider", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Provider>("SaleMgnModel.FK_Import_Provider", "Provider", value);
                 }
             }
         }
@@ -3411,16 +3336,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_Stock", "Stock")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Import_Stock", "Stock")]
         public Stock Stock
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Import_Stock", "Stock").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Import_Stock", "Stock").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Import_Stock", "Stock").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Import_Stock", "Stock").Value = value;
             }
         }
         /// <summary>
@@ -3432,13 +3357,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Import_Stock", "Stock");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Import_Stock", "Stock");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Stock>("QLBHModel.FK_Import_Stock", "Stock", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Stock>("SaleMgnModel.FK_Import_Stock", "Stock", value);
                 }
             }
         }
@@ -3449,16 +3374,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Import_User", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Import_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Import_User", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Import_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Import_User", "User").Value = value;
             }
         }
         /// <summary>
@@ -3470,13 +3395,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Import_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Import_User", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_Import_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_Import_User", "User", value);
                 }
             }
         }
@@ -3487,18 +3412,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ImportDetail_Import", "ImportDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ImportDetail_Import", "ImportDetail")]
         public EntityCollection<ImportDetail> ImportDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ImportDetail>("QLBHModel.FK_ImportDetail_Import", "ImportDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ImportDetail>("SaleMgnModel.FK_ImportDetail_Import", "ImportDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ImportDetail>("QLBHModel.FK_ImportDetail_Import", "ImportDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ImportDetail>("SaleMgnModel.FK_ImportDetail_Import", "ImportDetail", value);
                 }
             }
         }
@@ -3510,7 +3435,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="ImportDetail")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="ImportDetail")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ImportDetail : EntityObject
@@ -3802,16 +3727,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ImportDetail_Import", "Import")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ImportDetail_Import", "Import")]
         public Import Import
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Import>("QLBHModel.FK_ImportDetail_Import", "Import").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Import>("SaleMgnModel.FK_ImportDetail_Import", "Import").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Import>("QLBHModel.FK_ImportDetail_Import", "Import").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Import>("SaleMgnModel.FK_ImportDetail_Import", "Import").Value = value;
             }
         }
         /// <summary>
@@ -3823,13 +3748,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Import>("QLBHModel.FK_ImportDetail_Import", "Import");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Import>("SaleMgnModel.FK_ImportDetail_Import", "Import");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Import>("QLBHModel.FK_ImportDetail_Import", "Import", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Import>("SaleMgnModel.FK_ImportDetail_Import", "Import", value);
                 }
             }
         }
@@ -3840,16 +3765,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ImportDetail_Product", "Product")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ImportDetail_Product", "Product")]
         public Product Product
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_ImportDetail_Product", "Product").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_ImportDetail_Product", "Product").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_ImportDetail_Product", "Product").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_ImportDetail_Product", "Product").Value = value;
             }
         }
         /// <summary>
@@ -3861,13 +3786,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_ImportDetail_Product", "Product");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_ImportDetail_Product", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("QLBHModel.FK_ImportDetail_Product", "Product", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SaleMgnModel.FK_ImportDetail_Product", "Product", value);
                 }
             }
         }
@@ -3878,16 +3803,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ImportDetail_Storage", "Storage")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ImportDetail_Storage", "Storage")]
         public Storage Storage
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("QLBHModel.FK_ImportDetail_Storage", "Storage").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("SaleMgnModel.FK_ImportDetail_Storage", "Storage").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("QLBHModel.FK_ImportDetail_Storage", "Storage").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("SaleMgnModel.FK_ImportDetail_Storage", "Storage").Value = value;
             }
         }
         /// <summary>
@@ -3899,13 +3824,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("QLBHModel.FK_ImportDetail_Storage", "Storage");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Storage>("SaleMgnModel.FK_ImportDetail_Storage", "Storage");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Storage>("QLBHModel.FK_ImportDetail_Storage", "Storage", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Storage>("SaleMgnModel.FK_ImportDetail_Storage", "Storage", value);
                 }
             }
         }
@@ -3917,7 +3842,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Order")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Order")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Order : EntityObject
@@ -3933,10 +3858,14 @@ namespace SaleManager.Data
         /// <param name="createdDate">Initial value of the CreatedDate property.</param>
         /// <param name="createdBy">Initial value of the CreatedBy property.</param>
         /// <param name="isSeen">Initial value of the IsSeen property.</param>
+        /// <param name="referUserId">Initial value of the ReferUserId property.</param>
         /// <param name="status">Initial value of the Status property.</param>
         /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
         /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
-        public static Order CreateOrder(global::System.Int32 id, global::System.String code, global::System.Int32 customerId, global::System.DateTime createdDate, global::System.Int32 createdBy, global::System.Boolean isSeen, global::System.Int32 status, global::System.DateTime lastModifiedDate, global::System.Int32 lastModifiedBy)
+        /// <param name="isShip">Initial value of the IsShip property.</param>
+        /// <param name="transitFee">Initial value of the TransitFee property.</param>
+        /// <param name="adjustFee">Initial value of the AdjustFee property.</param>
+        public static Order CreateOrder(global::System.Int32 id, global::System.String code, global::System.Int32 customerId, global::System.DateTime createdDate, global::System.Int32 createdBy, global::System.Boolean isSeen, global::System.Int32 referUserId, global::System.Int32 status, global::System.DateTime lastModifiedDate, global::System.Int32 lastModifiedBy, global::System.Boolean isShip, global::System.Double transitFee, global::System.Double adjustFee)
         {
             Order order = new Order();
             order.Id = id;
@@ -3945,9 +3874,13 @@ namespace SaleManager.Data
             order.CreatedDate = createdDate;
             order.CreatedBy = createdBy;
             order.IsSeen = isSeen;
+            order.ReferUserId = referUserId;
             order.Status = status;
             order.LastModifiedDate = lastModifiedDate;
             order.LastModifiedBy = lastModifiedBy;
+            order.IsShip = isShip;
+            order.TransitFee = transitFee;
+            order.AdjustFee = adjustFee;
             return order;
         }
 
@@ -4005,30 +3938,6 @@ namespace SaleManager.Data
         private global::System.String _Code;
         partial void OnCodeChanging(global::System.String value);
         partial void OnCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> ReferUserId
-        {
-            get
-            {
-                return _ReferUserId;
-            }
-            set
-            {
-                OnReferUserIdChanging(value);
-                ReportPropertyChanging("ReferUserId");
-                _ReferUserId = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ReferUserId");
-                OnReferUserIdChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _ReferUserId;
-        partial void OnReferUserIdChanging(Nullable<global::System.Int32> value);
-        partial void OnReferUserIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4155,6 +4064,30 @@ namespace SaleManager.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.Int32 ReferUserId
+        {
+            get
+            {
+                return _ReferUserId;
+            }
+            set
+            {
+                OnReferUserIdChanging(value);
+                ReportPropertyChanging("ReferUserId");
+                _ReferUserId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ReferUserId");
+                OnReferUserIdChanged();
+            }
+        }
+        private global::System.Int32 _ReferUserId;
+        partial void OnReferUserIdChanging(global::System.Int32 value);
+        partial void OnReferUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Status
         {
             get
@@ -4221,6 +4154,78 @@ namespace SaleManager.Data
         private global::System.Int32 _LastModifiedBy;
         partial void OnLastModifiedByChanging(global::System.Int32 value);
         partial void OnLastModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsShip
+        {
+            get
+            {
+                return _IsShip;
+            }
+            set
+            {
+                OnIsShipChanging(value);
+                ReportPropertyChanging("IsShip");
+                _IsShip = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsShip");
+                OnIsShipChanged();
+            }
+        }
+        private global::System.Boolean _IsShip;
+        partial void OnIsShipChanging(global::System.Boolean value);
+        partial void OnIsShipChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Double TransitFee
+        {
+            get
+            {
+                return _TransitFee;
+            }
+            set
+            {
+                OnTransitFeeChanging(value);
+                ReportPropertyChanging("TransitFee");
+                _TransitFee = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TransitFee");
+                OnTransitFeeChanged();
+            }
+        }
+        private global::System.Double _TransitFee;
+        partial void OnTransitFeeChanging(global::System.Double value);
+        partial void OnTransitFeeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Double AdjustFee
+        {
+            get
+            {
+                return _AdjustFee;
+            }
+            set
+            {
+                OnAdjustFeeChanging(value);
+                ReportPropertyChanging("AdjustFee");
+                _AdjustFee = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AdjustFee");
+                OnAdjustFeeChanged();
+            }
+        }
+        private global::System.Double _AdjustFee;
+        partial void OnAdjustFeeChanging(global::System.Double value);
+        partial void OnAdjustFeeChanged();
 
         #endregion
 
@@ -4233,16 +4238,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Order_Customer", "Customer")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Order_Customer", "Customer")]
         public Customer Customer
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("QLBHModel.FK_Order_Customer", "Customer").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("SaleMgnModel.FK_Order_Customer", "Customer").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("QLBHModel.FK_Order_Customer", "Customer").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("SaleMgnModel.FK_Order_Customer", "Customer").Value = value;
             }
         }
         /// <summary>
@@ -4254,13 +4259,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("QLBHModel.FK_Order_Customer", "Customer");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("SaleMgnModel.FK_Order_Customer", "Customer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Customer>("QLBHModel.FK_Order_Customer", "Customer", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Customer>("SaleMgnModel.FK_Order_Customer", "Customer", value);
                 }
             }
         }
@@ -4271,18 +4276,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Export_Order", "Export")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Export_Order", "Export")]
         public EntityCollection<Export> Exports
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Export>("QLBHModel.FK_Export_Order", "Export");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Export>("SaleMgnModel.FK_Export_Order", "Export");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Export>("QLBHModel.FK_Export_Order", "Export", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Export>("SaleMgnModel.FK_Export_Order", "Export", value);
                 }
             }
         }
@@ -4293,16 +4298,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Order_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Order_User2", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Order_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Order_User2", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Order_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Order_User2", "User").Value = value;
             }
         }
         /// <summary>
@@ -4314,13 +4319,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Order_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_Order_User2", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_Order_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_Order_User2", "User", value);
                 }
             }
         }
@@ -4331,56 +4336,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Order_User1", "User")]
-        public User User1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Order_User1", "User").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Order_User1", "User").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<User> User1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_Order_User1", "User");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_Order_User1", "User", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderDetail_Order", "OrderDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderDetail_Order", "OrderDetail")]
         public EntityCollection<OrderDetail> OrderDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("QLBHModel.FK_OrderDetail_Order", "OrderDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("SaleMgnModel.FK_OrderDetail_Order", "OrderDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("QLBHModel.FK_OrderDetail_Order", "OrderDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("SaleMgnModel.FK_OrderDetail_Order", "OrderDetail", value);
                 }
             }
         }
@@ -4391,18 +4358,40 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderPayment_Order", "OrderPayment")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderPayment_Order", "OrderPayment")]
         public EntityCollection<OrderPayment> OrderPayments
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderPayment>("QLBHModel.FK_OrderPayment_Order", "OrderPayment");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderPayment>("SaleMgnModel.FK_OrderPayment_Order", "OrderPayment");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderPayment>("QLBHModel.FK_OrderPayment_Order", "OrderPayment", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderPayment>("SaleMgnModel.FK_OrderPayment_Order", "OrderPayment", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderTrack_Order", "OrderTrack")]
+        public EntityCollection<OrderTrack> OrderTracks
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderTrack>("SaleMgnModel.FK_OrderTrack_Order", "OrderTrack");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderTrack>("SaleMgnModel.FK_OrderTrack_Order", "OrderTrack", value);
                 }
             }
         }
@@ -4414,7 +4403,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="OrderDetail")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="OrderDetail")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class OrderDetail : EntityObject
@@ -4680,16 +4669,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderDetail_Order", "Order")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderDetail_Order", "Order")]
         public Order Order
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_OrderDetail_Order", "Order").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderDetail_Order", "Order").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_OrderDetail_Order", "Order").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderDetail_Order", "Order").Value = value;
             }
         }
         /// <summary>
@@ -4701,13 +4690,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_OrderDetail_Order", "Order");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderDetail_Order", "Order");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("QLBHModel.FK_OrderDetail_Order", "Order", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("SaleMgnModel.FK_OrderDetail_Order", "Order", value);
                 }
             }
         }
@@ -4718,16 +4707,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderDetail_Product", "Product")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderDetail_Product", "Product")]
         public Product Product
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_OrderDetail_Product", "Product").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_OrderDetail_Product", "Product").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_OrderDetail_Product", "Product").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_OrderDetail_Product", "Product").Value = value;
             }
         }
         /// <summary>
@@ -4739,13 +4728,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_OrderDetail_Product", "Product");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_OrderDetail_Product", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("QLBHModel.FK_OrderDetail_Product", "Product", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SaleMgnModel.FK_OrderDetail_Product", "Product", value);
                 }
             }
         }
@@ -4757,7 +4746,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="OrderPayment")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="OrderPayment")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class OrderPayment : EntityObject
@@ -4775,7 +4764,8 @@ namespace SaleManager.Data
         /// <param name="status">Initial value of the Status property.</param>
         /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
         /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
-        public static OrderPayment CreateOrderPayment(global::System.Int32 id, global::System.Int32 orderId, global::System.Int32 paymentTypeId, global::System.DateTime createdDate, global::System.Int32 createdBy, global::System.Int32 status, global::System.DateTime lastModifiedDate, global::System.Int32 lastModifiedBy)
+        /// <param name="money">Initial value of the Money property.</param>
+        public static OrderPayment CreateOrderPayment(global::System.Int32 id, global::System.Int32 orderId, global::System.Int32 paymentTypeId, global::System.DateTime createdDate, global::System.Int32 createdBy, global::System.Int32 status, global::System.DateTime lastModifiedDate, global::System.Int32 lastModifiedBy, global::System.Double money)
         {
             OrderPayment orderPayment = new OrderPayment();
             orderPayment.Id = id;
@@ -4786,6 +4776,7 @@ namespace SaleManager.Data
             orderPayment.Status = status;
             orderPayment.LastModifiedDate = lastModifiedDate;
             orderPayment.LastModifiedBy = lastModifiedBy;
+            orderPayment.Money = money;
             return orderPayment;
         }
 
@@ -5011,6 +5002,30 @@ namespace SaleManager.Data
         private global::System.Int32 _LastModifiedBy;
         partial void OnLastModifiedByChanging(global::System.Int32 value);
         partial void OnLastModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Double Money
+        {
+            get
+            {
+                return _Money;
+            }
+            set
+            {
+                OnMoneyChanging(value);
+                ReportPropertyChanging("Money");
+                _Money = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Money");
+                OnMoneyChanged();
+            }
+        }
+        private global::System.Double _Money;
+        partial void OnMoneyChanging(global::System.Double value);
+        partial void OnMoneyChanged();
 
         #endregion
 
@@ -5023,16 +5038,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderPayment_Order", "Order")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderPayment_Order", "Order")]
         public Order Order
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_OrderPayment_Order", "Order").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderPayment_Order", "Order").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_OrderPayment_Order", "Order").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderPayment_Order", "Order").Value = value;
             }
         }
         /// <summary>
@@ -5044,13 +5059,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("QLBHModel.FK_OrderPayment_Order", "Order");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderPayment_Order", "Order");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("QLBHModel.FK_OrderPayment_Order", "Order", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("SaleMgnModel.FK_OrderPayment_Order", "Order", value);
                 }
             }
         }
@@ -5061,16 +5076,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderPayment_PaymentType", "PaymentType")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderPayment_PaymentType", "PaymentType")]
         public PaymentType PaymentType
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PaymentType>("QLBHModel.FK_OrderPayment_PaymentType", "PaymentType").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PaymentType>("SaleMgnModel.FK_OrderPayment_PaymentType", "PaymentType").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PaymentType>("QLBHModel.FK_OrderPayment_PaymentType", "PaymentType").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PaymentType>("SaleMgnModel.FK_OrderPayment_PaymentType", "PaymentType").Value = value;
             }
         }
         /// <summary>
@@ -5082,13 +5097,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PaymentType>("QLBHModel.FK_OrderPayment_PaymentType", "PaymentType");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PaymentType>("SaleMgnModel.FK_OrderPayment_PaymentType", "PaymentType");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PaymentType>("QLBHModel.FK_OrderPayment_PaymentType", "PaymentType", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PaymentType>("SaleMgnModel.FK_OrderPayment_PaymentType", "PaymentType", value);
                 }
             }
         }
@@ -5099,16 +5114,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderPayment_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderPayment_User", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_OrderPayment_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_OrderPayment_User", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_OrderPayment_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_OrderPayment_User", "User").Value = value;
             }
         }
         /// <summary>
@@ -5120,13 +5135,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_OrderPayment_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_OrderPayment_User", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_OrderPayment_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_OrderPayment_User", "User", value);
                 }
             }
         }
@@ -5138,7 +5153,246 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="PaymentType")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="OrderTrack")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class OrderTrack : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new OrderTrack object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="orderId">Initial value of the OrderId property.</param>
+        /// <param name="createdBy">Initial value of the CreatedBy property.</param>
+        /// <param name="createdDate">Initial value of the CreatedDate property.</param>
+        public static OrderTrack CreateOrderTrack(global::System.Int32 id, global::System.Int32 orderId, global::System.Int32 createdBy, global::System.DateTime createdDate)
+        {
+            OrderTrack orderTrack = new OrderTrack();
+            orderTrack.Id = id;
+            orderTrack.OrderId = orderId;
+            orderTrack.CreatedBy = createdBy;
+            orderTrack.CreatedDate = createdDate;
+            return orderTrack;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrderId
+        {
+            get
+            {
+                return _OrderId;
+            }
+            set
+            {
+                OnOrderIdChanging(value);
+                ReportPropertyChanging("OrderId");
+                _OrderId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OrderId");
+                OnOrderIdChanged();
+            }
+        }
+        private global::System.Int32 _OrderId;
+        partial void OnOrderIdChanging(global::System.Int32 value);
+        partial void OnOrderIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Note
+        {
+            get
+            {
+                return _Note;
+            }
+            set
+            {
+                OnNoteChanging(value);
+                ReportPropertyChanging("Note");
+                _Note = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Note");
+                OnNoteChanged();
+            }
+        }
+        private global::System.String _Note;
+        partial void OnNoteChanging(global::System.String value);
+        partial void OnNoteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CreatedBy
+        {
+            get
+            {
+                return _CreatedBy;
+            }
+            set
+            {
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
+            }
+        }
+        private global::System.Int32 _CreatedBy;
+        partial void OnCreatedByChanging(global::System.Int32 value);
+        partial void OnCreatedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private global::System.DateTime _CreatedDate;
+        partial void OnCreatedDateChanging(global::System.DateTime value);
+        partial void OnCreatedDateChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderTrack_Order", "Order")]
+        public Order Order
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderTrack_Order", "Order").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderTrack_Order", "Order").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Order> OrderReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Order>("SaleMgnModel.FK_OrderTrack_Order", "Order");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Order>("SaleMgnModel.FK_OrderTrack_Order", "Order", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderTrack_User", "User")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_OrderTrack_User", "User").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_OrderTrack_User", "User").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_OrderTrack_User", "User");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_OrderTrack_User", "User", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="PaymentType")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class PaymentType : EntityObject
@@ -5326,18 +5580,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderPayment_PaymentType", "OrderPayment")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderPayment_PaymentType", "OrderPayment")]
         public EntityCollection<OrderPayment> OrderPayments
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderPayment>("QLBHModel.FK_OrderPayment_PaymentType", "OrderPayment");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderPayment>("SaleMgnModel.FK_OrderPayment_PaymentType", "OrderPayment");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderPayment>("QLBHModel.FK_OrderPayment_PaymentType", "OrderPayment", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderPayment>("SaleMgnModel.FK_OrderPayment_PaymentType", "OrderPayment", value);
                 }
             }
         }
@@ -5349,7 +5603,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Product")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Product")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Product : EntityObject
@@ -5767,18 +6021,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ExportDetail_Product", "ExportDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ExportDetail_Product", "ExportDetail")]
         public EntityCollection<ExportDetail> ExportDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExportDetail>("QLBHModel.FK_ExportDetail_Product", "ExportDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExportDetail>("SaleMgnModel.FK_ExportDetail_Product", "ExportDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExportDetail>("QLBHModel.FK_ExportDetail_Product", "ExportDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExportDetail>("SaleMgnModel.FK_ExportDetail_Product", "ExportDetail", value);
                 }
             }
         }
@@ -5789,18 +6043,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ImportDetail_Product", "ImportDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ImportDetail_Product", "ImportDetail")]
         public EntityCollection<ImportDetail> ImportDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ImportDetail>("QLBHModel.FK_ImportDetail_Product", "ImportDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ImportDetail>("SaleMgnModel.FK_ImportDetail_Product", "ImportDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ImportDetail>("QLBHModel.FK_ImportDetail_Product", "ImportDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ImportDetail>("SaleMgnModel.FK_ImportDetail_Product", "ImportDetail", value);
                 }
             }
         }
@@ -5811,18 +6065,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderDetail_Product", "OrderDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderDetail_Product", "OrderDetail")]
         public EntityCollection<OrderDetail> OrderDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("QLBHModel.FK_OrderDetail_Product", "OrderDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderDetail>("SaleMgnModel.FK_OrderDetail_Product", "OrderDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("QLBHModel.FK_OrderDetail_Product", "OrderDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderDetail>("SaleMgnModel.FK_OrderDetail_Product", "OrderDetail", value);
                 }
             }
         }
@@ -5833,16 +6087,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Product_ProductGroup", "ProductGroup")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Product_ProductGroup", "ProductGroup")]
         public ProductGroup ProductGroup
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductGroup>("QLBHModel.FK_Product_ProductGroup", "ProductGroup").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductGroup>("SaleMgnModel.FK_Product_ProductGroup", "ProductGroup").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductGroup>("QLBHModel.FK_Product_ProductGroup", "ProductGroup").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductGroup>("SaleMgnModel.FK_Product_ProductGroup", "ProductGroup").Value = value;
             }
         }
         /// <summary>
@@ -5854,13 +6108,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductGroup>("QLBHModel.FK_Product_ProductGroup", "ProductGroup");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductGroup>("SaleMgnModel.FK_Product_ProductGroup", "ProductGroup");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductGroup>("QLBHModel.FK_Product_ProductGroup", "ProductGroup", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductGroup>("SaleMgnModel.FK_Product_ProductGroup", "ProductGroup", value);
                 }
             }
         }
@@ -5871,16 +6125,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Product_ProductUnit", "ProductUnit")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Product_ProductUnit", "ProductUnit")]
         public ProductUnit ProductUnit
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductUnit>("QLBHModel.FK_Product_ProductUnit", "ProductUnit").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductUnit>("SaleMgnModel.FK_Product_ProductUnit", "ProductUnit").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductUnit>("QLBHModel.FK_Product_ProductUnit", "ProductUnit").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductUnit>("SaleMgnModel.FK_Product_ProductUnit", "ProductUnit").Value = value;
             }
         }
         /// <summary>
@@ -5892,13 +6146,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductUnit>("QLBHModel.FK_Product_ProductUnit", "ProductUnit");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductUnit>("SaleMgnModel.FK_Product_ProductUnit", "ProductUnit");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductUnit>("QLBHModel.FK_Product_ProductUnit", "ProductUnit", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductUnit>("SaleMgnModel.FK_Product_ProductUnit", "ProductUnit", value);
                 }
             }
         }
@@ -5909,18 +6163,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Storage_Product", "Storage")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Storage_Product", "Storage")]
         public EntityCollection<Storage> Storages
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Storage>("QLBHModel.FK_Storage_Product", "Storage");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Storage>("SaleMgnModel.FK_Storage_Product", "Storage");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Storage>("QLBHModel.FK_Storage_Product", "Storage", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Storage>("SaleMgnModel.FK_Storage_Product", "Storage", value);
                 }
             }
         }
@@ -5932,7 +6186,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="ProductCategory")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="ProductCategory")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ProductCategory : EntityObject
@@ -6096,18 +6350,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ProductGroup_ProductCategory", "ProductGroup")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ProductGroup_ProductCategory", "ProductGroup")]
         public EntityCollection<ProductGroup> ProductGroups
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ProductGroup>("QLBHModel.FK_ProductGroup_ProductCategory", "ProductGroup");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ProductGroup>("SaleMgnModel.FK_ProductGroup_ProductCategory", "ProductGroup");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ProductGroup>("QLBHModel.FK_ProductGroup_ProductCategory", "ProductGroup", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ProductGroup>("SaleMgnModel.FK_ProductGroup_ProductCategory", "ProductGroup", value);
                 }
             }
         }
@@ -6119,7 +6373,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="ProductGroup")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="ProductGroup")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ProductGroup : EntityObject
@@ -6333,18 +6587,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Product_ProductGroup", "Product")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Product_ProductGroup", "Product")]
         public EntityCollection<Product> Products
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Product>("QLBHModel.FK_Product_ProductGroup", "Product");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Product>("SaleMgnModel.FK_Product_ProductGroup", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Product>("QLBHModel.FK_Product_ProductGroup", "Product", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Product>("SaleMgnModel.FK_Product_ProductGroup", "Product", value);
                 }
             }
         }
@@ -6355,16 +6609,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ProductGroup_ProductCategory", "ProductCategory")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ProductGroup_ProductCategory", "ProductCategory")]
         public ProductCategory ProductCategory
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductCategory>("QLBHModel.FK_ProductGroup_ProductCategory", "ProductCategory").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductCategory>("SaleMgnModel.FK_ProductGroup_ProductCategory", "ProductCategory").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductCategory>("QLBHModel.FK_ProductGroup_ProductCategory", "ProductCategory").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductCategory>("SaleMgnModel.FK_ProductGroup_ProductCategory", "ProductCategory").Value = value;
             }
         }
         /// <summary>
@@ -6376,13 +6630,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductCategory>("QLBHModel.FK_ProductGroup_ProductCategory", "ProductCategory");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductCategory>("SaleMgnModel.FK_ProductGroup_ProductCategory", "ProductCategory");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductCategory>("QLBHModel.FK_ProductGroup_ProductCategory", "ProductCategory", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductCategory>("SaleMgnModel.FK_ProductGroup_ProductCategory", "ProductCategory", value);
                 }
             }
         }
@@ -6394,7 +6648,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="ProductUnit")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="ProductUnit")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ProductUnit : EntityObject
@@ -6558,18 +6812,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Product_ProductUnit", "Product")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Product_ProductUnit", "Product")]
         public EntityCollection<Product> Products
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Product>("QLBHModel.FK_Product_ProductUnit", "Product");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Product>("SaleMgnModel.FK_Product_ProductUnit", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Product>("QLBHModel.FK_Product_ProductUnit", "Product", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Product>("SaleMgnModel.FK_Product_ProductUnit", "Product", value);
                 }
             }
         }
@@ -6581,7 +6835,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Provider")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Provider")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Provider : EntityObject
@@ -6941,16 +7195,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Provider_City", "City")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Provider_City", "City")]
         public City City
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Provider_City", "City").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Provider_City", "City").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Provider_City", "City").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Provider_City", "City").Value = value;
             }
         }
         /// <summary>
@@ -6962,13 +7216,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Provider_City", "City");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Provider_City", "City");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("QLBHModel.FK_Provider_City", "City", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("SaleMgnModel.FK_Provider_City", "City", value);
                 }
             }
         }
@@ -6979,18 +7233,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_Provider", "Import")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Import_Provider", "Import")]
         public EntityCollection<Import> Imports
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Import>("QLBHModel.FK_Import_Provider", "Import");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Import>("SaleMgnModel.FK_Import_Provider", "Import");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Import>("QLBHModel.FK_Import_Provider", "Import", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Import>("SaleMgnModel.FK_Import_Provider", "Import", value);
                 }
             }
         }
@@ -7002,7 +7256,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Session")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Session")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Session : EntityObject
@@ -7187,7 +7441,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Stock")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Stock")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Stock : EntityObject
@@ -7523,16 +7777,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Stock_City", "City")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Stock_City", "City")]
         public City City
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Stock_City", "City").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Stock_City", "City").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Stock_City", "City").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Stock_City", "City").Value = value;
             }
         }
         /// <summary>
@@ -7544,13 +7798,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_Stock_City", "City");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_Stock_City", "City");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("QLBHModel.FK_Stock_City", "City", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("SaleMgnModel.FK_Stock_City", "City", value);
                 }
             }
         }
@@ -7561,18 +7815,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Export_Stock", "Export")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Export_Stock", "Export")]
         public EntityCollection<Export> Exports
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Export>("QLBHModel.FK_Export_Stock", "Export");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Export>("SaleMgnModel.FK_Export_Stock", "Export");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Export>("QLBHModel.FK_Export_Stock", "Export", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Export>("SaleMgnModel.FK_Export_Stock", "Export", value);
                 }
             }
         }
@@ -7583,18 +7837,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_Stock", "Import")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Import_Stock", "Import")]
         public EntityCollection<Import> Imports
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Import>("QLBHModel.FK_Import_Stock", "Import");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Import>("SaleMgnModel.FK_Import_Stock", "Import");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Import>("QLBHModel.FK_Import_Stock", "Import", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Import>("SaleMgnModel.FK_Import_Stock", "Import", value);
                 }
             }
         }
@@ -7605,18 +7859,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Storage_Stock", "Storage")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Storage_Stock", "Storage")]
         public EntityCollection<Storage> Storages
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Storage>("QLBHModel.FK_Storage_Stock", "Storage");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Storage>("SaleMgnModel.FK_Storage_Stock", "Storage");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Storage>("QLBHModel.FK_Storage_Stock", "Storage", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Storage>("SaleMgnModel.FK_Storage_Stock", "Storage", value);
                 }
             }
         }
@@ -7628,7 +7882,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="Storage")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="Storage")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Storage : EntityObject
@@ -7870,18 +8124,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ExportDetail_Storage", "ExportDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ExportDetail_Storage", "ExportDetail")]
         public EntityCollection<ExportDetail> ExportDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExportDetail>("QLBHModel.FK_ExportDetail_Storage", "ExportDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ExportDetail>("SaleMgnModel.FK_ExportDetail_Storage", "ExportDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExportDetail>("QLBHModel.FK_ExportDetail_Storage", "ExportDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ExportDetail>("SaleMgnModel.FK_ExportDetail_Storage", "ExportDetail", value);
                 }
             }
         }
@@ -7892,18 +8146,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_ImportDetail_Storage", "ImportDetail")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_ImportDetail_Storage", "ImportDetail")]
         public EntityCollection<ImportDetail> ImportDetails
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ImportDetail>("QLBHModel.FK_ImportDetail_Storage", "ImportDetail");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ImportDetail>("SaleMgnModel.FK_ImportDetail_Storage", "ImportDetail");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ImportDetail>("QLBHModel.FK_ImportDetail_Storage", "ImportDetail", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ImportDetail>("SaleMgnModel.FK_ImportDetail_Storage", "ImportDetail", value);
                 }
             }
         }
@@ -7914,16 +8168,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Storage_Product", "Product")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Storage_Product", "Product")]
         public Product Product
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_Storage_Product", "Product").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_Storage_Product", "Product").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_Storage_Product", "Product").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_Storage_Product", "Product").Value = value;
             }
         }
         /// <summary>
@@ -7935,13 +8189,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("QLBHModel.FK_Storage_Product", "Product");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("SaleMgnModel.FK_Storage_Product", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("QLBHModel.FK_Storage_Product", "Product", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("SaleMgnModel.FK_Storage_Product", "Product", value);
                 }
             }
         }
@@ -7952,16 +8206,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Storage_Stock", "Stock")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Storage_Stock", "Stock")]
         public Stock Stock
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Storage_Stock", "Stock").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Storage_Stock", "Stock").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Storage_Stock", "Stock").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Storage_Stock", "Stock").Value = value;
             }
         }
         /// <summary>
@@ -7973,13 +8227,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("QLBHModel.FK_Storage_Stock", "Stock");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Stock>("SaleMgnModel.FK_Storage_Stock", "Stock");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Stock>("QLBHModel.FK_Storage_Stock", "Stock", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Stock>("SaleMgnModel.FK_Storage_Stock", "Stock", value);
                 }
             }
         }
@@ -7991,7 +8245,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="User")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="User")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class User : EntityObject
@@ -8002,25 +8256,27 @@ namespace SaleManager.Data
         /// Create a new User object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="userGroupId">Initial value of the UserGroupId property.</param>
+        /// <param name="groupId">Initial value of the GroupId property.</param>
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="password">Initial value of the Password property.</param>
         /// <param name="firstName">Initial value of the FirstName property.</param>
         /// <param name="lastName">Initial value of the LastName property.</param>
         /// <param name="gender">Initial value of the Gender property.</param>
+        /// <param name="referUserId">Initial value of the ReferUserId property.</param>
         /// <param name="status">Initial value of the Status property.</param>
         /// <param name="lastModifiedBy">Initial value of the LastModifiedBy property.</param>
         /// <param name="lastModifiedDate">Initial value of the LastModifiedDate property.</param>
-        public static User CreateUser(global::System.Int32 id, global::System.Int32 userGroupId, global::System.String name, global::System.String password, global::System.String firstName, global::System.String lastName, global::System.Boolean gender, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
+        public static User CreateUser(global::System.Int32 id, global::System.Int32 groupId, global::System.String name, global::System.String password, global::System.String firstName, global::System.String lastName, global::System.Boolean gender, global::System.Int32 referUserId, global::System.Int32 status, global::System.Int32 lastModifiedBy, global::System.DateTime lastModifiedDate)
         {
             User user = new User();
             user.Id = id;
-            user.UserGroupId = userGroupId;
+            user.GroupId = groupId;
             user.Name = name;
             user.Password = password;
             user.FirstName = firstName;
             user.LastName = lastName;
             user.Gender = gender;
+            user.ReferUserId = referUserId;
             user.Status = status;
             user.LastModifiedBy = lastModifiedBy;
             user.LastModifiedDate = lastModifiedDate;
@@ -8063,24 +8319,24 @@ namespace SaleManager.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 UserGroupId
+        public global::System.Int32 GroupId
         {
             get
             {
-                return _UserGroupId;
+                return _GroupId;
             }
             set
             {
-                OnUserGroupIdChanging(value);
-                ReportPropertyChanging("UserGroupId");
-                _UserGroupId = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("UserGroupId");
-                OnUserGroupIdChanged();
+                OnGroupIdChanging(value);
+                ReportPropertyChanging("GroupId");
+                _GroupId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("GroupId");
+                OnGroupIdChanged();
             }
         }
-        private global::System.Int32 _UserGroupId;
-        partial void OnUserGroupIdChanging(global::System.Int32 value);
-        partial void OnUserGroupIdChanged();
+        private global::System.Int32 _GroupId;
+        partial void OnGroupIdChanging(global::System.Int32 value);
+        partial void OnGroupIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -8205,9 +8461,9 @@ namespace SaleManager.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> ReferUserId
+        public global::System.Int32 ReferUserId
         {
             get
             {
@@ -8222,8 +8478,8 @@ namespace SaleManager.Data
                 OnReferUserIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _ReferUserId;
-        partial void OnReferUserIdChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _ReferUserId;
+        partial void OnReferUserIdChanging(global::System.Int32 value);
         partial void OnReferUserIdChanged();
     
         /// <summary>
@@ -8309,18 +8565,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Customer_User", "Customer")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Customer_User", "Customer")]
         public EntityCollection<Customer> Customers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Customer>("QLBHModel.FK_Customer_User", "Customer");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Customer>("SaleMgnModel.FK_Customer_User", "Customer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Customer>("QLBHModel.FK_Customer_User", "Customer", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Customer>("SaleMgnModel.FK_Customer_User", "Customer", value);
                 }
             }
         }
@@ -8331,18 +8587,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Export_User", "Export")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Export_User", "Export")]
         public EntityCollection<Export> Exports
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Export>("QLBHModel.FK_Export_User", "Export");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Export>("SaleMgnModel.FK_Export_User", "Export");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Export>("QLBHModel.FK_Export_User", "Export", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Export>("SaleMgnModel.FK_Export_User", "Export", value);
                 }
             }
         }
@@ -8353,18 +8609,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Import_User", "Import")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Import_User", "Import")]
         public EntityCollection<Import> Imports
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Import>("QLBHModel.FK_Import_User", "Import");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Import>("SaleMgnModel.FK_Import_User", "Import");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Import>("QLBHModel.FK_Import_User", "Import", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Import>("SaleMgnModel.FK_Import_User", "Import", value);
                 }
             }
         }
@@ -8375,18 +8631,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Order_User", "Order")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_Order_User2", "Order")]
         public EntityCollection<Order> Orders
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("QLBHModel.FK_Order_User", "Order");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("SaleMgnModel.FK_Order_User2", "Order");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("QLBHModel.FK_Order_User", "Order", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("SaleMgnModel.FK_Order_User2", "Order", value);
                 }
             }
         }
@@ -8397,40 +8653,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_Order_User1", "Order")]
-        public EntityCollection<Order> Orders1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Order>("QLBHModel.FK_Order_User1", "Order");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Order>("QLBHModel.FK_Order_User1", "Order", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_OrderPayment_User", "OrderPayment")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderPayment_User", "OrderPayment")]
         public EntityCollection<OrderPayment> OrderPayments
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderPayment>("QLBHModel.FK_OrderPayment_User", "OrderPayment");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderPayment>("SaleMgnModel.FK_OrderPayment_User", "OrderPayment");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderPayment>("QLBHModel.FK_OrderPayment_User", "OrderPayment", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderPayment>("SaleMgnModel.FK_OrderPayment_User", "OrderPayment", value);
                 }
             }
         }
@@ -8441,16 +8675,38 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_User_UserGroup", "UserGroup")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_OrderTrack_User", "OrderTrack")]
+        public EntityCollection<OrderTrack> OrderTracks
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrderTrack>("SaleMgnModel.FK_OrderTrack_User", "OrderTrack");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrderTrack>("SaleMgnModel.FK_OrderTrack_User", "OrderTrack", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_User_UserGroup", "UserGroup")]
         public UserGroup UserGroup
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("SaleMgnModel.FK_User_UserGroup", "UserGroup").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("SaleMgnModel.FK_User_UserGroup", "UserGroup").Value = value;
             }
         }
         /// <summary>
@@ -8462,13 +8718,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserGroup>("SaleMgnModel.FK_User_UserGroup", "UserGroup");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UserGroup>("QLBHModel.FK_User_UserGroup", "UserGroup", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UserGroup>("SaleMgnModel.FK_User_UserGroup", "UserGroup", value);
                 }
             }
         }
@@ -8479,18 +8735,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_UserInfo_User", "UserInfo")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_UserInfo_User", "UserInfo")]
         public EntityCollection<UserInfo> UserInfoes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserInfo>("QLBHModel.FK_UserInfo_User", "UserInfo");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserInfo>("SaleMgnModel.FK_UserInfo_User", "UserInfo");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserInfo>("QLBHModel.FK_UserInfo_User", "UserInfo", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserInfo>("SaleMgnModel.FK_UserInfo_User", "UserInfo", value);
                 }
             }
         }
@@ -8502,7 +8758,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="UserGroup")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="UserGroup")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class UserGroup : EntityObject
@@ -8690,18 +8946,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_User_UserGroup", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_User_UserGroup", "User")]
         public EntityCollection<User> Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("QLBHModel.FK_User_UserGroup", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("SaleMgnModel.FK_User_UserGroup", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("QLBHModel.FK_User_UserGroup", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("SaleMgnModel.FK_User_UserGroup", "User", value);
                 }
             }
         }
@@ -8712,18 +8968,18 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FeatureMapping", "Feature")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FeatureMapping", "Feature")]
         public EntityCollection<Feature> Features
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Feature>("QLBHModel.FeatureMapping", "Feature");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Feature>("SaleMgnModel.FeatureMapping", "Feature");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("QLBHModel.FeatureMapping", "Feature", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Feature>("SaleMgnModel.FeatureMapping", "Feature", value);
                 }
             }
         }
@@ -8735,7 +8991,7 @@ namespace SaleManager.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLBHModel", Name="UserInfo")]
+    [EdmEntityTypeAttribute(NamespaceName="SaleMgnModel", Name="UserInfo")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class UserInfo : EntityObject
@@ -9165,16 +9421,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_UserInfo_City", "City")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_UserInfo_City", "City")]
         public City City
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_UserInfo_City", "City").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_UserInfo_City", "City").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_UserInfo_City", "City").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_UserInfo_City", "City").Value = value;
             }
         }
         /// <summary>
@@ -9186,13 +9442,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("QLBHModel.FK_UserInfo_City", "City");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<City>("SaleMgnModel.FK_UserInfo_City", "City");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("QLBHModel.FK_UserInfo_City", "City", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<City>("SaleMgnModel.FK_UserInfo_City", "City", value);
                 }
             }
         }
@@ -9203,16 +9459,16 @@ namespace SaleManager.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLBHModel", "FK_UserInfo_User", "User")]
+        [EdmRelationshipNavigationPropertyAttribute("SaleMgnModel", "FK_UserInfo_User", "User")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_UserInfo_User", "User").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_UserInfo_User", "User").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_UserInfo_User", "User").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_UserInfo_User", "User").Value = value;
             }
         }
         /// <summary>
@@ -9224,13 +9480,13 @@ namespace SaleManager.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("QLBHModel.FK_UserInfo_User", "User");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("SaleMgnModel.FK_UserInfo_User", "User");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("QLBHModel.FK_UserInfo_User", "User", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("SaleMgnModel.FK_UserInfo_User", "User", value);
                 }
             }
         }

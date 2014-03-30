@@ -9,7 +9,7 @@ namespace SaleManager.Service
 {
    public class CityService
    {
-      private readonly SaleManager.Data.QLBHEntities _entities = new QLBHEntities();
+      private readonly SaleManager.Data.SaleMgnEntities _entities = new SaleMgnEntities();
 
       public IEnumerable<SaleManager.Data.City> GetAllCity()
       {

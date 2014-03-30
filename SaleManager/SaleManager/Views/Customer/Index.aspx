@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Thêm khách hàng</h2>
-    <form id="CustomerForm" method="POST">
+    <form id="CustomerForm" action="Index.aspx" method="POST">
     <table border="0">
         <tr>
             <td>
@@ -25,9 +25,8 @@
                 Loại khách hàng
             </td>
             <td>
-                <%=Html.DropDownList("Type", new SelectList(Model.customertypes, "Type", "Name"), new { onchange = "ChangeCustomerType();" })%>
+                <%=Html.DropDownList("Type", new SelectList(Model.customertypes, "Type", "Name"))%>
             </td>
-            ,
         </tr>
         <tr>
             <td>
@@ -74,7 +73,7 @@
                 Tỉnh/Thành
             </td>
             <td>
-                <%=Html.DropDownList("City", new SelectList(Model.cities, "Id", "Name"), new { onchange = "ChangeCity();" })%>
+                <%=Html.DropDownList("City", new SelectList(Model.cities, "Id", "Name"))%>
             </td>
         </tr>
         <tr>
@@ -100,7 +99,7 @@
             </td>
             <td style="text-align: right">
                 <input type="button" value="Nhập lại" onclick="Reset();" />
-                <input type="button" value="Lưu" onclick="return Validation();" />
+                <input type="button" value="Lưu" onclick="SaveCustomer();" />
             </td>
         </tr>
     </table>
@@ -108,12 +107,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContent" runat="server">
     <script>
-        $(function () {
-            $(document).ready(function () {
-                
-            });
-        });
-
         function Reset() {
             $("#Name").val("");
             $("#Phone1").val("");
@@ -125,7 +118,7 @@
             $("#Error").val("");
         }
 
-        function Validation() {
+        function SaveCustomer() {
             if ($("#Name").val() == "") {
                 $("#Error").text("Tên khách hàng không được trống.");
                 $("#Error").attr("style", "color: red;display:block");
@@ -141,16 +134,24 @@
                 $("#Error").attr("style", "color: red;display:block");
                 return false;
             }
+            $("#form").submit();
 
-            return true;
+            var url = "SaveCustomer";
+            var data = {Name: $("#Name").val(), Phone1: $("#Phone1").val(), Phone2: $("#Phone2").val(), 
+                        Email:  $("#Email").val(), Fax: $("#Fax").val(), Address: $("#Address").val(),
+                        Note: $("#Note").val(), Type:  $("#Type").val(), City: $("#City").val() };
+            CallServerMethod(url, data, SaveCustomerCallback);
+            //return true;
         }
 
-        function ChangeCustomerType() {
-            //            $("Type").val($("#customertype").val());
+        function SaveCustomerCallback(parameters) {
+            if (parameters.finish) {
+                $("#Error").text("Lưu thành công");
+            } else {
+                $("#Error").text(parameters.data);
+            }
         }
 
-        function ChangeCity() {
-            //            $("City").val($("#cityname").val());
-        }
+        
     </script>
 </asp:Content>

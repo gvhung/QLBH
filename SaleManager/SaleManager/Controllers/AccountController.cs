@@ -50,7 +50,7 @@ namespace SaleManager.Controllers
                 }
                 else
                 {
-                    model.Errors = "The user name or password provided is incorrect.";
+                    model.Errors = "Tài khoản hoặc mật khẩu không chính xác.";
                 }
             }
 

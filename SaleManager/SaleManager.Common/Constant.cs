@@ -16,7 +16,7 @@ namespace SaleManager.Common
 
       public const string CUSTOMER_TYPE_PERSONAL = "Cá nhân";
       public const string CUSTOMER_TYPE_COMPANY = "Công ty";
-      public const string CUSTOMER_CODE = "C"; //next number is id
+      public const string CUSTOMER_CODE = "KH-{0}"; //next number is id
 
       public const string GENDER_MALE = "Nam";
       public const string GENDER_FEMALE = "Nữ";

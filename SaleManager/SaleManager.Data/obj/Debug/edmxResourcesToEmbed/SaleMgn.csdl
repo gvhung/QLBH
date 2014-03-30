@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaleMgnModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SaleMgnEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="SaleMgnModel.City" />
+    <EntitySet Name="Customers" EntityType="SaleMgnModel.Customer" />
+    <EntitySet Name="CustomerShippings" EntityType="SaleMgnModel.CustomerShipping" />
+    <EntitySet Name="DataVersions" EntityType="SaleMgnModel.DataVersion" />
+    <EntitySet Name="Exports" EntityType="SaleMgnModel.Export" />
+    <EntitySet Name="ExportDetails" EntityType="SaleMgnModel.ExportDetail" />
+    <EntitySet Name="Features" EntityType="SaleMgnModel.Feature" />
+    <EntitySet Name="Imports" EntityType="SaleMgnModel.Import" />
+    <EntitySet Name="ImportDetails" EntityType="SaleMgnModel.ImportDetail" />
+    <EntitySet Name="Orders" EntityType="SaleMgnModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="SaleMgnModel.OrderDetail" />
+    <EntitySet Name="OrderPayments" EntityType="SaleMgnModel.OrderPayment" />
+    <EntitySet Name="OrderTracks" EntityType="SaleMgnModel.OrderTrack" />
+    <EntitySet Name="PaymentTypes" EntityType="SaleMgnModel.PaymentType" />
+    <EntitySet Name="Products" EntityType="SaleMgnModel.Product" />
+    <EntitySet Name="ProductCategories" EntityType="SaleMgnModel.ProductCategory" />
+    <EntitySet Name="ProductGroups" EntityType="SaleMgnModel.ProductGroup" />
+    <EntitySet Name="ProductUnits" EntityType="SaleMgnModel.ProductUnit" />
+    <EntitySet Name="Providers" EntityType="SaleMgnModel.Provider" />
+    <EntitySet Name="Sessions" EntityType="SaleMgnModel.Session" />
+    <EntitySet Name="Stocks" EntityType="SaleMgnModel.Stock" />
+    <EntitySet Name="Storages" EntityType="SaleMgnModel.Storage" />
+    <EntitySet Name="Users" EntityType="SaleMgnModel.User" />
+    <EntitySet Name="UserGroups" EntityType="SaleMgnModel.UserGroup" />
+    <EntitySet Name="UserInfoes" EntityType="SaleMgnModel.UserInfo" />
+    <AssociationSet Name="FK_Customer_City" Association="SaleMgnModel.FK_Customer_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerShipping_City" Association="SaleMgnModel.FK_CustomerShipping_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="CustomerShipping" EntitySet="CustomerShippings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_City" Association="SaleMgnModel.FK_Provider_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Provider" EntitySet="Providers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_City" Association="SaleMgnModel.FK_Stock_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_City" Association="SaleMgnModel.FK_UserInfo_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_User" Association="SaleMgnModel.FK_Customer_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerContact_Customer" Association="SaleMgnModel.FK_CustomerContact_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerShipping" EntitySet="CustomerShippings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="SaleMgnModel.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Export_Order" Association="SaleMgnModel.FK_Export_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Export" EntitySet="Exports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Export_Stock" Association="SaleMgnModel.FK_Export_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Export" EntitySet="Exports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Export_User" Association="SaleMgnModel.FK_Export_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Export" EntitySet="Exports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetail_Export" Association="SaleMgnModel.FK_ExportDetail_Export">
+      <End Role="Export" EntitySet="Exports" />
+      <End Role="ExportDetail" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetail_Product" Association="SaleMgnModel.FK_ExportDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ExportDetail" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetail_Storage" Association="SaleMgnModel.FK_ExportDetail_Storage">
+      <End Role="Storage" EntitySet="Storages" />
+      <End Role="ExportDetail" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Import_Provider" Association="SaleMgnModel.FK_Import_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="Import" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Import_Stock" Association="SaleMgnModel.FK_Import_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Import" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Import_User" Association="SaleMgnModel.FK_Import_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Import" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportDetail_Import" Association="SaleMgnModel.FK_ImportDetail_Import">
+      <End Role="Import" EntitySet="Imports" />
+      <End Role="ImportDetail" EntitySet="ImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportDetail_Product" Association="SaleMgnModel.FK_ImportDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ImportDetail" EntitySet="ImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportDetail_Storage" Association="SaleMgnModel.FK_ImportDetail_Storage">
+      <End Role="Storage" EntitySet="Storages" />
+      <End Role="ImportDetail" EntitySet="ImportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_User2" Association="SaleMgnModel.FK_Order_User2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Order" Association="SaleMgnModel.FK_OrderDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPayment_Order" Association="SaleMgnModel.FK_OrderPayment_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderPayment" EntitySet="OrderPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderTrack_Order" Association="SaleMgnModel.FK_OrderTrack_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderTrack" EntitySet="OrderTracks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Product" Association="SaleMgnModel.FK_OrderDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPayment_PaymentType" Association="SaleMgnModel.FK_OrderPayment_PaymentType">
+      <End Role="PaymentType" EntitySet="PaymentTypes" />
+      <End Role="OrderPayment" EntitySet="OrderPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPayment_User" Association="SaleMgnModel.FK_OrderPayment_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="OrderPayment" EntitySet="OrderPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderTrack_User" Association="SaleMgnModel.FK_OrderTrack_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="OrderTrack" EntitySet="OrderTracks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductGroup" Association="SaleMgnModel.FK_Product_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductUnit" Association="SaleMgnModel.FK_Product_ProductUnit">
+      <End Role="ProductUnit" EntitySet="ProductUnits" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Product" Association="SaleMgnModel.FK_Storage_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Storage" EntitySet="Storages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductGroup_ProductCategory" Association="SaleMgnModel.FK_ProductGroup_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storage_Stock" Association="SaleMgnModel.FK_Storage_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Storage" EntitySet="Storages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserGroup" Association="SaleMgnModel.FK_User_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroups" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_User" Association="SaleMgnModel.FK_UserInfo_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FeatureMapping" Association="SaleMgnModel.FeatureMapping">
+      <End Role="Feature" EntitySet="Features" />
+      <End Role="UserGroup" EntitySet="UserGroups" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="SaleMgnModel.FK_Customer_City" FromRole="City" ToRole="Customer" />
+    <NavigationProperty Name="CustomerShippings" Relationship="SaleMgnModel.FK_CustomerShipping_City" FromRole="City" ToRole="CustomerShipping" />
+    <NavigationProperty Name="Providers" Relationship="SaleMgnModel.FK_Provider_City" FromRole="City" ToRole="Provider" />
+    <NavigationProperty Name="Stocks" Relationship="SaleMgnModel.FK_Stock_City" FromRole="City" ToRole="Stock" />
+    <NavigationProperty Name="UserInfoes" Relationship="SaleMgnModel.FK_UserInfo_City" FromRole="City" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerType" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ReferUserId" Type="Int32" Nullable="false" />
+    <Property Name="ApprovedUserId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_Customer_City" FromRole="Customer" ToRole="City" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Customer_User" FromRole="Customer" ToRole="User" />
+    <NavigationProperty Name="CustomerShippings" Relationship="SaleMgnModel.FK_CustomerContact_Customer" FromRole="Customer" ToRole="CustomerShipping" />
+    <NavigationProperty Name="Orders" Relationship="SaleMgnModel.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CustomerShipping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_CustomerShipping_City" FromRole="CustomerShipping" ToRole="City" />
+    <NavigationProperty Name="Customer" Relationship="SaleMgnModel.FK_CustomerContact_Customer" FromRole="CustomerShipping" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="DataVersion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Export">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_Export_Order" FromRole="Export" ToRole="Order" />
+    <NavigationProperty Name="Stock" Relationship="SaleMgnModel.FK_Export_Stock" FromRole="Export" ToRole="Stock" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Export_User" FromRole="Export" ToRole="User" />
+    <NavigationProperty Name="ExportDetails" Relationship="SaleMgnModel.FK_ExportDetail_Export" FromRole="Export" ToRole="ExportDetail" />
+  </EntityType>
+  <EntityType Name="ExportDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExportId" Type="Int32" Nullable="false" />
+    <Property Name="StorageId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Export" Relationship="SaleMgnModel.FK_ExportDetail_Export" FromRole="ExportDetail" ToRole="Export" />
+    <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_ExportDetail_Product" FromRole="ExportDetail" ToRole="Product" />
+    <NavigationProperty Name="Storage" Relationship="SaleMgnModel.FK_ExportDetail_Storage" FromRole="ExportDetail" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Feature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserGroups" Relationship="SaleMgnModel.FeatureMapping" FromRole="Feature" ToRole="UserGroup" />
+  </EntityType>
+  <EntityType Name="Import">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ProviderId" Type="Int32" Nullable="false" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatebBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Provider" Relationship="SaleMgnModel.FK_Import_Provider" FromRole="Import" ToRole="Provider" />
+    <NavigationProperty Name="Stock" Relationship="SaleMgnModel.FK_Import_Stock" FromRole="Import" ToRole="Stock" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Import_User" FromRole="Import" ToRole="User" />
+    <NavigationProperty Name="ImportDetails" Relationship="SaleMgnModel.FK_ImportDetail_Import" FromRole="Import" ToRole="ImportDetail" />
+  </EntityType>
+  <EntityType Name="ImportDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImportId" Type="Int32" Nullable="false" />
+    <Property Name="StorageId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Import" Relationship="SaleMgnModel.FK_ImportDetail_Import" FromRole="ImportDetail" ToRole="Import" />
+    <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_ImportDetail_Product" FromRole="ImportDetail" ToRole="Product" />
+    <NavigationProperty Name="Storage" Relationship="SaleMgnModel.FK_ImportDetail_Storage" FromRole="ImportDetail" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsSeen" Type="Boolean" Nullable="false" />
+    <Property Name="ReferUserId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="IsShip" Type="Boolean" Nullable="false" />
+    <Property Name="TransitFee" Type="Double" Nullable="false" />
+    <Property Name="AdjustFee" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="SaleMgnModel.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="Exports" Relationship="SaleMgnModel.FK_Export_Order" FromRole="Order" ToRole="Export" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Order_User2" FromRole="Order" ToRole="User" />
+    <NavigationProperty Name="OrderDetails" Relationship="SaleMgnModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+    <NavigationProperty Name="OrderPayments" Relationship="SaleMgnModel.FK_OrderPayment_Order" FromRole="Order" ToRole="OrderPayment" />
+    <NavigationProperty Name="OrderTracks" Relationship="SaleMgnModel.FK_OrderTrack_Order" FromRole="Order" ToRole="OrderTrack" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TotalQuantity" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="OrderPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="Money" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_OrderPayment_Order" FromRole="OrderPayment" ToRole="Order" />
+    <NavigationProperty Name="PaymentType" Relationship="SaleMgnModel.FK_OrderPayment_PaymentType" FromRole="OrderPayment" ToRole="PaymentType" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_OrderPayment_User" FromRole="OrderPayment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="OrderTrack">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_OrderTrack_Order" FromRole="OrderTrack" ToRole="Order" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_OrderTrack_User" FromRole="OrderTrack" ToRole="User" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OrderPayments" Relationship="SaleMgnModel.FK_OrderPayment_PaymentType" FromRole="PaymentType" ToRole="OrderPayment" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ProductGroupId" Type="Int32" Nullable="false" />
+    <Property Name="ProductUnitId" Type="Int32" Nullable="false" />
+    <Property Name="SafeQuantity" Type="Int32" Nullable="false" />
+    <Property Name="Size" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="IsSurface" Type="Boolean" Nullable="false" />
+    <Property Name="AllowSurface" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ExportDetails" Relationship="SaleMgnModel.FK_ExportDetail_Product" FromRole="Product" ToRole="ExportDetail" />
+    <NavigationProperty Name="ImportDetails" Relationship="SaleMgnModel.FK_ImportDetail_Product" FromRole="Product" ToRole="ImportDetail" />
+    <NavigationProperty Name="OrderDetails" Relationship="SaleMgnModel.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
+    <NavigationProperty Name="ProductGroup" Relationship="SaleMgnModel.FK_Product_ProductGroup" FromRole="Product" ToRole="ProductGroup" />
+    <NavigationProperty Name="ProductUnit" Relationship="SaleMgnModel.FK_Product_ProductUnit" FromRole="Product" ToRole="ProductUnit" />
+    <NavigationProperty Name="Storages" Relationship="SaleMgnModel.FK_Storage_Product" FromRole="Product" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ProductGroups" Relationship="SaleMgnModel.FK_ProductGroup_ProductCategory" FromRole="ProductCategory" ToRole="ProductGroup" />
+  </EntityType>
+  <EntityType Name="ProductGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="SaleMgnModel.FK_Product_ProductGroup" FromRole="ProductGroup" ToRole="Product" />
+    <NavigationProperty Name="ProductCategory" Relationship="SaleMgnModel.FK_ProductGroup_ProductCategory" FromRole="ProductGroup" ToRole="ProductCategory" />
+  </EntityType>
+  <EntityType Name="ProductUnit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="SaleMgnModel.FK_Product_ProductUnit" FromRole="ProductUnit" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_Provider_City" FromRole="Provider" ToRole="City" />
+    <NavigationProperty Name="Imports" Relationship="SaleMgnModel.FK_Import_Provider" FromRole="Provider" ToRole="Import" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Token" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastRenewDate" Type="DateTime" Nullable="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_Stock_City" FromRole="Stock" ToRole="City" />
+    <NavigationProperty Name="Exports" Relationship="SaleMgnModel.FK_Export_Stock" FromRole="Stock" ToRole="Export" />
+    <NavigationProperty Name="Imports" Relationship="SaleMgnModel.FK_Import_Stock" FromRole="Stock" ToRole="Import" />
+    <NavigationProperty Name="Storages" Relationship="SaleMgnModel.FK_Storage_Stock" FromRole="Stock" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Storage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ExportDetails" Relationship="SaleMgnModel.FK_ExportDetail_Storage" FromRole="Storage" ToRole="ExportDetail" />
+    <NavigationProperty Name="ImportDetails" Relationship="SaleMgnModel.FK_ImportDetail_Storage" FromRole="Storage" ToRole="ImportDetail" />
+    <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_Storage_Product" FromRole="Storage" ToRole="Product" />
+    <NavigationProperty Name="Stock" Relationship="SaleMgnModel.FK_Storage_Stock" FromRole="Storage" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="ReferUserId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="SaleMgnModel.FK_Customer_User" FromRole="User" ToRole="Customer" />
+    <NavigationProperty Name="Exports" Relationship="SaleMgnModel.FK_Export_User" FromRole="User" ToRole="Export" />
+    <NavigationProperty Name="Imports" Relationship="SaleMgnModel.FK_Import_User" FromRole="User" ToRole="Import" />
+    <NavigationProperty Name="Orders" Relationship="SaleMgnModel.FK_Order_User2" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="OrderPayments" Relationship="SaleMgnModel.FK_OrderPayment_User" FromRole="User" ToRole="OrderPayment" />
+    <NavigationProperty Name="OrderTracks" Relationship="SaleMgnModel.FK_OrderTrack_User" FromRole="User" ToRole="OrderTrack" />
+    <NavigationProperty Name="UserGroup" Relationship="SaleMgnModel.FK_User_UserGroup" FromRole="User" ToRole="UserGroup" />
+    <NavigationProperty Name="UserInfoes" Relationship="SaleMgnModel.FK_UserInfo_User" FromRole="User" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="SaleMgnModel.FK_User_UserGroup" FromRole="UserGroup" ToRole="User" />
+    <NavigationProperty Name="Features" Relationship="SaleMgnModel.FeatureMapping" FromRole="UserGroup" ToRole="Feature" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="SocialInsuranceNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="TaxNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SocialNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SocialIssuedDate" Type="DateTime" Nullable="false" />
+    <Property Name="SocialIssudePlace" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_UserInfo_City" FromRole="UserInfo" ToRole="City" />
+    <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_UserInfo_User" FromRole="UserInfo" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Customer_City">
+    <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+    <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerShipping_City">
+    <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+    <End Role="CustomerShipping" Type="SaleMgnModel.CustomerShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerShipping">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_City">
+    <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+    <End Role="Provider" Type="SaleMgnModel.Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_City">
+    <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+    <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_City">
+    <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+    <End Role="UserInfo" Type="SaleMgnModel.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_User">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="ApprovedUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerContact_Customer">
+    <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="1" />
+    <End Role="CustomerShipping" Type="SaleMgnModel.CustomerShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerShipping">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="1" />
+    <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Export_Order">
+    <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+    <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Export">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Export_Stock">
+    <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="1" />
+    <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Export">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Export_User">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Export">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetail_Export">
+    <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="1" />
+    <End Role="ExportDetail" Type="SaleMgnModel.ExportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Export">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetail">
+        <PropertyRef Name="ExportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetail_Product">
+    <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+    <End Role="ExportDetail" Type="SaleMgnModel.ExportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetail_Storage">
+    <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="1" />
+    <End Role="ExportDetail" Type="SaleMgnModel.ExportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetail">
+        <PropertyRef Name="StorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Import_Provider">
+    <End Role="Provider" Type="SaleMgnModel.Provider" Multiplicity="1" />
+    <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Import">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Import_Stock">
+    <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="1" />
+    <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Import">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Import_User">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Import">
+        <PropertyRef Name="CreatebBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportDetail_Import">
+    <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="1" />
+    <End Role="ImportDetail" Type="SaleMgnModel.ImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Import">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportDetail">
+        <PropertyRef Name="ImportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportDetail_Product">
+    <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+    <End Role="ImportDetail" Type="SaleMgnModel.ImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportDetail_Storage">
+    <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="1" />
+    <End Role="ImportDetail" Type="SaleMgnModel.ImportDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportDetail">
+        <PropertyRef Name="StorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_User2">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Order">
+    <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+    <End Role="OrderDetail" Type="SaleMgnModel.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPayment_Order">
+    <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+    <End Role="OrderPayment" Type="SaleMgnModel.OrderPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderPayment">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderTrack_Order">
+    <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+    <End Role="OrderTrack" Type="SaleMgnModel.OrderTrack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderTrack">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Product">
+    <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+    <End Role="OrderDetail" Type="SaleMgnModel.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPayment_PaymentType">
+    <End Role="PaymentType" Type="SaleMgnModel.PaymentType" Multiplicity="1" />
+    <End Role="OrderPayment" Type="SaleMgnModel.OrderPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderPayment">
+        <PropertyRef Name="PaymentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPayment_User">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="OrderPayment" Type="SaleMgnModel.OrderPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderPayment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderTrack_User">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="OrderTrack" Type="SaleMgnModel.OrderTrack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderTrack">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductGroup">
+    <End Role="ProductGroup" Type="SaleMgnModel.ProductGroup" Multiplicity="1" />
+    <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductUnit">
+    <End Role="ProductUnit" Type="SaleMgnModel.ProductUnit" Multiplicity="1" />
+    <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductUnit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Product">
+    <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+    <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductGroup_ProductCategory">
+    <End Role="ProductCategory" Type="SaleMgnModel.ProductCategory" Multiplicity="1" />
+    <End Role="ProductGroup" Type="SaleMgnModel.ProductGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductGroup">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storage_Stock">
+    <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="1" />
+    <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserGroup">
+    <End Role="UserGroup" Type="SaleMgnModel.UserGroup" Multiplicity="1" />
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_User">
+    <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+    <End Role="UserInfo" Type="SaleMgnModel.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FeatureMapping">
+    <End Role="Feature" Type="SaleMgnModel.Feature" Multiplicity="*" />
+    <End Role="UserGroup" Type="SaleMgnModel.UserGroup" Multiplicity="*" />
+  </Association>
+</Schema>

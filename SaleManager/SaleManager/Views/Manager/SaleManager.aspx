@@ -39,6 +39,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContent" runat="server">
     <link rel="stylesheet" href="/Styles/jquery-ui.css">
+    <link rel="stylesheet" href="/Styles/demo_table.css">
+    <script src="/Scripts/jqueryUI/jquery.dataTables.min.js"></script>
     <script src="/Scripts/jqueryUI/jquery.ui.core.js"></script>
     <script src="/Scripts/jqueryUI/jquery.ui.widget.js"></script>
     <script src="/Scripts/jqueryUI/jquery.ui.datepicker.js"></script>
@@ -48,6 +50,9 @@
             $.datepicker.setDefaults($.datepicker.regional[""]);
             $("#DateFrom").datepicker($.datepicker.regional["vi"]);
             $("#DateTo").datepicker($.datepicker.regional["vi"]);
+            $("#DateFrom").datepicker("setDate", new Date());
+            $("#DateTo").datepicker("setDate", new Date());
+            Search();
         });
 
         function Search() {
@@ -65,6 +70,22 @@
                 $("#TotalSum").html(parameter.totalSum);
                 $("#NewCount").html(parameter.newCount);
                 $("#NewSum").html(parameter.newSum);
+
+                $('#table1').dataTable({
+                    "oLanguage": {
+                        "oPaginate": {
+                            "sFirst": "<<",
+                            "sLast": ">>",
+                            "sNext": ">",
+                            "sPrevious": "<"
+                        }
+                    },
+                    "sPaginationType": "full_numbers",
+                    "bSort": false,
+                    "bInfo": false,
+                    "bFilter": false,
+                    "bLengthChange": false
+                });
             }
         }
     </script>

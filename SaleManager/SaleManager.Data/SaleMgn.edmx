@@ -4,174 +4,179 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLBHModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="QLBHModelStoreContainer">
-          <EntitySet Name="City" EntityType="QLBHModel.Store.City" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Customer" EntityType="QLBHModel.Store.Customer" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CustomerShipping" EntityType="QLBHModel.Store.CustomerShipping" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DataVersion" EntityType="QLBHModel.Store.DataVersion" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Export" EntityType="QLBHModel.Store.Export" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ExportDetail" EntityType="QLBHModel.Store.ExportDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Feature" EntityType="QLBHModel.Store.Feature" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FeatureMapping" EntityType="QLBHModel.Store.FeatureMapping" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Import" EntityType="QLBHModel.Store.Import" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ImportDetail" EntityType="QLBHModel.Store.ImportDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Order" EntityType="QLBHModel.Store.Order" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OrderDetail" EntityType="QLBHModel.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OrderPayment" EntityType="QLBHModel.Store.OrderPayment" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PaymentType" EntityType="QLBHModel.Store.PaymentType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Product" EntityType="QLBHModel.Store.Product" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductCategory" EntityType="QLBHModel.Store.ProductCategory" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductGroup" EntityType="QLBHModel.Store.ProductGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductUnit" EntityType="QLBHModel.Store.ProductUnit" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Provider" EntityType="QLBHModel.Store.Provider" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Session" EntityType="QLBHModel.Store.Session" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Stock" EntityType="QLBHModel.Store.Stock" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Storage" EntityType="QLBHModel.Store.Storage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="User" EntityType="QLBHModel.Store.User" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserGroup" EntityType="QLBHModel.Store.UserGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserInfo" EntityType="QLBHModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Customer_City" Association="QLBHModel.Store.FK_Customer_City">
+      <Schema Namespace="SaleMgnModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SaleMgnModelStoreContainer">
+          <EntitySet Name="City" EntityType="SaleMgnModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customer" EntityType="SaleMgnModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerShipping" EntityType="SaleMgnModel.Store.CustomerShipping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DataVersion" EntityType="SaleMgnModel.Store.DataVersion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Export" EntityType="SaleMgnModel.Store.Export" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExportDetail" EntityType="SaleMgnModel.Store.ExportDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Feature" EntityType="SaleMgnModel.Store.Feature" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FeatureMapping" EntityType="SaleMgnModel.Store.FeatureMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Import" EntityType="SaleMgnModel.Store.Import" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImportDetail" EntityType="SaleMgnModel.Store.ImportDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="SaleMgnModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetail" EntityType="SaleMgnModel.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderPayment" EntityType="SaleMgnModel.Store.OrderPayment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderTrack" EntityType="SaleMgnModel.Store.OrderTrack" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentType" EntityType="SaleMgnModel.Store.PaymentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="SaleMgnModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductCategory" EntityType="SaleMgnModel.Store.ProductCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductGroup" EntityType="SaleMgnModel.Store.ProductGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductUnit" EntityType="SaleMgnModel.Store.ProductUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Provider" EntityType="SaleMgnModel.Store.Provider" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Session" EntityType="SaleMgnModel.Store.Session" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Stock" EntityType="SaleMgnModel.Store.Stock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Storage" EntityType="SaleMgnModel.Store.Storage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="SaleMgnModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroup" EntityType="SaleMgnModel.Store.UserGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserInfo" EntityType="SaleMgnModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Customer_City" Association="SaleMgnModel.Store.FK_Customer_City">
             <End Role="City" EntitySet="City" />
             <End Role="Customer" EntitySet="Customer" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customer_User" Association="QLBHModel.Store.FK_Customer_User">
+          <AssociationSet Name="FK_Customer_User" Association="SaleMgnModel.Store.FK_Customer_User">
             <End Role="User" EntitySet="User" />
             <End Role="Customer" EntitySet="Customer" />
           </AssociationSet>
-          <AssociationSet Name="FK_CustomerContact_Customer" Association="QLBHModel.Store.FK_CustomerContact_Customer">
+          <AssociationSet Name="FK_CustomerContact_Customer" Association="SaleMgnModel.Store.FK_CustomerContact_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="CustomerShipping" EntitySet="CustomerShipping" />
           </AssociationSet>
-          <AssociationSet Name="FK_CustomerShipping_City" Association="QLBHModel.Store.FK_CustomerShipping_City">
+          <AssociationSet Name="FK_CustomerShipping_City" Association="SaleMgnModel.Store.FK_CustomerShipping_City">
             <End Role="City" EntitySet="City" />
             <End Role="CustomerShipping" EntitySet="CustomerShipping" />
           </AssociationSet>
-          <AssociationSet Name="FK_Export_Order" Association="QLBHModel.Store.FK_Export_Order">
+          <AssociationSet Name="FK_Export_Order" Association="SaleMgnModel.Store.FK_Export_Order">
             <End Role="Order" EntitySet="Order" />
             <End Role="Export" EntitySet="Export" />
           </AssociationSet>
-          <AssociationSet Name="FK_Export_Stock" Association="QLBHModel.Store.FK_Export_Stock">
+          <AssociationSet Name="FK_Export_Stock" Association="SaleMgnModel.Store.FK_Export_Stock">
             <End Role="Stock" EntitySet="Stock" />
             <End Role="Export" EntitySet="Export" />
           </AssociationSet>
-          <AssociationSet Name="FK_Export_User" Association="QLBHModel.Store.FK_Export_User">
+          <AssociationSet Name="FK_Export_User" Association="SaleMgnModel.Store.FK_Export_User">
             <End Role="User" EntitySet="User" />
             <End Role="Export" EntitySet="Export" />
           </AssociationSet>
-          <AssociationSet Name="FK_ExportDetail_Export" Association="QLBHModel.Store.FK_ExportDetail_Export">
+          <AssociationSet Name="FK_ExportDetail_Export" Association="SaleMgnModel.Store.FK_ExportDetail_Export">
             <End Role="Export" EntitySet="Export" />
             <End Role="ExportDetail" EntitySet="ExportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_ExportDetail_Product" Association="QLBHModel.Store.FK_ExportDetail_Product">
+          <AssociationSet Name="FK_ExportDetail_Product" Association="SaleMgnModel.Store.FK_ExportDetail_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="ExportDetail" EntitySet="ExportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_ExportDetail_Storage" Association="QLBHModel.Store.FK_ExportDetail_Storage">
+          <AssociationSet Name="FK_ExportDetail_Storage" Association="SaleMgnModel.Store.FK_ExportDetail_Storage">
             <End Role="Storage" EntitySet="Storage" />
             <End Role="ExportDetail" EntitySet="ExportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_FeatureMapping_Feature" Association="QLBHModel.Store.FK_FeatureMapping_Feature">
+          <AssociationSet Name="FK_FeatureMapping_Feature" Association="SaleMgnModel.Store.FK_FeatureMapping_Feature">
             <End Role="Feature" EntitySet="Feature" />
             <End Role="FeatureMapping" EntitySet="FeatureMapping" />
           </AssociationSet>
-          <AssociationSet Name="FK_FeatureMapping_UserGroup" Association="QLBHModel.Store.FK_FeatureMapping_UserGroup">
+          <AssociationSet Name="FK_FeatureMapping_UserGroup" Association="SaleMgnModel.Store.FK_FeatureMapping_UserGroup">
             <End Role="UserGroup" EntitySet="UserGroup" />
             <End Role="FeatureMapping" EntitySet="FeatureMapping" />
           </AssociationSet>
-          <AssociationSet Name="FK_Import_Provider" Association="QLBHModel.Store.FK_Import_Provider">
+          <AssociationSet Name="FK_Import_Provider" Association="SaleMgnModel.Store.FK_Import_Provider">
             <End Role="Provider" EntitySet="Provider" />
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
-          <AssociationSet Name="FK_Import_Stock" Association="QLBHModel.Store.FK_Import_Stock">
+          <AssociationSet Name="FK_Import_Stock" Association="SaleMgnModel.Store.FK_Import_Stock">
             <End Role="Stock" EntitySet="Stock" />
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
-          <AssociationSet Name="FK_Import_User" Association="QLBHModel.Store.FK_Import_User">
+          <AssociationSet Name="FK_Import_User" Association="SaleMgnModel.Store.FK_Import_User">
             <End Role="User" EntitySet="User" />
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImportDetail_Import" Association="QLBHModel.Store.FK_ImportDetail_Import">
+          <AssociationSet Name="FK_ImportDetail_Import" Association="SaleMgnModel.Store.FK_ImportDetail_Import">
             <End Role="Import" EntitySet="Import" />
             <End Role="ImportDetail" EntitySet="ImportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImportDetail_Product" Association="QLBHModel.Store.FK_ImportDetail_Product">
+          <AssociationSet Name="FK_ImportDetail_Product" Association="SaleMgnModel.Store.FK_ImportDetail_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="ImportDetail" EntitySet="ImportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImportDetail_Storage" Association="QLBHModel.Store.FK_ImportDetail_Storage">
+          <AssociationSet Name="FK_ImportDetail_Storage" Association="SaleMgnModel.Store.FK_ImportDetail_Storage">
             <End Role="Storage" EntitySet="Storage" />
             <End Role="ImportDetail" EntitySet="ImportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Customer" Association="QLBHModel.Store.FK_Order_Customer">
+          <AssociationSet Name="FK_Order_Customer" Association="SaleMgnModel.Store.FK_Order_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_User" Association="QLBHModel.Store.FK_Order_User">
+          <AssociationSet Name="FK_Order_User2" Association="SaleMgnModel.Store.FK_Order_User2">
             <End Role="User" EntitySet="User" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_User1" Association="QLBHModel.Store.FK_Order_User1">
-            <End Role="User" EntitySet="User" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Order" Association="QLBHModel.Store.FK_OrderDetail_Order">
+          <AssociationSet Name="FK_OrderDetail_Order" Association="SaleMgnModel.Store.FK_OrderDetail_Order">
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Product" Association="QLBHModel.Store.FK_OrderDetail_Product">
+          <AssociationSet Name="FK_OrderDetail_Product" Association="SaleMgnModel.Store.FK_OrderDetail_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderPayment_Order" Association="QLBHModel.Store.FK_OrderPayment_Order">
+          <AssociationSet Name="FK_OrderPayment_Order" Association="SaleMgnModel.Store.FK_OrderPayment_Order">
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderPayment" EntitySet="OrderPayment" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderPayment_PaymentType" Association="QLBHModel.Store.FK_OrderPayment_PaymentType">
+          <AssociationSet Name="FK_OrderPayment_PaymentType" Association="SaleMgnModel.Store.FK_OrderPayment_PaymentType">
             <End Role="PaymentType" EntitySet="PaymentType" />
             <End Role="OrderPayment" EntitySet="OrderPayment" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderPayment_User" Association="QLBHModel.Store.FK_OrderPayment_User">
+          <AssociationSet Name="FK_OrderPayment_User" Association="SaleMgnModel.Store.FK_OrderPayment_User">
             <End Role="User" EntitySet="User" />
             <End Role="OrderPayment" EntitySet="OrderPayment" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_ProductGroup" Association="QLBHModel.Store.FK_Product_ProductGroup">
+          <AssociationSet Name="FK_OrderTrack_Order" Association="SaleMgnModel.Store.FK_OrderTrack_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderTrack" EntitySet="OrderTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderTrack_User" Association="SaleMgnModel.Store.FK_OrderTrack_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="OrderTrack" EntitySet="OrderTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductGroup" Association="SaleMgnModel.Store.FK_Product_ProductGroup">
             <End Role="ProductGroup" EntitySet="ProductGroup" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_ProductUnit" Association="QLBHModel.Store.FK_Product_ProductUnit">
+          <AssociationSet Name="FK_Product_ProductUnit" Association="SaleMgnModel.Store.FK_Product_ProductUnit">
             <End Role="ProductUnit" EntitySet="ProductUnit" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK_ProductGroup_ProductCategory" Association="QLBHModel.Store.FK_ProductGroup_ProductCategory">
+          <AssociationSet Name="FK_ProductGroup_ProductCategory" Association="SaleMgnModel.Store.FK_ProductGroup_ProductCategory">
             <End Role="ProductCategory" EntitySet="ProductCategory" />
             <End Role="ProductGroup" EntitySet="ProductGroup" />
           </AssociationSet>
-          <AssociationSet Name="FK_Provider_City" Association="QLBHModel.Store.FK_Provider_City">
+          <AssociationSet Name="FK_Provider_City" Association="SaleMgnModel.Store.FK_Provider_City">
             <End Role="City" EntitySet="City" />
             <End Role="Provider" EntitySet="Provider" />
           </AssociationSet>
-          <AssociationSet Name="FK_Stock_City" Association="QLBHModel.Store.FK_Stock_City">
+          <AssociationSet Name="FK_Stock_City" Association="SaleMgnModel.Store.FK_Stock_City">
             <End Role="City" EntitySet="City" />
             <End Role="Stock" EntitySet="Stock" />
           </AssociationSet>
-          <AssociationSet Name="FK_Storage_Product" Association="QLBHModel.Store.FK_Storage_Product">
+          <AssociationSet Name="FK_Storage_Product" Association="SaleMgnModel.Store.FK_Storage_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
-          <AssociationSet Name="FK_Storage_Stock" Association="QLBHModel.Store.FK_Storage_Stock">
+          <AssociationSet Name="FK_Storage_Stock" Association="SaleMgnModel.Store.FK_Storage_Stock">
             <End Role="Stock" EntitySet="Stock" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.Store.FK_User_UserGroup">
+          <AssociationSet Name="FK_User_UserGroup" Association="SaleMgnModel.Store.FK_User_UserGroup">
             <End Role="UserGroup" EntitySet="UserGroup" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserInfo_City" Association="QLBHModel.Store.FK_UserInfo_City">
+          <AssociationSet Name="FK_UserInfo_City" Association="SaleMgnModel.Store.FK_UserInfo_City">
             <End Role="City" EntitySet="City" />
             <End Role="UserInfo" EntitySet="UserInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserInfo_User" Association="QLBHModel.Store.FK_UserInfo_User">
+          <AssociationSet Name="FK_UserInfo_User" Association="SaleMgnModel.Store.FK_UserInfo_User">
             <End Role="User" EntitySet="User" />
             <End Role="UserInfo" EntitySet="UserInfo" />
           </AssociationSet>
@@ -214,10 +219,6 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CustomerId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
-          <Property Name="Gender" Type="bit" Nullable="false" />
-          <Property Name="PhoneNumber1" Type="nvarchar" MaxLength="255" />
-          <Property Name="PhoneNumber2" Type="nvarchar" MaxLength="255" />
           <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CityId" Type="int" Nullable="false" />
           <Property Name="Note" Type="nvarchar(max)" />
@@ -316,15 +317,18 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="255" />
-          <Property Name="ReferUserId" Type="int" />
           <Property Name="CustomerId" Type="int" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="CreatedBy" Type="int" Nullable="false" />
           <Property Name="Note" Type="nvarchar(max)" />
           <Property Name="IsSeen" Type="bit" Nullable="false" />
+          <Property Name="ReferUserId" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="int" Nullable="false" />
+          <Property Name="IsShip" Type="bit" Nullable="false" />
+          <Property Name="TransitFee" Type="float" Nullable="false" />
+          <Property Name="AdjustFee" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -353,6 +357,17 @@
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="int" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderTrack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="PaymentType">
           <Key>
@@ -481,13 +496,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="UserGroupId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Gender" Type="bit" Nullable="false" />
-          <Property Name="ReferUserId" Type="int" />
+          <Property Name="ReferUserId" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="LastModifiedBy" Type="int" Nullable="false" />
           <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
@@ -525,8 +540,8 @@
           <Property Name="SocialIssudePlace" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <Association Name="FK_Customer_City">
-          <End Role="City" Type="QLBHModel.Store.City" Multiplicity="1" />
-          <End Role="Customer" Type="QLBHModel.Store.Customer" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.Store.City" Multiplicity="1" />
+          <End Role="Customer" Type="SaleMgnModel.Store.Customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -537,8 +552,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Customer_User">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="1" />
-          <End Role="Customer" Type="QLBHModel.Store.Customer" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="Customer" Type="SaleMgnModel.Store.Customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -549,8 +564,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CustomerContact_Customer">
-          <End Role="Customer" Type="QLBHModel.Store.Customer" Multiplicity="1" />
-          <End Role="CustomerShipping" Type="QLBHModel.Store.CustomerShipping" Multiplicity="*" />
+          <End Role="Customer" Type="SaleMgnModel.Store.Customer" Multiplicity="1" />
+          <End Role="CustomerShipping" Type="SaleMgnModel.Store.CustomerShipping" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="Id" />
@@ -561,8 +576,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CustomerShipping_City">
-          <End Role="City" Type="QLBHModel.Store.City" Multiplicity="1" />
-          <End Role="CustomerShipping" Type="QLBHModel.Store.CustomerShipping" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.Store.City" Multiplicity="1" />
+          <End Role="CustomerShipping" Type="SaleMgnModel.Store.CustomerShipping" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -573,8 +588,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Export_Order">
-          <End Role="Order" Type="QLBHModel.Store.Order" Multiplicity="1" />
-          <End Role="Export" Type="QLBHModel.Store.Export" Multiplicity="*" />
+          <End Role="Order" Type="SaleMgnModel.Store.Order" Multiplicity="1" />
+          <End Role="Export" Type="SaleMgnModel.Store.Export" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id" />
@@ -585,8 +600,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Export_Stock">
-          <End Role="Stock" Type="QLBHModel.Store.Stock" Multiplicity="1" />
-          <End Role="Export" Type="QLBHModel.Store.Export" Multiplicity="*" />
+          <End Role="Stock" Type="SaleMgnModel.Store.Stock" Multiplicity="1" />
+          <End Role="Export" Type="SaleMgnModel.Store.Export" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
               <PropertyRef Name="Id" />
@@ -597,8 +612,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Export_User">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="1" />
-          <End Role="Export" Type="QLBHModel.Store.Export" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="Export" Type="SaleMgnModel.Store.Export" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -609,8 +624,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExportDetail_Export">
-          <End Role="Export" Type="QLBHModel.Store.Export" Multiplicity="1" />
-          <End Role="ExportDetail" Type="QLBHModel.Store.ExportDetail" Multiplicity="*" />
+          <End Role="Export" Type="SaleMgnModel.Store.Export" Multiplicity="1" />
+          <End Role="ExportDetail" Type="SaleMgnModel.Store.ExportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Export">
               <PropertyRef Name="Id" />
@@ -621,8 +636,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExportDetail_Product">
-          <End Role="Product" Type="QLBHModel.Store.Product" Multiplicity="1" />
-          <End Role="ExportDetail" Type="QLBHModel.Store.ExportDetail" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Store.Product" Multiplicity="1" />
+          <End Role="ExportDetail" Type="SaleMgnModel.Store.ExportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -633,8 +648,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExportDetail_Storage">
-          <End Role="Storage" Type="QLBHModel.Store.Storage" Multiplicity="1" />
-          <End Role="ExportDetail" Type="QLBHModel.Store.ExportDetail" Multiplicity="*" />
+          <End Role="Storage" Type="SaleMgnModel.Store.Storage" Multiplicity="1" />
+          <End Role="ExportDetail" Type="SaleMgnModel.Store.ExportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Storage">
               <PropertyRef Name="Id" />
@@ -645,8 +660,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FeatureMapping_Feature">
-          <End Role="Feature" Type="QLBHModel.Store.Feature" Multiplicity="1" />
-          <End Role="FeatureMapping" Type="QLBHModel.Store.FeatureMapping" Multiplicity="*" />
+          <End Role="Feature" Type="SaleMgnModel.Store.Feature" Multiplicity="1" />
+          <End Role="FeatureMapping" Type="SaleMgnModel.Store.FeatureMapping" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Feature">
               <PropertyRef Name="Id" />
@@ -657,8 +672,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FeatureMapping_UserGroup">
-          <End Role="UserGroup" Type="QLBHModel.Store.UserGroup" Multiplicity="1" />
-          <End Role="FeatureMapping" Type="QLBHModel.Store.FeatureMapping" Multiplicity="*" />
+          <End Role="UserGroup" Type="SaleMgnModel.Store.UserGroup" Multiplicity="1" />
+          <End Role="FeatureMapping" Type="SaleMgnModel.Store.FeatureMapping" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserGroup">
               <PropertyRef Name="Id" />
@@ -669,8 +684,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Import_Provider">
-          <End Role="Provider" Type="QLBHModel.Store.Provider" Multiplicity="1" />
-          <End Role="Import" Type="QLBHModel.Store.Import" Multiplicity="*" />
+          <End Role="Provider" Type="SaleMgnModel.Store.Provider" Multiplicity="1" />
+          <End Role="Import" Type="SaleMgnModel.Store.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provider">
               <PropertyRef Name="Id" />
@@ -681,8 +696,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Import_Stock">
-          <End Role="Stock" Type="QLBHModel.Store.Stock" Multiplicity="1" />
-          <End Role="Import" Type="QLBHModel.Store.Import" Multiplicity="*" />
+          <End Role="Stock" Type="SaleMgnModel.Store.Stock" Multiplicity="1" />
+          <End Role="Import" Type="SaleMgnModel.Store.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
               <PropertyRef Name="Id" />
@@ -693,8 +708,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Import_User">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="1" />
-          <End Role="Import" Type="QLBHModel.Store.Import" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="Import" Type="SaleMgnModel.Store.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -705,8 +720,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ImportDetail_Import">
-          <End Role="Import" Type="QLBHModel.Store.Import" Multiplicity="1" />
-          <End Role="ImportDetail" Type="QLBHModel.Store.ImportDetail" Multiplicity="*" />
+          <End Role="Import" Type="SaleMgnModel.Store.Import" Multiplicity="1" />
+          <End Role="ImportDetail" Type="SaleMgnModel.Store.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Import">
               <PropertyRef Name="Id" />
@@ -717,8 +732,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ImportDetail_Product">
-          <End Role="Product" Type="QLBHModel.Store.Product" Multiplicity="1" />
-          <End Role="ImportDetail" Type="QLBHModel.Store.ImportDetail" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Store.Product" Multiplicity="1" />
+          <End Role="ImportDetail" Type="SaleMgnModel.Store.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -729,8 +744,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ImportDetail_Storage">
-          <End Role="Storage" Type="QLBHModel.Store.Storage" Multiplicity="1" />
-          <End Role="ImportDetail" Type="QLBHModel.Store.ImportDetail" Multiplicity="*" />
+          <End Role="Storage" Type="SaleMgnModel.Store.Storage" Multiplicity="1" />
+          <End Role="ImportDetail" Type="SaleMgnModel.Store.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Storage">
               <PropertyRef Name="Id" />
@@ -741,8 +756,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Customer">
-          <End Role="Customer" Type="QLBHModel.Store.Customer" Multiplicity="1" />
-          <End Role="Order" Type="QLBHModel.Store.Order" Multiplicity="*" />
+          <End Role="Customer" Type="SaleMgnModel.Store.Customer" Multiplicity="1" />
+          <End Role="Order" Type="SaleMgnModel.Store.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="Id" />
@@ -752,21 +767,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_User">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="0..1" />
-          <End Role="Order" Type="QLBHModel.Store.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="ReferUserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_User1">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="1" />
-          <End Role="Order" Type="QLBHModel.Store.Order" Multiplicity="*" />
+        <Association Name="FK_Order_User2">
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="Order" Type="SaleMgnModel.Store.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -777,8 +780,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetail_Order">
-          <End Role="Order" Type="QLBHModel.Store.Order" Multiplicity="1" />
-          <End Role="OrderDetail" Type="QLBHModel.Store.OrderDetail" Multiplicity="*" />
+          <End Role="Order" Type="SaleMgnModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="SaleMgnModel.Store.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id" />
@@ -789,8 +792,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetail_Product">
-          <End Role="Product" Type="QLBHModel.Store.Product" Multiplicity="1" />
-          <End Role="OrderDetail" Type="QLBHModel.Store.OrderDetail" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Store.Product" Multiplicity="1" />
+          <End Role="OrderDetail" Type="SaleMgnModel.Store.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -801,8 +804,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderPayment_Order">
-          <End Role="Order" Type="QLBHModel.Store.Order" Multiplicity="1" />
-          <End Role="OrderPayment" Type="QLBHModel.Store.OrderPayment" Multiplicity="*" />
+          <End Role="Order" Type="SaleMgnModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderPayment" Type="SaleMgnModel.Store.OrderPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id" />
@@ -813,8 +816,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderPayment_PaymentType">
-          <End Role="PaymentType" Type="QLBHModel.Store.PaymentType" Multiplicity="1" />
-          <End Role="OrderPayment" Type="QLBHModel.Store.OrderPayment" Multiplicity="*" />
+          <End Role="PaymentType" Type="SaleMgnModel.Store.PaymentType" Multiplicity="1" />
+          <End Role="OrderPayment" Type="SaleMgnModel.Store.OrderPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaymentType">
               <PropertyRef Name="Id" />
@@ -825,8 +828,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderPayment_User">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="1" />
-          <End Role="OrderPayment" Type="QLBHModel.Store.OrderPayment" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="OrderPayment" Type="SaleMgnModel.Store.OrderPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -836,9 +839,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderTrack_Order">
+          <End Role="Order" Type="SaleMgnModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderTrack" Type="SaleMgnModel.Store.OrderTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderTrack">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderTrack_User">
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="OrderTrack" Type="SaleMgnModel.Store.OrderTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderTrack">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Product_ProductGroup">
-          <End Role="ProductGroup" Type="QLBHModel.Store.ProductGroup" Multiplicity="1" />
-          <End Role="Product" Type="QLBHModel.Store.Product" Multiplicity="*" />
+          <End Role="ProductGroup" Type="SaleMgnModel.Store.ProductGroup" Multiplicity="1" />
+          <End Role="Product" Type="SaleMgnModel.Store.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductGroup">
               <PropertyRef Name="Id" />
@@ -849,8 +876,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_ProductUnit">
-          <End Role="ProductUnit" Type="QLBHModel.Store.ProductUnit" Multiplicity="1" />
-          <End Role="Product" Type="QLBHModel.Store.Product" Multiplicity="*" />
+          <End Role="ProductUnit" Type="SaleMgnModel.Store.ProductUnit" Multiplicity="1" />
+          <End Role="Product" Type="SaleMgnModel.Store.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductUnit">
               <PropertyRef Name="Id" />
@@ -861,8 +888,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductGroup_ProductCategory">
-          <End Role="ProductCategory" Type="QLBHModel.Store.ProductCategory" Multiplicity="1" />
-          <End Role="ProductGroup" Type="QLBHModel.Store.ProductGroup" Multiplicity="*" />
+          <End Role="ProductCategory" Type="SaleMgnModel.Store.ProductCategory" Multiplicity="1" />
+          <End Role="ProductGroup" Type="SaleMgnModel.Store.ProductGroup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductCategory">
               <PropertyRef Name="Id" />
@@ -873,8 +900,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provider_City">
-          <End Role="City" Type="QLBHModel.Store.City" Multiplicity="1" />
-          <End Role="Provider" Type="QLBHModel.Store.Provider" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.Store.City" Multiplicity="1" />
+          <End Role="Provider" Type="SaleMgnModel.Store.Provider" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -885,8 +912,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stock_City">
-          <End Role="City" Type="QLBHModel.Store.City" Multiplicity="1" />
-          <End Role="Stock" Type="QLBHModel.Store.Stock" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.Store.City" Multiplicity="1" />
+          <End Role="Stock" Type="SaleMgnModel.Store.Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -897,8 +924,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Storage_Product">
-          <End Role="Product" Type="QLBHModel.Store.Product" Multiplicity="1" />
-          <End Role="Storage" Type="QLBHModel.Store.Storage" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Store.Product" Multiplicity="1" />
+          <End Role="Storage" Type="SaleMgnModel.Store.Storage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -909,8 +936,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Storage_Stock">
-          <End Role="Stock" Type="QLBHModel.Store.Stock" Multiplicity="1" />
-          <End Role="Storage" Type="QLBHModel.Store.Storage" Multiplicity="*" />
+          <End Role="Stock" Type="SaleMgnModel.Store.Stock" Multiplicity="1" />
+          <End Role="Storage" Type="SaleMgnModel.Store.Storage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
               <PropertyRef Name="Id" />
@@ -921,20 +948,20 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_UserGroup">
-          <End Role="UserGroup" Type="QLBHModel.Store.UserGroup" Multiplicity="1" />
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="*" />
+          <End Role="UserGroup" Type="SaleMgnModel.Store.UserGroup" Multiplicity="1" />
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserGroup">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="UserGroupId" />
+              <PropertyRef Name="GroupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserInfo_City">
-          <End Role="City" Type="QLBHModel.Store.City" Multiplicity="1" />
-          <End Role="UserInfo" Type="QLBHModel.Store.UserInfo" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.Store.City" Multiplicity="1" />
+          <End Role="UserInfo" Type="SaleMgnModel.Store.UserInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -945,8 +972,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserInfo_User">
-          <End Role="User" Type="QLBHModel.Store.User" Multiplicity="1" />
-          <End Role="UserInfo" Type="QLBHModel.Store.UserInfo" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.Store.User" Multiplicity="1" />
+          <End Role="UserInfo" Type="SaleMgnModel.Store.UserInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -960,169 +987,174 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QLBHModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="QLBHEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cities" EntityType="QLBHModel.City" />
-          <EntitySet Name="Customers" EntityType="QLBHModel.Customer" />
-          <EntitySet Name="CustomerShippings" EntityType="QLBHModel.CustomerShipping" />
-          <EntitySet Name="DataVersions" EntityType="QLBHModel.DataVersion" />
-          <EntitySet Name="Exports" EntityType="QLBHModel.Export" />
-          <EntitySet Name="ExportDetails" EntityType="QLBHModel.ExportDetail" />
-          <EntitySet Name="Features" EntityType="QLBHModel.Feature" />
-          <EntitySet Name="Imports" EntityType="QLBHModel.Import" />
-          <EntitySet Name="ImportDetails" EntityType="QLBHModel.ImportDetail" />
-          <EntitySet Name="Orders" EntityType="QLBHModel.Order" />
-          <EntitySet Name="OrderDetails" EntityType="QLBHModel.OrderDetail" />
-          <EntitySet Name="OrderPayments" EntityType="QLBHModel.OrderPayment" />
-          <EntitySet Name="PaymentTypes" EntityType="QLBHModel.PaymentType" />
-          <EntitySet Name="Products" EntityType="QLBHModel.Product" />
-          <EntitySet Name="ProductCategories" EntityType="QLBHModel.ProductCategory" />
-          <EntitySet Name="ProductGroups" EntityType="QLBHModel.ProductGroup" />
-          <EntitySet Name="ProductUnits" EntityType="QLBHModel.ProductUnit" />
-          <EntitySet Name="Providers" EntityType="QLBHModel.Provider" />
-          <EntitySet Name="Sessions" EntityType="QLBHModel.Session" />
-          <EntitySet Name="Stocks" EntityType="QLBHModel.Stock" />
-          <EntitySet Name="Storages" EntityType="QLBHModel.Storage" />
-          <EntitySet Name="Users" EntityType="QLBHModel.User" />
-          <EntitySet Name="UserGroups" EntityType="QLBHModel.UserGroup" />
-          <EntitySet Name="UserInfoes" EntityType="QLBHModel.UserInfo" />
-          <AssociationSet Name="FK_Customer_City" Association="QLBHModel.FK_Customer_City">
+      <Schema Namespace="SaleMgnModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SaleMgnEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="SaleMgnModel.City" />
+          <EntitySet Name="Customers" EntityType="SaleMgnModel.Customer" />
+          <EntitySet Name="CustomerShippings" EntityType="SaleMgnModel.CustomerShipping" />
+          <EntitySet Name="DataVersions" EntityType="SaleMgnModel.DataVersion" />
+          <EntitySet Name="Exports" EntityType="SaleMgnModel.Export" />
+          <EntitySet Name="ExportDetails" EntityType="SaleMgnModel.ExportDetail" />
+          <EntitySet Name="Features" EntityType="SaleMgnModel.Feature" />
+          <EntitySet Name="Imports" EntityType="SaleMgnModel.Import" />
+          <EntitySet Name="ImportDetails" EntityType="SaleMgnModel.ImportDetail" />
+          <EntitySet Name="Orders" EntityType="SaleMgnModel.Order" />
+          <EntitySet Name="OrderDetails" EntityType="SaleMgnModel.OrderDetail" />
+          <EntitySet Name="OrderPayments" EntityType="SaleMgnModel.OrderPayment" />
+          <EntitySet Name="OrderTracks" EntityType="SaleMgnModel.OrderTrack" />
+          <EntitySet Name="PaymentTypes" EntityType="SaleMgnModel.PaymentType" />
+          <EntitySet Name="Products" EntityType="SaleMgnModel.Product" />
+          <EntitySet Name="ProductCategories" EntityType="SaleMgnModel.ProductCategory" />
+          <EntitySet Name="ProductGroups" EntityType="SaleMgnModel.ProductGroup" />
+          <EntitySet Name="ProductUnits" EntityType="SaleMgnModel.ProductUnit" />
+          <EntitySet Name="Providers" EntityType="SaleMgnModel.Provider" />
+          <EntitySet Name="Sessions" EntityType="SaleMgnModel.Session" />
+          <EntitySet Name="Stocks" EntityType="SaleMgnModel.Stock" />
+          <EntitySet Name="Storages" EntityType="SaleMgnModel.Storage" />
+          <EntitySet Name="Users" EntityType="SaleMgnModel.User" />
+          <EntitySet Name="UserGroups" EntityType="SaleMgnModel.UserGroup" />
+          <EntitySet Name="UserInfoes" EntityType="SaleMgnModel.UserInfo" />
+          <AssociationSet Name="FK_Customer_City" Association="SaleMgnModel.FK_Customer_City">
             <End Role="City" EntitySet="Cities" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK_CustomerShipping_City" Association="QLBHModel.FK_CustomerShipping_City">
+          <AssociationSet Name="FK_CustomerShipping_City" Association="SaleMgnModel.FK_CustomerShipping_City">
             <End Role="City" EntitySet="Cities" />
             <End Role="CustomerShipping" EntitySet="CustomerShippings" />
           </AssociationSet>
-          <AssociationSet Name="FK_Provider_City" Association="QLBHModel.FK_Provider_City">
+          <AssociationSet Name="FK_Provider_City" Association="SaleMgnModel.FK_Provider_City">
             <End Role="City" EntitySet="Cities" />
             <End Role="Provider" EntitySet="Providers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Stock_City" Association="QLBHModel.FK_Stock_City">
+          <AssociationSet Name="FK_Stock_City" Association="SaleMgnModel.FK_Stock_City">
             <End Role="City" EntitySet="Cities" />
             <End Role="Stock" EntitySet="Stocks" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserInfo_City" Association="QLBHModel.FK_UserInfo_City">
+          <AssociationSet Name="FK_UserInfo_City" Association="SaleMgnModel.FK_UserInfo_City">
             <End Role="City" EntitySet="Cities" />
             <End Role="UserInfo" EntitySet="UserInfoes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customer_User" Association="QLBHModel.FK_Customer_User">
+          <AssociationSet Name="FK_Customer_User" Association="SaleMgnModel.FK_Customer_User">
             <End Role="User" EntitySet="Users" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK_CustomerContact_Customer" Association="QLBHModel.FK_CustomerContact_Customer">
+          <AssociationSet Name="FK_CustomerContact_Customer" Association="SaleMgnModel.FK_CustomerContact_Customer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="CustomerShipping" EntitySet="CustomerShippings" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Customer" Association="QLBHModel.FK_Order_Customer">
+          <AssociationSet Name="FK_Order_Customer" Association="SaleMgnModel.FK_Order_Customer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Export_Order" Association="QLBHModel.FK_Export_Order">
+          <AssociationSet Name="FK_Export_Order" Association="SaleMgnModel.FK_Export_Order">
             <End Role="Order" EntitySet="Orders" />
             <End Role="Export" EntitySet="Exports" />
           </AssociationSet>
-          <AssociationSet Name="FK_Export_Stock" Association="QLBHModel.FK_Export_Stock">
+          <AssociationSet Name="FK_Export_Stock" Association="SaleMgnModel.FK_Export_Stock">
             <End Role="Stock" EntitySet="Stocks" />
             <End Role="Export" EntitySet="Exports" />
           </AssociationSet>
-          <AssociationSet Name="FK_Export_User" Association="QLBHModel.FK_Export_User">
+          <AssociationSet Name="FK_Export_User" Association="SaleMgnModel.FK_Export_User">
             <End Role="User" EntitySet="Users" />
             <End Role="Export" EntitySet="Exports" />
           </AssociationSet>
-          <AssociationSet Name="FK_ExportDetail_Export" Association="QLBHModel.FK_ExportDetail_Export">
+          <AssociationSet Name="FK_ExportDetail_Export" Association="SaleMgnModel.FK_ExportDetail_Export">
             <End Role="Export" EntitySet="Exports" />
             <End Role="ExportDetail" EntitySet="ExportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_ExportDetail_Product" Association="QLBHModel.FK_ExportDetail_Product">
+          <AssociationSet Name="FK_ExportDetail_Product" Association="SaleMgnModel.FK_ExportDetail_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="ExportDetail" EntitySet="ExportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_ExportDetail_Storage" Association="QLBHModel.FK_ExportDetail_Storage">
+          <AssociationSet Name="FK_ExportDetail_Storage" Association="SaleMgnModel.FK_ExportDetail_Storage">
             <End Role="Storage" EntitySet="Storages" />
             <End Role="ExportDetail" EntitySet="ExportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_Import_Provider" Association="QLBHModel.FK_Import_Provider">
+          <AssociationSet Name="FK_Import_Provider" Association="SaleMgnModel.FK_Import_Provider">
             <End Role="Provider" EntitySet="Providers" />
             <End Role="Import" EntitySet="Imports" />
           </AssociationSet>
-          <AssociationSet Name="FK_Import_Stock" Association="QLBHModel.FK_Import_Stock">
+          <AssociationSet Name="FK_Import_Stock" Association="SaleMgnModel.FK_Import_Stock">
             <End Role="Stock" EntitySet="Stocks" />
             <End Role="Import" EntitySet="Imports" />
           </AssociationSet>
-          <AssociationSet Name="FK_Import_User" Association="QLBHModel.FK_Import_User">
+          <AssociationSet Name="FK_Import_User" Association="SaleMgnModel.FK_Import_User">
             <End Role="User" EntitySet="Users" />
             <End Role="Import" EntitySet="Imports" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImportDetail_Import" Association="QLBHModel.FK_ImportDetail_Import">
+          <AssociationSet Name="FK_ImportDetail_Import" Association="SaleMgnModel.FK_ImportDetail_Import">
             <End Role="Import" EntitySet="Imports" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImportDetail_Product" Association="QLBHModel.FK_ImportDetail_Product">
+          <AssociationSet Name="FK_ImportDetail_Product" Association="SaleMgnModel.FK_ImportDetail_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImportDetail_Storage" Association="QLBHModel.FK_ImportDetail_Storage">
+          <AssociationSet Name="FK_ImportDetail_Storage" Association="SaleMgnModel.FK_ImportDetail_Storage">
             <End Role="Storage" EntitySet="Storages" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_User" Association="QLBHModel.FK_Order_User">
+          <AssociationSet Name="FK_Order_User2" Association="SaleMgnModel.FK_Order_User2">
             <End Role="User" EntitySet="Users" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_User1" Association="QLBHModel.FK_Order_User1">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Order" Association="QLBHModel.FK_OrderDetail_Order">
+          <AssociationSet Name="FK_OrderDetail_Order" Association="SaleMgnModel.FK_OrderDetail_Order">
             <End Role="Order" EntitySet="Orders" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderPayment_Order" Association="QLBHModel.FK_OrderPayment_Order">
+          <AssociationSet Name="FK_OrderPayment_Order" Association="SaleMgnModel.FK_OrderPayment_Order">
             <End Role="Order" EntitySet="Orders" />
             <End Role="OrderPayment" EntitySet="OrderPayments" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Product" Association="QLBHModel.FK_OrderDetail_Product">
+          <AssociationSet Name="FK_OrderTrack_Order" Association="SaleMgnModel.FK_OrderTrack_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderTrack" EntitySet="OrderTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Product" Association="SaleMgnModel.FK_OrderDetail_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderPayment_PaymentType" Association="QLBHModel.FK_OrderPayment_PaymentType">
+          <AssociationSet Name="FK_OrderPayment_PaymentType" Association="SaleMgnModel.FK_OrderPayment_PaymentType">
             <End Role="PaymentType" EntitySet="PaymentTypes" />
             <End Role="OrderPayment" EntitySet="OrderPayments" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderPayment_User" Association="QLBHModel.FK_OrderPayment_User">
+          <AssociationSet Name="FK_OrderPayment_User" Association="SaleMgnModel.FK_OrderPayment_User">
             <End Role="User" EntitySet="Users" />
             <End Role="OrderPayment" EntitySet="OrderPayments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_ProductGroup" Association="QLBHModel.FK_Product_ProductGroup">
+          <AssociationSet Name="FK_OrderTrack_User" Association="SaleMgnModel.FK_OrderTrack_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="OrderTrack" EntitySet="OrderTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductGroup" Association="SaleMgnModel.FK_Product_ProductGroup">
             <End Role="ProductGroup" EntitySet="ProductGroups" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_ProductUnit" Association="QLBHModel.FK_Product_ProductUnit">
+          <AssociationSet Name="FK_Product_ProductUnit" Association="SaleMgnModel.FK_Product_ProductUnit">
             <End Role="ProductUnit" EntitySet="ProductUnits" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_Storage_Product" Association="QLBHModel.FK_Storage_Product">
+          <AssociationSet Name="FK_Storage_Product" Association="SaleMgnModel.FK_Storage_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="Storage" EntitySet="Storages" />
           </AssociationSet>
-          <AssociationSet Name="FK_ProductGroup_ProductCategory" Association="QLBHModel.FK_ProductGroup_ProductCategory">
+          <AssociationSet Name="FK_ProductGroup_ProductCategory" Association="SaleMgnModel.FK_ProductGroup_ProductCategory">
             <End Role="ProductCategory" EntitySet="ProductCategories" />
             <End Role="ProductGroup" EntitySet="ProductGroups" />
           </AssociationSet>
-          <AssociationSet Name="FK_Storage_Stock" Association="QLBHModel.FK_Storage_Stock">
+          <AssociationSet Name="FK_Storage_Stock" Association="SaleMgnModel.FK_Storage_Stock">
             <End Role="Stock" EntitySet="Stocks" />
             <End Role="Storage" EntitySet="Storages" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_UserGroup" Association="QLBHModel.FK_User_UserGroup">
+          <AssociationSet Name="FK_User_UserGroup" Association="SaleMgnModel.FK_User_UserGroup">
             <End Role="UserGroup" EntitySet="UserGroups" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserInfo_User" Association="QLBHModel.FK_UserInfo_User">
+          <AssociationSet Name="FK_UserInfo_User" Association="SaleMgnModel.FK_UserInfo_User">
             <End Role="User" EntitySet="Users" />
             <End Role="UserInfo" EntitySet="UserInfoes" />
           </AssociationSet>
-          <AssociationSet Name="FeatureMapping" Association="QLBHModel.FeatureMapping">
+          <AssociationSet Name="FeatureMapping" Association="SaleMgnModel.FeatureMapping">
             <End Role="Feature" EntitySet="Features" />
             <End Role="UserGroup" EntitySet="UserGroups" />
           </AssociationSet>
@@ -1137,11 +1169,11 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Customers" Relationship="QLBHModel.FK_Customer_City" FromRole="City" ToRole="Customer" />
-          <NavigationProperty Name="CustomerShippings" Relationship="QLBHModel.FK_CustomerShipping_City" FromRole="City" ToRole="CustomerShipping" />
-          <NavigationProperty Name="Providers" Relationship="QLBHModel.FK_Provider_City" FromRole="City" ToRole="Provider" />
-          <NavigationProperty Name="Stocks" Relationship="QLBHModel.FK_Stock_City" FromRole="City" ToRole="Stock" />
-          <NavigationProperty Name="UserInfoes" Relationship="QLBHModel.FK_UserInfo_City" FromRole="City" ToRole="UserInfo" />
+          <NavigationProperty Name="Customers" Relationship="SaleMgnModel.FK_Customer_City" FromRole="City" ToRole="Customer" />
+          <NavigationProperty Name="CustomerShippings" Relationship="SaleMgnModel.FK_CustomerShipping_City" FromRole="City" ToRole="CustomerShipping" />
+          <NavigationProperty Name="Providers" Relationship="SaleMgnModel.FK_Provider_City" FromRole="City" ToRole="Provider" />
+          <NavigationProperty Name="Stocks" Relationship="SaleMgnModel.FK_Stock_City" FromRole="City" ToRole="Stock" />
+          <NavigationProperty Name="UserInfoes" Relationship="SaleMgnModel.FK_UserInfo_City" FromRole="City" ToRole="UserInfo" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -1163,10 +1195,10 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="City" Relationship="QLBHModel.FK_Customer_City" FromRole="Customer" ToRole="City" />
-          <NavigationProperty Name="User" Relationship="QLBHModel.FK_Customer_User" FromRole="Customer" ToRole="User" />
-          <NavigationProperty Name="CustomerShippings" Relationship="QLBHModel.FK_CustomerContact_Customer" FromRole="Customer" ToRole="CustomerShipping" />
-          <NavigationProperty Name="Orders" Relationship="QLBHModel.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_Customer_City" FromRole="Customer" ToRole="City" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Customer_User" FromRole="Customer" ToRole="User" />
+          <NavigationProperty Name="CustomerShippings" Relationship="SaleMgnModel.FK_CustomerContact_Customer" FromRole="Customer" ToRole="CustomerShipping" />
+          <NavigationProperty Name="Orders" Relationship="SaleMgnModel.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
         </EntityType>
         <EntityType Name="CustomerShipping">
           <Key>
@@ -1174,18 +1206,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CustomerId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="Gender" Type="Boolean" Nullable="false" />
-          <Property Name="PhoneNumber1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="PhoneNumber2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="CityId" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="City" Relationship="QLBHModel.FK_CustomerShipping_City" FromRole="CustomerShipping" ToRole="City" />
-          <NavigationProperty Name="Customer" Relationship="QLBHModel.FK_CustomerContact_Customer" FromRole="CustomerShipping" ToRole="Customer" />
+          <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_CustomerShipping_City" FromRole="CustomerShipping" ToRole="City" />
+          <NavigationProperty Name="Customer" Relationship="SaleMgnModel.FK_CustomerContact_Customer" FromRole="CustomerShipping" ToRole="Customer" />
         </EntityType>
         <EntityType Name="DataVersion">
           <Key>
@@ -1208,10 +1236,10 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="QLBHModel.FK_Export_Order" FromRole="Export" ToRole="Order" />
-          <NavigationProperty Name="Stock" Relationship="QLBHModel.FK_Export_Stock" FromRole="Export" ToRole="Stock" />
-          <NavigationProperty Name="User" Relationship="QLBHModel.FK_Export_User" FromRole="Export" ToRole="User" />
-          <NavigationProperty Name="ExportDetails" Relationship="QLBHModel.FK_ExportDetail_Export" FromRole="Export" ToRole="ExportDetail" />
+          <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_Export_Order" FromRole="Export" ToRole="Order" />
+          <NavigationProperty Name="Stock" Relationship="SaleMgnModel.FK_Export_Stock" FromRole="Export" ToRole="Stock" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Export_User" FromRole="Export" ToRole="User" />
+          <NavigationProperty Name="ExportDetails" Relationship="SaleMgnModel.FK_ExportDetail_Export" FromRole="Export" ToRole="ExportDetail" />
         </EntityType>
         <EntityType Name="ExportDetail">
           <Key>
@@ -1226,9 +1254,9 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Export" Relationship="QLBHModel.FK_ExportDetail_Export" FromRole="ExportDetail" ToRole="Export" />
-          <NavigationProperty Name="Product" Relationship="QLBHModel.FK_ExportDetail_Product" FromRole="ExportDetail" ToRole="Product" />
-          <NavigationProperty Name="Storage" Relationship="QLBHModel.FK_ExportDetail_Storage" FromRole="ExportDetail" ToRole="Storage" />
+          <NavigationProperty Name="Export" Relationship="SaleMgnModel.FK_ExportDetail_Export" FromRole="ExportDetail" ToRole="Export" />
+          <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_ExportDetail_Product" FromRole="ExportDetail" ToRole="Product" />
+          <NavigationProperty Name="Storage" Relationship="SaleMgnModel.FK_ExportDetail_Storage" FromRole="ExportDetail" ToRole="Storage" />
         </EntityType>
         <EntityType Name="Feature">
           <Key>
@@ -1240,7 +1268,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="UserGroups" Relationship="QLBHModel.FeatureMapping" FromRole="Feature" ToRole="UserGroup" />
+          <NavigationProperty Name="UserGroups" Relationship="SaleMgnModel.FeatureMapping" FromRole="Feature" ToRole="UserGroup" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -1256,10 +1284,10 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Provider" Relationship="QLBHModel.FK_Import_Provider" FromRole="Import" ToRole="Provider" />
-          <NavigationProperty Name="Stock" Relationship="QLBHModel.FK_Import_Stock" FromRole="Import" ToRole="Stock" />
-          <NavigationProperty Name="User" Relationship="QLBHModel.FK_Import_User" FromRole="Import" ToRole="User" />
-          <NavigationProperty Name="ImportDetails" Relationship="QLBHModel.FK_ImportDetail_Import" FromRole="Import" ToRole="ImportDetail" />
+          <NavigationProperty Name="Provider" Relationship="SaleMgnModel.FK_Import_Provider" FromRole="Import" ToRole="Provider" />
+          <NavigationProperty Name="Stock" Relationship="SaleMgnModel.FK_Import_Stock" FromRole="Import" ToRole="Stock" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Import_User" FromRole="Import" ToRole="User" />
+          <NavigationProperty Name="ImportDetails" Relationship="SaleMgnModel.FK_ImportDetail_Import" FromRole="Import" ToRole="ImportDetail" />
         </EntityType>
         <EntityType Name="ImportDetail">
           <Key>
@@ -1275,9 +1303,9 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Import" Relationship="QLBHModel.FK_ImportDetail_Import" FromRole="ImportDetail" ToRole="Import" />
-          <NavigationProperty Name="Product" Relationship="QLBHModel.FK_ImportDetail_Product" FromRole="ImportDetail" ToRole="Product" />
-          <NavigationProperty Name="Storage" Relationship="QLBHModel.FK_ImportDetail_Storage" FromRole="ImportDetail" ToRole="Storage" />
+          <NavigationProperty Name="Import" Relationship="SaleMgnModel.FK_ImportDetail_Import" FromRole="ImportDetail" ToRole="Import" />
+          <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_ImportDetail_Product" FromRole="ImportDetail" ToRole="Product" />
+          <NavigationProperty Name="Storage" Relationship="SaleMgnModel.FK_ImportDetail_Storage" FromRole="ImportDetail" ToRole="Storage" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -1285,21 +1313,24 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="ReferUserId" Type="Int32" />
           <Property Name="CustomerId" Type="Int32" Nullable="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
           <Property Name="CreatedBy" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="IsSeen" Type="Boolean" Nullable="false" />
+          <Property Name="ReferUserId" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="QLBHModel.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
-          <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_Order" FromRole="Order" ToRole="Export" />
-          <NavigationProperty Name="User" Relationship="QLBHModel.FK_Order_User" FromRole="Order" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="QLBHModel.FK_Order_User1" FromRole="Order" ToRole="User" />
-          <NavigationProperty Name="OrderDetails" Relationship="QLBHModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
-          <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_Order" FromRole="Order" ToRole="OrderPayment" />
+          <Property Name="IsShip" Type="Boolean" Nullable="false" />
+          <Property Name="TransitFee" Type="Double" Nullable="false" />
+          <Property Name="AdjustFee" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="SaleMgnModel.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Exports" Relationship="SaleMgnModel.FK_Export_Order" FromRole="Order" ToRole="Export" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_Order_User2" FromRole="Order" ToRole="User" />
+          <NavigationProperty Name="OrderDetails" Relationship="SaleMgnModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+          <NavigationProperty Name="OrderPayments" Relationship="SaleMgnModel.FK_OrderPayment_Order" FromRole="Order" ToRole="OrderPayment" />
+          <NavigationProperty Name="OrderTracks" Relationship="SaleMgnModel.FK_OrderTrack_Order" FromRole="Order" ToRole="OrderTrack" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -1314,8 +1345,8 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="QLBHModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
-          <NavigationProperty Name="Product" Relationship="QLBHModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
+          <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
         </EntityType>
         <EntityType Name="OrderPayment">
           <Key>
@@ -1330,9 +1361,22 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="QLBHModel.FK_OrderPayment_Order" FromRole="OrderPayment" ToRole="Order" />
-          <NavigationProperty Name="PaymentType" Relationship="QLBHModel.FK_OrderPayment_PaymentType" FromRole="OrderPayment" ToRole="PaymentType" />
-          <NavigationProperty Name="User" Relationship="QLBHModel.FK_OrderPayment_User" FromRole="OrderPayment" ToRole="User" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_OrderPayment_Order" FromRole="OrderPayment" ToRole="Order" />
+          <NavigationProperty Name="PaymentType" Relationship="SaleMgnModel.FK_OrderPayment_PaymentType" FromRole="OrderPayment" ToRole="PaymentType" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_OrderPayment_User" FromRole="OrderPayment" ToRole="User" />
+        </EntityType>
+        <EntityType Name="OrderTrack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="SaleMgnModel.FK_OrderTrack_Order" FromRole="OrderTrack" ToRole="Order" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_OrderTrack_User" FromRole="OrderTrack" ToRole="User" />
         </EntityType>
         <EntityType Name="PaymentType">
           <Key>
@@ -1344,7 +1388,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_PaymentType" FromRole="PaymentType" ToRole="OrderPayment" />
+          <NavigationProperty Name="OrderPayments" Relationship="SaleMgnModel.FK_OrderPayment_PaymentType" FromRole="PaymentType" ToRole="OrderPayment" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -1365,12 +1409,12 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="ExportDetails" Relationship="QLBHModel.FK_ExportDetail_Product" FromRole="Product" ToRole="ExportDetail" />
-          <NavigationProperty Name="ImportDetails" Relationship="QLBHModel.FK_ImportDetail_Product" FromRole="Product" ToRole="ImportDetail" />
-          <NavigationProperty Name="OrderDetails" Relationship="QLBHModel.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
-          <NavigationProperty Name="ProductGroup" Relationship="QLBHModel.FK_Product_ProductGroup" FromRole="Product" ToRole="ProductGroup" />
-          <NavigationProperty Name="ProductUnit" Relationship="QLBHModel.FK_Product_ProductUnit" FromRole="Product" ToRole="ProductUnit" />
-          <NavigationProperty Name="Storages" Relationship="QLBHModel.FK_Storage_Product" FromRole="Product" ToRole="Storage" />
+          <NavigationProperty Name="ExportDetails" Relationship="SaleMgnModel.FK_ExportDetail_Product" FromRole="Product" ToRole="ExportDetail" />
+          <NavigationProperty Name="ImportDetails" Relationship="SaleMgnModel.FK_ImportDetail_Product" FromRole="Product" ToRole="ImportDetail" />
+          <NavigationProperty Name="OrderDetails" Relationship="SaleMgnModel.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="ProductGroup" Relationship="SaleMgnModel.FK_Product_ProductGroup" FromRole="Product" ToRole="ProductGroup" />
+          <NavigationProperty Name="ProductUnit" Relationship="SaleMgnModel.FK_Product_ProductUnit" FromRole="Product" ToRole="ProductUnit" />
+          <NavigationProperty Name="Storages" Relationship="SaleMgnModel.FK_Storage_Product" FromRole="Product" ToRole="Storage" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -1381,7 +1425,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="ProductGroups" Relationship="QLBHModel.FK_ProductGroup_ProductCategory" FromRole="ProductCategory" ToRole="ProductGroup" />
+          <NavigationProperty Name="ProductGroups" Relationship="SaleMgnModel.FK_ProductGroup_ProductCategory" FromRole="ProductCategory" ToRole="ProductGroup" />
         </EntityType>
         <EntityType Name="ProductGroup">
           <Key>
@@ -1394,8 +1438,8 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="QLBHModel.FK_Product_ProductGroup" FromRole="ProductGroup" ToRole="Product" />
-          <NavigationProperty Name="ProductCategory" Relationship="QLBHModel.FK_ProductGroup_ProductCategory" FromRole="ProductGroup" ToRole="ProductCategory" />
+          <NavigationProperty Name="Products" Relationship="SaleMgnModel.FK_Product_ProductGroup" FromRole="ProductGroup" ToRole="Product" />
+          <NavigationProperty Name="ProductCategory" Relationship="SaleMgnModel.FK_ProductGroup_ProductCategory" FromRole="ProductGroup" ToRole="ProductCategory" />
         </EntityType>
         <EntityType Name="ProductUnit">
           <Key>
@@ -1406,7 +1450,7 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="QLBHModel.FK_Product_ProductUnit" FromRole="ProductUnit" ToRole="Product" />
+          <NavigationProperty Name="Products" Relationship="SaleMgnModel.FK_Product_ProductUnit" FromRole="ProductUnit" ToRole="Product" />
         </EntityType>
         <EntityType Name="Provider">
           <Key>
@@ -1425,8 +1469,8 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="City" Relationship="QLBHModel.FK_Provider_City" FromRole="Provider" ToRole="City" />
-          <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_Provider" FromRole="Provider" ToRole="Import" />
+          <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_Provider_City" FromRole="Provider" ToRole="City" />
+          <NavigationProperty Name="Imports" Relationship="SaleMgnModel.FK_Import_Provider" FromRole="Provider" ToRole="Import" />
         </EntityType>
         <EntityType Name="Session">
           <Key>
@@ -1455,10 +1499,10 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="City" Relationship="QLBHModel.FK_Stock_City" FromRole="Stock" ToRole="City" />
-          <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_Stock" FromRole="Stock" ToRole="Export" />
-          <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_Stock" FromRole="Stock" ToRole="Import" />
-          <NavigationProperty Name="Storages" Relationship="QLBHModel.FK_Storage_Stock" FromRole="Stock" ToRole="Storage" />
+          <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_Stock_City" FromRole="Stock" ToRole="City" />
+          <NavigationProperty Name="Exports" Relationship="SaleMgnModel.FK_Export_Stock" FromRole="Stock" ToRole="Export" />
+          <NavigationProperty Name="Imports" Relationship="SaleMgnModel.FK_Import_Stock" FromRole="Stock" ToRole="Import" />
+          <NavigationProperty Name="Storages" Relationship="SaleMgnModel.FK_Storage_Stock" FromRole="Stock" ToRole="Storage" />
         </EntityType>
         <EntityType Name="Storage">
           <Key>
@@ -1472,34 +1516,34 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ExportDetails" Relationship="QLBHModel.FK_ExportDetail_Storage" FromRole="Storage" ToRole="ExportDetail" />
-          <NavigationProperty Name="ImportDetails" Relationship="QLBHModel.FK_ImportDetail_Storage" FromRole="Storage" ToRole="ImportDetail" />
-          <NavigationProperty Name="Product" Relationship="QLBHModel.FK_Storage_Product" FromRole="Storage" ToRole="Product" />
-          <NavigationProperty Name="Stock" Relationship="QLBHModel.FK_Storage_Stock" FromRole="Storage" ToRole="Stock" />
+          <NavigationProperty Name="ExportDetails" Relationship="SaleMgnModel.FK_ExportDetail_Storage" FromRole="Storage" ToRole="ExportDetail" />
+          <NavigationProperty Name="ImportDetails" Relationship="SaleMgnModel.FK_ImportDetail_Storage" FromRole="Storage" ToRole="ImportDetail" />
+          <NavigationProperty Name="Product" Relationship="SaleMgnModel.FK_Storage_Product" FromRole="Storage" ToRole="Product" />
+          <NavigationProperty Name="Stock" Relationship="SaleMgnModel.FK_Storage_Stock" FromRole="Storage" ToRole="Stock" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserGroupId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Gender" Type="Boolean" Nullable="false" />
-          <Property Name="ReferUserId" Type="Int32" />
+          <Property Name="ReferUserId" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Customers" Relationship="QLBHModel.FK_Customer_User" FromRole="User" ToRole="Customer" />
-          <NavigationProperty Name="Exports" Relationship="QLBHModel.FK_Export_User" FromRole="User" ToRole="Export" />
-          <NavigationProperty Name="Imports" Relationship="QLBHModel.FK_Import_User" FromRole="User" ToRole="Import" />
-          <NavigationProperty Name="Orders" Relationship="QLBHModel.FK_Order_User" FromRole="User" ToRole="Order" />
-          <NavigationProperty Name="Orders1" Relationship="QLBHModel.FK_Order_User1" FromRole="User" ToRole="Order" />
-          <NavigationProperty Name="OrderPayments" Relationship="QLBHModel.FK_OrderPayment_User" FromRole="User" ToRole="OrderPayment" />
-          <NavigationProperty Name="UserGroup" Relationship="QLBHModel.FK_User_UserGroup" FromRole="User" ToRole="UserGroup" />
-          <NavigationProperty Name="UserInfoes" Relationship="QLBHModel.FK_UserInfo_User" FromRole="User" ToRole="UserInfo" />
+          <NavigationProperty Name="Customers" Relationship="SaleMgnModel.FK_Customer_User" FromRole="User" ToRole="Customer" />
+          <NavigationProperty Name="Exports" Relationship="SaleMgnModel.FK_Export_User" FromRole="User" ToRole="Export" />
+          <NavigationProperty Name="Imports" Relationship="SaleMgnModel.FK_Import_User" FromRole="User" ToRole="Import" />
+          <NavigationProperty Name="Orders" Relationship="SaleMgnModel.FK_Order_User2" FromRole="User" ToRole="Order" />
+          <NavigationProperty Name="OrderPayments" Relationship="SaleMgnModel.FK_OrderPayment_User" FromRole="User" ToRole="OrderPayment" />
+          <NavigationProperty Name="OrderTracks" Relationship="SaleMgnModel.FK_OrderTrack_User" FromRole="User" ToRole="OrderTrack" />
+          <NavigationProperty Name="UserGroup" Relationship="SaleMgnModel.FK_User_UserGroup" FromRole="User" ToRole="UserGroup" />
+          <NavigationProperty Name="UserInfoes" Relationship="SaleMgnModel.FK_UserInfo_User" FromRole="User" ToRole="UserInfo" />
         </EntityType>
         <EntityType Name="UserGroup">
           <Key>
@@ -1511,8 +1555,8 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedBy" Type="Int32" Nullable="false" />
           <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Users" Relationship="QLBHModel.FK_User_UserGroup" FromRole="UserGroup" ToRole="User" />
-          <NavigationProperty Name="Features" Relationship="QLBHModel.FeatureMapping" FromRole="UserGroup" ToRole="Feature" />
+          <NavigationProperty Name="Users" Relationship="SaleMgnModel.FK_User_UserGroup" FromRole="UserGroup" ToRole="User" />
+          <NavigationProperty Name="Features" Relationship="SaleMgnModel.FeatureMapping" FromRole="UserGroup" ToRole="Feature" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -1534,12 +1578,12 @@
           <Property Name="SocialNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="SocialIssuedDate" Type="DateTime" Nullable="false" />
           <Property Name="SocialIssudePlace" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="City" Relationship="QLBHModel.FK_UserInfo_City" FromRole="UserInfo" ToRole="City" />
-          <NavigationProperty Name="User" Relationship="QLBHModel.FK_UserInfo_User" FromRole="UserInfo" ToRole="User" />
+          <NavigationProperty Name="City" Relationship="SaleMgnModel.FK_UserInfo_City" FromRole="UserInfo" ToRole="City" />
+          <NavigationProperty Name="User" Relationship="SaleMgnModel.FK_UserInfo_User" FromRole="UserInfo" ToRole="User" />
         </EntityType>
         <Association Name="FK_Customer_City">
-          <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
-          <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+          <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -1550,8 +1594,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CustomerShipping_City">
-          <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
-          <End Role="CustomerShipping" Type="QLBHModel.CustomerShipping" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+          <End Role="CustomerShipping" Type="SaleMgnModel.CustomerShipping" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -1562,8 +1606,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provider_City">
-          <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
-          <End Role="Provider" Type="QLBHModel.Provider" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+          <End Role="Provider" Type="SaleMgnModel.Provider" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -1574,8 +1618,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stock_City">
-          <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
-          <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+          <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -1586,8 +1630,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserInfo_City">
-          <End Role="City" Type="QLBHModel.City" Multiplicity="1" />
-          <End Role="UserInfo" Type="QLBHModel.UserInfo" Multiplicity="*" />
+          <End Role="City" Type="SaleMgnModel.City" Multiplicity="1" />
+          <End Role="UserInfo" Type="SaleMgnModel.UserInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="Id" />
@@ -1598,8 +1642,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Customer_User">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
-          <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1610,8 +1654,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CustomerContact_Customer">
-          <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="1" />
-          <End Role="CustomerShipping" Type="QLBHModel.CustomerShipping" Multiplicity="*" />
+          <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="1" />
+          <End Role="CustomerShipping" Type="SaleMgnModel.CustomerShipping" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="Id" />
@@ -1622,8 +1666,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Customer">
-          <End Role="Customer" Type="QLBHModel.Customer" Multiplicity="1" />
-          <End Role="Order" Type="QLBHModel.Order" Multiplicity="*" />
+          <End Role="Customer" Type="SaleMgnModel.Customer" Multiplicity="1" />
+          <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="Id" />
@@ -1634,8 +1678,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Export_Order">
-          <End Role="Order" Type="QLBHModel.Order" Multiplicity="1" />
-          <End Role="Export" Type="QLBHModel.Export" Multiplicity="*" />
+          <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+          <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id" />
@@ -1646,8 +1690,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Export_Stock">
-          <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="1" />
-          <End Role="Export" Type="QLBHModel.Export" Multiplicity="*" />
+          <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="1" />
+          <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
               <PropertyRef Name="Id" />
@@ -1658,8 +1702,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Export_User">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
-          <End Role="Export" Type="QLBHModel.Export" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1670,8 +1714,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExportDetail_Export">
-          <End Role="Export" Type="QLBHModel.Export" Multiplicity="1" />
-          <End Role="ExportDetail" Type="QLBHModel.ExportDetail" Multiplicity="*" />
+          <End Role="Export" Type="SaleMgnModel.Export" Multiplicity="1" />
+          <End Role="ExportDetail" Type="SaleMgnModel.ExportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Export">
               <PropertyRef Name="Id" />
@@ -1682,8 +1726,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExportDetail_Product">
-          <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
-          <End Role="ExportDetail" Type="QLBHModel.ExportDetail" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+          <End Role="ExportDetail" Type="SaleMgnModel.ExportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -1694,8 +1738,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExportDetail_Storage">
-          <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="1" />
-          <End Role="ExportDetail" Type="QLBHModel.ExportDetail" Multiplicity="*" />
+          <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="1" />
+          <End Role="ExportDetail" Type="SaleMgnModel.ExportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Storage">
               <PropertyRef Name="Id" />
@@ -1706,8 +1750,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Import_Provider">
-          <End Role="Provider" Type="QLBHModel.Provider" Multiplicity="1" />
-          <End Role="Import" Type="QLBHModel.Import" Multiplicity="*" />
+          <End Role="Provider" Type="SaleMgnModel.Provider" Multiplicity="1" />
+          <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provider">
               <PropertyRef Name="Id" />
@@ -1718,8 +1762,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Import_Stock">
-          <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="1" />
-          <End Role="Import" Type="QLBHModel.Import" Multiplicity="*" />
+          <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="1" />
+          <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
               <PropertyRef Name="Id" />
@@ -1730,8 +1774,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Import_User">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
-          <End Role="Import" Type="QLBHModel.Import" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1742,8 +1786,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ImportDetail_Import">
-          <End Role="Import" Type="QLBHModel.Import" Multiplicity="1" />
-          <End Role="ImportDetail" Type="QLBHModel.ImportDetail" Multiplicity="*" />
+          <End Role="Import" Type="SaleMgnModel.Import" Multiplicity="1" />
+          <End Role="ImportDetail" Type="SaleMgnModel.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Import">
               <PropertyRef Name="Id" />
@@ -1754,8 +1798,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ImportDetail_Product">
-          <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
-          <End Role="ImportDetail" Type="QLBHModel.ImportDetail" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+          <End Role="ImportDetail" Type="SaleMgnModel.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -1766,8 +1810,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ImportDetail_Storage">
-          <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="1" />
-          <End Role="ImportDetail" Type="QLBHModel.ImportDetail" Multiplicity="*" />
+          <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="1" />
+          <End Role="ImportDetail" Type="SaleMgnModel.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Storage">
               <PropertyRef Name="Id" />
@@ -1777,21 +1821,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_User">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="0..1" />
-          <End Role="Order" Type="QLBHModel.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="ReferUserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_User1">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
-          <End Role="Order" Type="QLBHModel.Order" Multiplicity="*" />
+        <Association Name="FK_Order_User2">
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1802,8 +1834,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetail_Order">
-          <End Role="Order" Type="QLBHModel.Order" Multiplicity="1" />
-          <End Role="OrderDetail" Type="QLBHModel.OrderDetail" Multiplicity="*" />
+          <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="SaleMgnModel.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id" />
@@ -1814,8 +1846,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderPayment_Order">
-          <End Role="Order" Type="QLBHModel.Order" Multiplicity="1" />
-          <End Role="OrderPayment" Type="QLBHModel.OrderPayment" Multiplicity="*" />
+          <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+          <End Role="OrderPayment" Type="SaleMgnModel.OrderPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id" />
@@ -1825,9 +1857,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderTrack_Order">
+          <End Role="Order" Type="SaleMgnModel.Order" Multiplicity="1" />
+          <End Role="OrderTrack" Type="SaleMgnModel.OrderTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderTrack">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrderDetail_Product">
-          <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
-          <End Role="OrderDetail" Type="QLBHModel.OrderDetail" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+          <End Role="OrderDetail" Type="SaleMgnModel.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -1838,8 +1882,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderPayment_PaymentType">
-          <End Role="PaymentType" Type="QLBHModel.PaymentType" Multiplicity="1" />
-          <End Role="OrderPayment" Type="QLBHModel.OrderPayment" Multiplicity="*" />
+          <End Role="PaymentType" Type="SaleMgnModel.PaymentType" Multiplicity="1" />
+          <End Role="OrderPayment" Type="SaleMgnModel.OrderPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaymentType">
               <PropertyRef Name="Id" />
@@ -1850,8 +1894,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderPayment_User">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
-          <End Role="OrderPayment" Type="QLBHModel.OrderPayment" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="OrderPayment" Type="SaleMgnModel.OrderPayment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1861,9 +1905,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderTrack_User">
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="OrderTrack" Type="SaleMgnModel.OrderTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderTrack">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Product_ProductGroup">
-          <End Role="ProductGroup" Type="QLBHModel.ProductGroup" Multiplicity="1" />
-          <End Role="Product" Type="QLBHModel.Product" Multiplicity="*" />
+          <End Role="ProductGroup" Type="SaleMgnModel.ProductGroup" Multiplicity="1" />
+          <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductGroup">
               <PropertyRef Name="Id" />
@@ -1874,8 +1930,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_ProductUnit">
-          <End Role="ProductUnit" Type="QLBHModel.ProductUnit" Multiplicity="1" />
-          <End Role="Product" Type="QLBHModel.Product" Multiplicity="*" />
+          <End Role="ProductUnit" Type="SaleMgnModel.ProductUnit" Multiplicity="1" />
+          <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductUnit">
               <PropertyRef Name="Id" />
@@ -1886,8 +1942,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Storage_Product">
-          <End Role="Product" Type="QLBHModel.Product" Multiplicity="1" />
-          <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="*" />
+          <End Role="Product" Type="SaleMgnModel.Product" Multiplicity="1" />
+          <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id" />
@@ -1898,8 +1954,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductGroup_ProductCategory">
-          <End Role="ProductCategory" Type="QLBHModel.ProductCategory" Multiplicity="1" />
-          <End Role="ProductGroup" Type="QLBHModel.ProductGroup" Multiplicity="*" />
+          <End Role="ProductCategory" Type="SaleMgnModel.ProductCategory" Multiplicity="1" />
+          <End Role="ProductGroup" Type="SaleMgnModel.ProductGroup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductCategory">
               <PropertyRef Name="Id" />
@@ -1910,8 +1966,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Storage_Stock">
-          <End Role="Stock" Type="QLBHModel.Stock" Multiplicity="1" />
-          <End Role="Storage" Type="QLBHModel.Storage" Multiplicity="*" />
+          <End Role="Stock" Type="SaleMgnModel.Stock" Multiplicity="1" />
+          <End Role="Storage" Type="SaleMgnModel.Storage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
               <PropertyRef Name="Id" />
@@ -1922,20 +1978,20 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_UserGroup">
-          <End Role="UserGroup" Type="QLBHModel.UserGroup" Multiplicity="1" />
-          <End Role="User" Type="QLBHModel.User" Multiplicity="*" />
+          <End Role="UserGroup" Type="SaleMgnModel.UserGroup" Multiplicity="1" />
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserGroup">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="UserGroupId" />
+              <PropertyRef Name="GroupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserInfo_User">
-          <End Role="User" Type="QLBHModel.User" Multiplicity="1" />
-          <End Role="UserInfo" Type="QLBHModel.UserInfo" Multiplicity="*" />
+          <End Role="User" Type="SaleMgnModel.User" Multiplicity="1" />
+          <End Role="UserInfo" Type="SaleMgnModel.UserInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1946,17 +2002,17 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FeatureMapping">
-          <End Role="Feature" Type="QLBHModel.Feature" Multiplicity="*" />
-          <End Role="UserGroup" Type="QLBHModel.UserGroup" Multiplicity="*" />
+          <End Role="Feature" Type="SaleMgnModel.Feature" Multiplicity="*" />
+          <End Role="UserGroup" Type="SaleMgnModel.UserGroup" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLBHModelStoreContainer" CdmEntityContainer="QLBHEntities">
+        <EntityContainerMapping StorageEntityContainer="SaleMgnModelStoreContainer" CdmEntityContainer="SaleMgnEntities">
           <EntitySetMapping Name="Cities">
-            <EntityTypeMapping TypeName="QLBHModel.City">
+            <EntityTypeMapping TypeName="SaleMgnModel.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1968,7 +2024,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="QLBHModel.Customer">
+            <EntityTypeMapping TypeName="SaleMgnModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1990,14 +2046,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CustomerShippings">
-            <EntityTypeMapping TypeName="QLBHModel.CustomerShipping">
+            <EntityTypeMapping TypeName="SaleMgnModel.CustomerShipping">
               <MappingFragment StoreEntitySet="CustomerShipping">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
-                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="CityId" ColumnName="CityId" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
@@ -2008,7 +2060,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DataVersions">
-            <EntityTypeMapping TypeName="QLBHModel.DataVersion">
+            <EntityTypeMapping TypeName="SaleMgnModel.DataVersion">
               <MappingFragment StoreEntitySet="DataVersion">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2017,7 +2069,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Exports">
-            <EntityTypeMapping TypeName="QLBHModel.Export">
+            <EntityTypeMapping TypeName="SaleMgnModel.Export">
               <MappingFragment StoreEntitySet="Export">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StockId" ColumnName="StockId" />
@@ -2032,7 +2084,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ExportDetails">
-            <EntityTypeMapping TypeName="QLBHModel.ExportDetail">
+            <EntityTypeMapping TypeName="SaleMgnModel.ExportDetail">
               <MappingFragment StoreEntitySet="ExportDetail">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ExportId" ColumnName="ExportId" />
@@ -2047,7 +2099,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Features">
-            <EntityTypeMapping TypeName="QLBHModel.Feature">
+            <EntityTypeMapping TypeName="SaleMgnModel.Feature">
               <MappingFragment StoreEntitySet="Feature">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2059,7 +2111,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Imports">
-            <EntityTypeMapping TypeName="QLBHModel.Import">
+            <EntityTypeMapping TypeName="SaleMgnModel.Import">
               <MappingFragment StoreEntitySet="Import">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -2075,7 +2127,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ImportDetails">
-            <EntityTypeMapping TypeName="QLBHModel.ImportDetail">
+            <EntityTypeMapping TypeName="SaleMgnModel.ImportDetail">
               <MappingFragment StoreEntitySet="ImportDetail">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ImportId" ColumnName="ImportId" />
@@ -2091,24 +2143,27 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="QLBHModel.Order">
+            <EntityTypeMapping TypeName="SaleMgnModel.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="ReferUserId" ColumnName="ReferUserId" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="IsSeen" ColumnName="IsSeen" />
+                <ScalarProperty Name="ReferUserId" ColumnName="ReferUserId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
                 <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="IsShip" ColumnName="IsShip" />
+                <ScalarProperty Name="TransitFee" ColumnName="TransitFee" />
+                <ScalarProperty Name="AdjustFee" ColumnName="AdjustFee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="QLBHModel.OrderDetail">
+            <EntityTypeMapping TypeName="SaleMgnModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetail">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
@@ -2123,7 +2178,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderPayments">
-            <EntityTypeMapping TypeName="QLBHModel.OrderPayment">
+            <EntityTypeMapping TypeName="SaleMgnModel.OrderPayment">
               <MappingFragment StoreEntitySet="OrderPayment">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
@@ -2134,11 +2189,23 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
                 <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderTracks">
+            <EntityTypeMapping TypeName="SaleMgnModel.OrderTrack">
+              <MappingFragment StoreEntitySet="OrderTrack">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PaymentTypes">
-            <EntityTypeMapping TypeName="QLBHModel.PaymentType">
+            <EntityTypeMapping TypeName="SaleMgnModel.PaymentType">
               <MappingFragment StoreEntitySet="PaymentType">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2150,7 +2217,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="QLBHModel.Product">
+            <EntityTypeMapping TypeName="SaleMgnModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -2171,7 +2238,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductCategories">
-            <EntityTypeMapping TypeName="QLBHModel.ProductCategory">
+            <EntityTypeMapping TypeName="SaleMgnModel.ProductCategory">
               <MappingFragment StoreEntitySet="ProductCategory">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2182,7 +2249,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductGroups">
-            <EntityTypeMapping TypeName="QLBHModel.ProductGroup">
+            <EntityTypeMapping TypeName="SaleMgnModel.ProductGroup">
               <MappingFragment StoreEntitySet="ProductGroup">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
@@ -2195,7 +2262,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductUnits">
-            <EntityTypeMapping TypeName="QLBHModel.ProductUnit">
+            <EntityTypeMapping TypeName="SaleMgnModel.ProductUnit">
               <MappingFragment StoreEntitySet="ProductUnit">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2206,7 +2273,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Providers">
-            <EntityTypeMapping TypeName="QLBHModel.Provider">
+            <EntityTypeMapping TypeName="SaleMgnModel.Provider">
               <MappingFragment StoreEntitySet="Provider">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -2225,7 +2292,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sessions">
-            <EntityTypeMapping TypeName="QLBHModel.Session">
+            <EntityTypeMapping TypeName="SaleMgnModel.Session">
               <MappingFragment StoreEntitySet="Session">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
@@ -2237,7 +2304,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Stocks">
-            <EntityTypeMapping TypeName="QLBHModel.Stock">
+            <EntityTypeMapping TypeName="SaleMgnModel.Stock">
               <MappingFragment StoreEntitySet="Stock">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2255,7 +2322,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Storages">
-            <EntityTypeMapping TypeName="QLBHModel.Storage">
+            <EntityTypeMapping TypeName="SaleMgnModel.Storage">
               <MappingFragment StoreEntitySet="Storage">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StockId" ColumnName="StockId" />
@@ -2269,10 +2336,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="QLBHModel.User">
+            <EntityTypeMapping TypeName="SaleMgnModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -2286,7 +2353,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserGroups">
-            <EntityTypeMapping TypeName="QLBHModel.UserGroup">
+            <EntityTypeMapping TypeName="SaleMgnModel.UserGroup">
               <MappingFragment StoreEntitySet="UserGroup">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2298,7 +2365,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserInfoes">
-            <EntityTypeMapping TypeName="QLBHModel.UserInfo">
+            <EntityTypeMapping TypeName="SaleMgnModel.UserInfo">
               <MappingFragment StoreEntitySet="UserInfo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -2319,7 +2386,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FeatureMapping" TypeName="QLBHModel.FeatureMapping" StoreEntitySet="FeatureMapping">
+          <AssociationSetMapping Name="FeatureMapping" TypeName="SaleMgnModel.FeatureMapping" StoreEntitySet="FeatureMapping">
             <EndProperty Name="Feature">
               <ScalarProperty Name="Id" ColumnName="FeatureId" />
             </EndProperty>
@@ -2347,293 +2414,306 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="SaleManagerModel" ZoomLevel="35">
-        <EntityTypeShape EntityType="QLBHModel.City" Width="1.5" PointX="8.25" PointY="8.375" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Customer" Width="1.5" PointX="7.5" PointY="12.5" Height="4.8648079427083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.CustomerShipping" Width="1.5" PointX="12.75" PointY="13.125" Height="3.7109993489583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.DataVersion" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Export" Width="1.5" PointX="12" PointY="17.625" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.ExportDetail" Width="1.5" PointX="17.25" PointY="20.625" Height="3.3263964843750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Feature" Width="1.5" PointX="0.75" PointY="13.75" Height="2.3648893229166692" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Import" Width="1.5" PointX="10.5" PointY="13.125" Height="3.7109993489583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.ImportDetail" Width="1.5" PointX="15.75" PointY="13.125" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Order" Width="1.5" PointX="9.75" PointY="17.75" Height="4.2879036458333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.OrderDetail" Width="1.5" PointX="15" PointY="18.375" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.OrderPayment" Width="1.5" PointX="18" PointY="15.625" Height="3.3263964843750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.PaymentType" Width="1.5" PointX="15.75" PointY="9.125" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Product" Width="1.5" PointX="15" PointY="28.75" Height="5.0571093750000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.ProductCategory" Width="1.5" PointX="10.5" PointY="28.75" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.ProductGroup" Width="1.5" PointX="12.75" PointY="28.5" Height="2.749492187499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.ProductUnit" Width="1.5" PointX="12.75" PointY="32" Height="2.1725878906250067" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Provider" Width="1.5" PointX="8.25" PointY="3" Height="3.903300781249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Session" Width="1.5" PointX="2.75" PointY="0.75" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Stock" Width="1.5" PointX="9.75" PointY="23.25" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.Storage" Width="1.5" PointX="15" PointY="23.875" Height="3.326396484374996" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.User" Width="1.5" PointX="5.25" PointY="12.625" Height="4.6725065104166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.UserGroup" Width="1.5" PointX="3" PointY="13.625" Height="2.5571907552083388" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBHModel.UserInfo" Width="1.5" PointX="10.5" PointY="7.625" Height="4.48020507812501" IsExpanded="true" />
-        <AssociationConnector Association="QLBHModel.FK_Customer_City" ManuallyRouted="false">
-          <ConnectorPoint PointX="8.625" PointY="11.509095052083332" />
-          <ConnectorPoint PointX="8.625" PointY="12.5" />
+      <Diagram Name="SaleMgn">
+        <EntityTypeShape EntityType="SaleMgnModel.City" Width="1.5" PointX="8.25" PointY="11.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Customer" Width="1.5" PointX="7.5" PointY="15.375" Height="4.8648079427083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.CustomerShipping" Width="1.5" PointX="12.75" PointY="16.25" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.DataVersion" Width="1.5" PointX="0.75" PointY="2.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Export" Width="1.5" PointX="15" PointY="11.5" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.ExportDetail" Width="1.5" PointX="20.25" PointY="11.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Feature" Width="1.5" PointX="0.75" PointY="16.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Import" Width="1.5" PointX="10.5" PointY="15.875" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.ImportDetail" Width="1.5" PointX="15.75" PointY="16" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Order" Width="1.5" PointX="12.75" PointY="10.375" Height="4.8648079427083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.OrderDetail" Width="1.5" PointX="18" PointY="11.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.OrderPayment" Width="1.5" PointX="18" PointY="15.5" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.OrderTrack" Width="1.5" PointX="15" PointY="8" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.PaymentType" Width="1.5" PointX="15.75" PointY="21" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Product" Width="1.5" PointX="15.75" PointY="1.25" Height="5.0571093750000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.ProductCategory" Width="1.5" PointX="11.25" PointY="4.5" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.ProductGroup" Width="1.5" PointX="13.5" PointY="4.25" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.ProductUnit" Width="1.5" PointX="13.5" PointY="0.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Provider" Width="1.5" PointX="8.25" PointY="21.75" Height="3.903300781249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Session" Width="1.5" PointX="2.75" PointY="2.125" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Stock" Width="1.5" PointX="12.75" PointY="20.125" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.Storage" Width="1.5" PointX="18" PointY="6.5" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.User" Width="1.5" PointX="5.25" PointY="15.375" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.UserGroup" Width="1.5" PointX="3" PointY="16.5" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleMgnModel.UserInfo" Width="1.5" PointX="10.5" PointY="10.5" Height="4.48020507812501" IsExpanded="true" />
+        <AssociationConnector Association="SaleMgnModel.FK_Customer_City" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="14.259095052083332" />
+          <ConnectorPoint PointX="8.625" PointY="15.375" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_CustomerShipping_City" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="11.509095052083332" />
-          <ConnectorPoint PointX="10.125" PointY="11.884095052083332" />
-          <ConnectorPoint PointX="10.125" PointY="12.75" />
-          <ConnectorPoint PointX="10.229166666666666" PointY="12.75" />
-          <ConnectorPoint PointX="10.395833333333334" PointY="12.75" />
-          <ConnectorPoint PointX="12.375" PointY="12.75" />
-          <ConnectorPoint PointX="12.75" PointY="13.125" />
+        <AssociationConnector Association="SaleMgnModel.FK_CustomerShipping_City" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="12.692047526041666" />
+          <ConnectorPoint PointX="10.25" PointY="12.692047526041666" />
+          <ConnectorPoint PointX="10.25" PointY="15.489807942708335" />
+          <ConnectorPoint PointX="13.5" PointY="15.489807942708335" />
+          <ConnectorPoint PointX="13.5" PointY="16.25" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Provider_City" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="8.375" />
-          <ConnectorPoint PointX="9" PointY="6.903300781249996" />
+        <AssociationConnector Association="SaleMgnModel.FK_Provider_City" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.40625" PointY="14.259095052083332" />
+          <ConnectorPoint PointX="9.40625" PointY="21.75" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Stock_City" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.375" PointY="11.509095052083332" />
-          <ConnectorPoint PointX="9.375" PointY="25.297801106770834" />
-          <ConnectorPoint PointX="9.75" PointY="25.297801106770834" />
+        <AssociationConnector Association="SaleMgnModel.FK_Stock_City" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="14.259095052083332" />
+          <ConnectorPoint PointX="10.125" PointY="14.634095052083332" />
+          <ConnectorPoint PointX="10.125" PointY="22.172801106770834" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="22.172801106770834" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="22.172801106770834" />
+          <ConnectorPoint PointX="12.75" PointY="22.172801106770834" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_UserInfo_City" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="9.9107950260416651" />
-          <ConnectorPoint PointX="10.229166666666666" PointY="9.9107950260416651" />
-          <ConnectorPoint PointX="10.395833333333334" PointY="9.9107950260416651" />
-          <ConnectorPoint PointX="10.5" PointY="9.9107950260416651" />
+        <AssociationConnector Association="SaleMgnModel.FK_UserInfo_City" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="11.846023763020833" />
+          <ConnectorPoint PointX="10.5" PointY="11.846023763020833" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Customer_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="14.961253255208334" />
-          <ConnectorPoint PointX="6.916666666666667" PointY="14.961253255208334" />
-          <ConnectorPoint PointX="7.083333333333333" PointY="14.961253255208334" />
-          <ConnectorPoint PointX="7.166666666666667" PointY="14.961253255208334" />
-          <ConnectorPoint PointX="7.333333333333333" PointY="14.961253255208334" />
-          <ConnectorPoint PointX="7.5" PointY="14.961253255208334" />
+        <AssociationConnector Association="SaleMgnModel.FK_Customer_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="17.711253255208334" />
+          <ConnectorPoint PointX="7.5" PointY="17.711253255208334" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_CustomerContact_Customer" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="9.8541666666666661" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="10.020833333333334" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="10.208333333333334" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="11.541669166666667" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="11.708335833333335" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="13.5" PointY="17.10040414583333" />
-          <ConnectorPoint PointX="13.5" PointY="16.835999348958332" />
+        <AssociationConnector Association="SaleMgnModel.FK_CustomerContact_Customer" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="9.9583333333333339" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="13.0937475" PointY="15.651153971354168" />
+          <ConnectorPoint PointX="13.0937475" PointY="16.25" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Order_Customer" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="12.90625" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="12.90625" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="12.90625" />
-          <ConnectorPoint PointX="9.9375" PointY="12.90625" />
-          <ConnectorPoint PointX="9.9375" PointY="17.75" />
+        <AssociationConnector Association="SaleMgnModel.FK_Order_Customer" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.84375" PointY="15.375" />
+          <ConnectorPoint PointX="7.84375" PointY="10.40625" />
+          <ConnectorPoint PointX="12.75" PointY="10.40625" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Export_Order" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="19.446848958333334" />
-          <ConnectorPoint PointX="11.541669166666667" PointY="19.446848958333334" />
-          <ConnectorPoint PointX="11.708335833333335" PointY="19.446848958333334" />
-          <ConnectorPoint PointX="12" PointY="19.446848958333334" />
+        <AssociationConnector Association="SaleMgnModel.FK_Export_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="13.259348958333334" />
+          <ConnectorPoint PointX="15" PointY="13.259348958333334" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Export_Stock" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="25.297801106770834" />
-          <ConnectorPoint PointX="12.75" PointY="25.297801106770834" />
-          <ConnectorPoint PointX="12.75" PointY="21.143697916666667" />
+        <AssociationConnector Association="SaleMgnModel.FK_Export_Stock" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="20.53125" />
+          <ConnectorPoint PointX="15.34375" PointY="20.53125" />
+          <ConnectorPoint PointX="15.34375" PointY="15.018697916666667" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Export_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6" PointY="17.297506510416667" />
-          <ConnectorPoint PointX="6" PointY="17.65625" />
-          <ConnectorPoint PointX="6.3229191666666669" PointY="17.65625" />
-          <ConnectorPoint PointX="6.4895858333333329" PointY="17.65625" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="17.65625" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="17.65625" />
-          <ConnectorPoint PointX="9.8541666666666661" PointY="17.65625" />
-          <ConnectorPoint PointX="10.020833333333334" PointY="17.65625" />
-          <ConnectorPoint PointX="10.197916666666666" PointY="17.65625" />
-          <ConnectorPoint PointX="10.364583333333334" PointY="17.65625" />
-          <ConnectorPoint PointX="11.541669166666667" PointY="17.65625" />
-          <ConnectorPoint PointX="11.708335833333335" PointY="17.65625" />
-          <ConnectorPoint PointX="12" PointY="17.65625" />
+        <AssociationConnector Association="SaleMgnModel.FK_Export_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="15.375" />
+          <ConnectorPoint PointX="6" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="6.1197926666666671" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="6.2864593333333332" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="6.3229186666666672" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="6.4895853333333333" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="6.5260446666666665" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="6.6927113333333326" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="9.9583333333333339" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="15.230205078125009" />
+          <ConnectorPoint PointX="10.458333333333334" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="12.5" PointY="15.23020507812501" />
+          <ConnectorPoint PointX="12.5" PointY="15.364807942708335" />
+          <ConnectorPoint PointX="13.791666166666667" PointY="15.364807942708335" />
+          <ConnectorPoint PointX="13.958332833333335" PointY="15.364807942708335" />
+          <ConnectorPoint PointX="14.625" PointY="15.364807942708335" />
+          <ConnectorPoint PointX="14.625" PointY="14.170275437500003" />
+          <ConnectorPoint PointX="15" PointY="14.170275437500003" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ExportDetail_Export" ManuallyRouted="false">
-          <ConnectorPoint PointX="13.1562525" PointY="21.143697916666667" />
-          <ConnectorPoint PointX="13.1562525" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="16.979170416666669" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="17.145837083333333" PointY="22.692047526041666" />
-          <ConnectorPoint PointX="17.25" PointY="22.692047526041666" />
+        <AssociationConnector Association="SaleMgnModel.FK_ExportDetail_Export" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.5" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="17.026044166666669" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="17.192710833333333" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="17.791666666666668" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="17.958333333333332" PointY="14.573995768229166" />
+          <ConnectorPoint PointX="20.25" PointY="14.573995768229166" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ExportDetail_Product" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="31.2785546875" />
-          <ConnectorPoint PointX="18" PointY="31.2785546875" />
-          <ConnectorPoint PointX="18" PointY="23.951396484375003" />
+        <AssociationConnector Association="SaleMgnModel.FK_ExportDetail_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="17.25" PointY="3.7785546875000016" />
+          <ConnectorPoint PointX="21" PointY="3.7785546875000016" />
+          <ConnectorPoint PointX="21" PointY="11.5" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ExportDetail_Storage" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="25.607648984375" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="25.607648984375" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="25.607648984375" />
-          <ConnectorPoint PointX="17.5937475" PointY="25.607648984375" />
-          <ConnectorPoint PointX="17.5937475" PointY="23.951396484375003" />
+        <AssociationConnector Association="SaleMgnModel.FK_ExportDetail_Storage" ManuallyRouted="false">
+          <ConnectorPoint PointX="19.5" PointY="8.163198242187498" />
+          <ConnectorPoint PointX="20.5937475" PointY="8.163198242187498" />
+          <ConnectorPoint PointX="20.5937475" PointY="11.5" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Import_Provider" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="6.8398382427884572" />
-          <ConnectorPoint PointX="10.3125" PointY="7.4023382427884572" />
-          <ConnectorPoint PointX="10.3125" PointY="14.980499674479166" />
-          <ConnectorPoint PointX="10.5" PointY="14.980499674479166" />
+        <AssociationConnector Association="SaleMgnModel.FK_Import_Provider" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="23.913050944010415" />
+          <ConnectorPoint PointX="11.25" PointY="23.913050944010415" />
+          <ConnectorPoint PointX="11.25" PointY="19.585999348958332" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Import_Stock" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="24.242648053385423" />
-          <ConnectorPoint PointX="11.6250025" PointY="24.242648053385423" />
-          <ConnectorPoint PointX="11.6250025" PointY="16.835999348958332" />
+        <AssociationConnector Association="SaleMgnModel.FK_Import_Stock" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.75" PointY="21.117648053385423" />
+          <ConnectorPoint PointX="11.6562525" PointY="21.117648053385423" />
+          <ConnectorPoint PointX="11.6562525" PointY="19.585999348958332" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Import_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6" PointY="12.625" />
-          <ConnectorPoint PointX="6" PointY="12.375" />
-          <ConnectorPoint PointX="6.3229186666666672" PointY="12.375" />
-          <ConnectorPoint PointX="6.4895853333333333" PointY="12.375" />
-          <ConnectorPoint PointX="6.916666666666667" PointY="12.375" />
-          <ConnectorPoint PointX="7.083333333333333" PointY="12.375" />
-          <ConnectorPoint PointX="7.25" PointY="12.375" />
-          <ConnectorPoint PointX="7.25" PointY="17.5" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="17.5" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="17.5" />
-          <ConnectorPoint PointX="9.8541666666666661" PointY="17.5" />
-          <ConnectorPoint PointX="10.020833333333334" PointY="17.5" />
-          <ConnectorPoint PointX="10.125" PointY="17.5" />
-          <ConnectorPoint PointX="10.125" PointY="14.021497837239583" />
-          <ConnectorPoint PointX="10.229166666666666" PointY="14.021497837239583" />
-          <ConnectorPoint PointX="10.395833333333334" PointY="14.021497837239583" />
-          <ConnectorPoint PointX="10.5" PointY="14.021497837239583" />
+        <AssociationConnector Association="SaleMgnModel.FK_Import_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.406252" PointY="15.375" />
+          <ConnectorPoint PointX="6.406252" PointY="14.875" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="14.875" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="14.875" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="14.875" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="14.875" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="14.875" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="14.875" />
+          <ConnectorPoint PointX="9.875" PointY="14.875" />
+          <ConnectorPoint PointX="9.875" PointY="17.730499674479166" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="17.730499674479166" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="17.730499674479166" />
+          <ConnectorPoint PointX="10.5" PointY="17.730499674479166" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ImportDetail_Import" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="13.187306692307692" />
-          <ConnectorPoint PointX="12.249806692307693" PointY="12.9375" />
-          <ConnectorPoint PointX="12.479166666666666" PointY="12.9375" />
-          <ConnectorPoint PointX="12.645833333333334" PointY="12.9375" />
-          <ConnectorPoint PointX="15.5625" PointY="12.9375" />
-          <ConnectorPoint PointX="15.75" PointY="13.125" />
+        <AssociationConnector Association="SaleMgnModel.FK_ImportDetail_Import" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="19.386495768229167" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="19.386495768229167" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="19.386495768229167" />
+          <ConnectorPoint PointX="15.75" PointY="19.386495768229167" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ImportDetail_Product" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="29.983024843750009" />
-          <ConnectorPoint PointX="16.8750025" PointY="29.983024843750009" />
-          <ConnectorPoint PointX="16.8750025" PointY="16.643697916666667" />
+        <AssociationConnector Association="SaleMgnModel.FK_ImportDetail_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.90625" PointY="6.3071093750000031" />
+          <ConnectorPoint PointX="16.90625" PointY="16" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ImportDetail_Storage" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="24.710071992187508" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="24.710071992187508" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="24.710071992187508" />
-          <ConnectorPoint PointX="17.06250375" PointY="24.710071992187508" />
-          <ConnectorPoint PointX="17.06250375" PointY="16.643697916666667" />
+        <AssociationConnector Association="SaleMgnModel.FK_ImportDetail_Storage" ManuallyRouted="false">
+          <ConnectorPoint PointX="18" PointY="7.21875" />
+          <ConnectorPoint PointX="17.1093775" PointY="7.21875" />
+          <ConnectorPoint PointX="17.1093775" PointY="16" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Order_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.4062525" PointY="17.297506510416667" />
-          <ConnectorPoint PointX="6.4062525" PointY="19.893951822916669" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="19.893951822916669" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="19.893951822916669" />
-          <ConnectorPoint PointX="9.75" PointY="19.893951822916669" />
+        <AssociationConnector Association="SaleMgnModel.FK_Order_User2" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.5937475" PointY="15.375" />
+          <ConnectorPoint PointX="5.5937475" PointY="10.421875" />
+          <ConnectorPoint PointX="6.1197926666666671" PointY="10.421875" />
+          <ConnectorPoint PointX="6.2864593333333332" PointY="10.421875" />
+          <ConnectorPoint PointX="12.75" PointY="10.421875" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Order_User1" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.5937475" PointY="17.297506510416667" />
-          <ConnectorPoint PointX="5.5937475" PointY="18.790723411458341" />
-          <ConnectorPoint PointX="6.3229191666666669" PointY="18.790723411458341" />
-          <ConnectorPoint PointX="6.4895858333333329" PointY="18.790723411458341" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="18.790723411458341" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="18.790723411458341" />
-          <ConnectorPoint PointX="9.75" PointY="18.790723411458341" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderDetail_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="11.28125" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="11.28125" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="11.28125" />
+          <ConnectorPoint PointX="17.026044166666669" PointY="11.28125" />
+          <ConnectorPoint PointX="17.192710833333333" PointY="11.28125" />
+          <ConnectorPoint PointX="17.791666666666668" PointY="11.28125" />
+          <ConnectorPoint PointX="17.958333333333332" PointY="11.28125" />
+          <ConnectorPoint PointX="18" PointY="11.28125" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_OrderDetail_Order" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="21.357646484375" />
-          <ConnectorPoint PointX="11.541669166666667" PointY="21.357646484375" />
-          <ConnectorPoint PointX="11.708335833333335" PointY="21.357646484375" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="21.357646484375" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="21.357646484375" />
-          <ConnectorPoint PointX="13.072919166666667" PointY="21.357646484375" />
-          <ConnectorPoint PointX="13.239585833333335" PointY="21.357646484375" />
-          <ConnectorPoint PointX="15" PointY="21.357646484375" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderPayment_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.874999500000001" PointY="15.239807942708335" />
+          <ConnectorPoint PointX="13.874999500000001" PointY="15.75" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="15.75" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="15.75" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="15.75" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="15.75" />
+          <ConnectorPoint PointX="17.026044166666669" PointY="15.75" />
+          <ConnectorPoint PointX="17.192710833333333" PointY="15.75" />
+          <ConnectorPoint PointX="17.625" PointY="15.75" />
+          <ConnectorPoint PointX="17.625" PointY="17.259348958333334" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="17.259348958333334" />
+          <ConnectorPoint PointX="17.958333333333332" PointY="17.259348958333334" />
+          <ConnectorPoint PointX="18" PointY="17.259348958333334" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_OrderPayment_Order" ManuallyRouted="false">
-          <ConnectorPoint PointX="10.28125" PointY="17.75" />
-          <ConnectorPoint PointX="10.28125" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="11.541669166666667" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="11.708335833333335" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="16.979170416666669" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="17.145837083333333" PointY="17.300202072916665" />
-          <ConnectorPoint PointX="18" PointY="17.300202072916665" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderTrack_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.5" PointY="10.375" />
+          <ConnectorPoint PointX="13.5" PointY="9.1824446614583337" />
+          <ConnectorPoint PointX="15" PointY="9.1824446614583337" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_OrderDetail_Product" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="28.75" />
-          <ConnectorPoint PointX="14.625" PointY="28.375" />
-          <ConnectorPoint PointX="14.625" PointY="21.884095052083332" />
-          <ConnectorPoint PointX="15" PointY="21.509095052083332" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderDetail_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.7031225" PointY="6.3071093750000031" />
+          <ConnectorPoint PointX="16.7031225" PointY="11.1718725" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="11.1718725" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="11.1718725" />
+          <ConnectorPoint PointX="17.026044166666669" PointY="11.1718725" />
+          <ConnectorPoint PointX="17.192710833333333" PointY="11.1718725" />
+          <ConnectorPoint PointX="17.791666666666668" PointY="11.1718725" />
+          <ConnectorPoint PointX="17.958333333333332" PointY="11.1718725" />
+          <ConnectorPoint PointX="18" PointY="11.1718725" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_OrderPayment_PaymentType" ManuallyRouted="false">
-          <ConnectorPoint PointX="17.25" PointY="10.307444661458334" />
-          <ConnectorPoint PointX="18.75" PointY="10.307444661458334" />
-          <ConnectorPoint PointX="18.75" PointY="15.625" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderPayment_PaymentType" ManuallyRouted="false">
+          <ConnectorPoint PointX="17.25" PointY="22.182444661458334" />
+          <ConnectorPoint PointX="18.75" PointY="22.182444661458334" />
+          <ConnectorPoint PointX="18.75" PointY="19.018697916666667" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_OrderPayment_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.406252" PointY="12.625" />
-          <ConnectorPoint PointX="6.406252" PointY="12.125" />
-          <ConnectorPoint PointX="7" PointY="12.125" />
-          <ConnectorPoint PointX="7" PointY="17.5625" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="17.5625" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="17.5625" />
-          <ConnectorPoint PointX="9.8541666666666661" PointY="17.5625" />
-          <ConnectorPoint PointX="10.020833333333334" PointY="17.5625" />
-          <ConnectorPoint PointX="10.197916666666666" PointY="17.5625" />
-          <ConnectorPoint PointX="10.364583333333334" PointY="17.5625" />
-          <ConnectorPoint PointX="11.541669166666667" PointY="17.5625" />
-          <ConnectorPoint PointX="11.708335833333335" PointY="17.5625" />
-          <ConnectorPoint PointX="11.75" PointY="17.5625" />
-          <ConnectorPoint PointX="11.75" PointY="17.776874624399042" />
-          <ConnectorPoint PointX="16.791669166666669" PointY="17.776874624399042" />
-          <ConnectorPoint PointX="16.958335833333333" PointY="17.776874624399042" />
-          <ConnectorPoint PointX="16.979170416666669" PointY="17.776874624399042" />
-          <ConnectorPoint PointX="17.145837083333333" PointY="17.776874624399042" />
-          <ConnectorPoint PointX="18" PointY="17.776874624399042" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderPayment_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.6093779999999995" PointY="15.375" />
+          <ConnectorPoint PointX="6.6093779999999995" PointY="15" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="15" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="15" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="15" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="15" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="15" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="15" />
+          <ConnectorPoint PointX="9.7916666666666661" PointY="15" />
+          <ConnectorPoint PointX="9.9583333333333339" PointY="15" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="14.999999999999998" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="15" />
+          <ConnectorPoint PointX="10.375" PointY="15" />
+          <ConnectorPoint PointX="10.375" PointY="15.5625" />
+          <ConnectorPoint PointX="13.791666166666667" PointY="15.5625" />
+          <ConnectorPoint PointX="13.958332833333335" PointY="15.5625" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="15.5625" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="15.5625" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="15.5625" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="15.5625" />
+          <ConnectorPoint PointX="17.026044166666669" PointY="15.5625" />
+          <ConnectorPoint PointX="17.192710833333333" PointY="15.5625" />
+          <ConnectorPoint PointX="17.75" PointY="15.5625" />
+          <ConnectorPoint PointX="17.75" PointY="18.170275437499996" />
+          <ConnectorPoint PointX="17.791666666666668" PointY="18.170275437499996" />
+          <ConnectorPoint PointX="17.958333333333332" PointY="18.170275437499996" />
+          <ConnectorPoint PointX="18" PointY="18.170275437499996" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Product_ProductGroup" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.25" PointY="30.030998593749992" />
-          <ConnectorPoint PointX="15" PointY="30.030998593749992" />
+        <AssociationConnector Association="SaleMgnModel.FK_OrderTrack_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.203126" PointY="15.375" />
+          <ConnectorPoint PointX="6.203126" PointY="9.8049194921875014" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="9.8049194921875014" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="9.8049194921875014" />
+          <ConnectorPoint PointX="15" PointY="9.8049194921875014" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Product_ProductUnit" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.25" PointY="32.903554687500005" />
-          <ConnectorPoint PointX="15" PointY="32.903554687500005" />
+        <AssociationConnector Association="SaleMgnModel.FK_Product_ProductGroup" ManuallyRouted="false">
+          <ConnectorPoint PointX="15" PointY="5.2785546875000016" />
+          <ConnectorPoint PointX="15.75" PointY="5.2785546875000016" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Storage_Product" ManuallyRouted="false">
-          <ConnectorPoint PointX="15.7812525" PointY="28.75" />
-          <ConnectorPoint PointX="15.7812525" PointY="27.201396484374996" />
+        <AssociationConnector Association="SaleMgnModel.FK_Product_ProductUnit" ManuallyRouted="false">
+          <ConnectorPoint PointX="15" PointY="2.0862939453125016" />
+          <ConnectorPoint PointX="15.75" PointY="2.0862939453125016" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_ProductGroup_ProductCategory" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="29.8362939453125" />
-          <ConnectorPoint PointX="12.75" PointY="29.8362939453125" />
+        <AssociationConnector Association="SaleMgnModel.FK_Storage_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="17.25" PointY="5.074084531249996" />
+          <ConnectorPoint PointX="18.75" PointY="5.074084531249996" />
+          <ConnectorPoint PointX="18.75" PointY="6.5" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_Storage_Stock" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="26.312098795572915" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="26.312098795572915" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="26.312098795572915" />
-          <ConnectorPoint PointX="15" PointY="26.312098795572915" />
+        <AssociationConnector Association="SaleMgnModel.FK_ProductGroup_ProductCategory" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.75" PointY="5.5862939453125016" />
+          <ConnectorPoint PointX="13.5" PointY="5.5862939453125016" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_User_UserGroup" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="14.903595377604169" />
-          <ConnectorPoint PointX="5.25" PointY="14.903595377604169" />
+        <AssociationConnector Association="SaleMgnModel.FK_Storage_Stock" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="22.407178106770829" />
+          <ConnectorPoint PointX="15.5" PointY="22.407178106770829" />
+          <ConnectorPoint PointX="15.5" PointY="20.75" />
+          <ConnectorPoint PointX="17.875" PointY="20.75" />
+          <ConnectorPoint PointX="17.875" PointY="10.201396484374996" />
+          <ConnectorPoint PointX="18.75" PointY="10.201396484374996" />
+          <ConnectorPoint PointX="18.75" PointY="9.826396484374996" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FK_UserInfo_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.5937475" PointY="12.625" />
-          <ConnectorPoint PointX="5.5937475" PointY="7.96875" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="7.9687499999999991" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="7.96875" />
-          <ConnectorPoint PointX="10.229166666666666" PointY="7.9687499999999991" />
-          <ConnectorPoint PointX="10.395833333333334" PointY="7.96875" />
-          <ConnectorPoint PointX="10.5" PointY="7.96875" />
+        <AssociationConnector Association="SaleMgnModel.FK_User_UserGroup" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.778595377604169" />
+          <ConnectorPoint PointX="5.25" PointY="17.778595377604169" />
         </AssociationConnector>
-        <AssociationConnector Association="QLBHModel.FeatureMapping" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="14.932444661458334" />
-          <ConnectorPoint PointX="3" PointY="14.932444661458334" />
+        <AssociationConnector Association="SaleMgnModel.FK_UserInfo_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.79687375" PointY="15.375" />
+          <ConnectorPoint PointX="5.79687375" PointY="10.78125" />
+          <ConnectorPoint PointX="6.1197926666666671" PointY="10.78125" />
+          <ConnectorPoint PointX="6.2864593333333332" PointY="10.78125" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="10.78125" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="10.78125" />
+          <ConnectorPoint PointX="10.5" PointY="10.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SaleMgnModel.FeatureMapping" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="17.807444661458334" />
+          <ConnectorPoint PointX="3" PointY="17.807444661458334" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
